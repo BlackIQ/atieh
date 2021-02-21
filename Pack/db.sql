@@ -1,7 +1,5 @@
-CREATE
-DATABASE Atieh;
-USE
-Atieh;
+CREATE DATABASE Atieh;
+USE Atieh;
 
 -- Class Table
 CREATE TABLE class
