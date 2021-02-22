@@ -52,7 +52,7 @@ include("panels/sidebar.php");
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../student">
+            <li><a href="../">
                     <em class="fa fa-home"></em>
                 </a></li>
             <li class="active">Class</li>
@@ -82,6 +82,17 @@ include("panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-warning">List of students in <?php echo $mc; ?></h1>
                     <hr>
+                    <label>Session</label>
+                    <select class="form-control" id="exampleFormControlSelect2">
+                        <?php
+                                for($i = 1 ; $i <= 16 ; $i++) {
+                                    ?>
+                                    <option><?php echo $i; ?></option>    
+                                    <?php
+                                }
+                        ?>
+                    </select>
+                    <br>
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
                             <thead class="thead-dark">

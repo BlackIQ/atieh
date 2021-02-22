@@ -24,6 +24,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['status'] = true;
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
+                $_SESSION["person"] = "student";
                 header("Location: http://192.168.1.4/Atieh/student");
             }
         }
@@ -41,6 +42,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['status'] = true;
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
+                $_SESSION["person"] = "teacher";
                 header("Location: http://192.168.1.4/Atieh/teacher");
             }
         }

@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION['status'] == true) {
+if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
     // Database Connection
     $server = "localhost";
     $user = "milad";
@@ -102,7 +102,9 @@ if ($_SESSION['status'] == true) {
     </div>';
     }
 } else {
-    header("Location: http://192.168.1.4/Atieh/login.php");
+    if ($_SESSION['person'] == "teacher") {
+        header("Location: http://192.168.1.4/Atieh/people/teacher");
+    }
 }
 
 ?>
