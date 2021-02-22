@@ -50,42 +50,36 @@ include("panels/sidebar.php");
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    My Class
+                    My Classes
                     <span class="pull-right clickable panel-toggle panel-button-tab-left">
                         <em class="fa fa-toggle-up"></em>
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Class Information</h1>
+                    <h1 class="text-warning">Table of classes</h1>
                     <hr>
-                    <h4 class="text-primary">Teacher's name</h4>
-                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $teacher; ?></b></p>
-                    <br>
-                    <h4 class="text-primary"><i class="fa fa-link"></i> Class links</h4>
-                    <p class="text-danger"><b>
-                        <b class="text-primary"><i class="fa fa-skype"></i> Skype</b> | <b class="text-success"><i class="fa fa-whatsapp"></i> WhatsApp</b>
-                    </p>
-                    <br>
-                    <h4 class="text-primary"><i class="fa fa-clock-o"></i> Class period</h4>
-                    <p class="text-muted"><b class="text-danger"><?php echo $starttime; ?></b> until <b class="text-success"><?php echo $endtime; ?></b></p>
-                </div>
-            </div>
-        </div>
-    </div><!--/.row-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Homework
-                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
-                        <em class="fa fa-toggle-up"></em>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h1 class="text-warning">Session <?php echo $homeworksession; ?></h1>
-                    <hr>
-                    <h3 class="text-primary"><?php echo $homeworktitle; ?></h3>
-                    <p class="text-success"><?php echo $homeworktext; ?></p>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Class Level</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">End Time</th>
+                                <th scope="col">Days</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row"><i class="color-blue fa fa-male"></i></th>
+                                <td>AEF5E</td>
+                                <td>6:00 PM</td>
+                                <td>7:30 PM</td>
+                                <td>Even Days</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
