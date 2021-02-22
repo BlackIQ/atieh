@@ -24,12 +24,12 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['status'] = true;
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
-                header("Location: http://127.0.0.1/Atieh/student");
+                header("Location: http://192.168.1.4/Atieh/student");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://127.0.0.1/Atieh/login.php");
+            header("Location: http://192.168.1.4/Atieh/login.php");
         }
     }
     elseif ($radio == "teacher") {
@@ -41,16 +41,16 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['status'] = true;
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
-                header("Location: http://127.0.0.1/Atieh/teacher");
+                header("Location: http://192.168.1.4/Atieh/teacher");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://127.0.0.1/Atieh/login.php");
+            header("Location: http://192.168.1.4/Atieh/login.php");
         }
     }
 }
 else {
     $_SESSION["error"] = "500";
-    header("Location: http://127.0.0.1/Atieh/login.php");
+    header("Location: http://192.168.1.4/Atieh/login.php");
 }
