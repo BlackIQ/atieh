@@ -1,5 +1,17 @@
 <?php
 include("include/data.php");
+
+// Database Connection
+$server = "localhost";
+$user = "milad";
+$passwd = "milad";
+$db = "Atieh";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+
+$sql = "SELECT * FROM status WHERE student_code='$stdnt'";
+$result = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -115,86 +127,43 @@ include("panels/sidebar.php");
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td></td>
-                                <td><i class="fa fa-times text-danger"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td></td>
-                                <td><i class="fa fa-times text-danger"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9</th>
-                                <td><i class="fa fa-check text-success"></i></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">10</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11</th>
-                                <td></td>
-                                <td></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">12</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">13</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">14</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">15</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">16</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                                <?php
+                                if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        for ($i = 1 ; $i <= 16 ; $i++) {
+                                            $session = "S".$i;
+                                            if ($row[$session] == "p") {
+                                                ?>
+                                                    <tr>
+                                                        <th scope="row"><?php echo $i; ?></th>
+                                                        <td><i class="fa fa-check text-success"></i></td>
+                                                        <td></td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                            elseif ($row[$session] == "a") {
+                                                ?>
+                                                    <tr>
+                                                        <th scope="row"><?php echo $i; ?></th>
+                                                        <td></td>
+                                                        <td><i class="fa fa-check text-danger"></i></td>
+                                                    </tr>
+                                                <?php
+                                            }
+                                            else {
+                                                ?>
+                                                <tr>
+                                                    <th scope="row"><?php echo $i; ?></th>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
