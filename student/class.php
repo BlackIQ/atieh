@@ -121,7 +121,7 @@ include("panels/sidebar.php");
                         <table class="table table-striped table-hover table-bordered">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Session</th>
                                 <th scope="col">Present</th>
                                 <th scope="col">Absent</th>
                             </tr>
@@ -147,7 +147,7 @@ include("panels/sidebar.php");
                                                     <tr>
                                                         <th scope="row"><?php echo $i; ?></th>
                                                         <td></td>
-                                                        <td><i class="fa fa-check text-danger"></i></td>
+                                                        <td><i class="fa fa-times text-danger"></i></td>
                                                     </tr>
                                                 <?php
                                             }
