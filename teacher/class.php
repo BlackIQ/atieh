@@ -160,10 +160,20 @@ include("panels/sidebar.php");
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $code = $row["code"];
+                                    $fullname = $row["full_name"];
                                     ?>
                                     <tr>
-                                        <th scope="row"><?php echo $row["full_name"]; ?></th>
-                                        <td><i class="fa fa-check color-teal"></i> | <i class="fa fa-times color-red"></i></td>
+                                        <th scope="row"><?php echo $fullname; ?></th>
+                                        <td>
+                                            <a href="include/set.php?code='<?php echo $code; ?>'&session=15&action=p">
+                                                <i class="fa fa-check color-teal"></i>
+                                            </a>
+                                            | 
+                                            <a href="include/set.php?code='<?php echo $code; ?>'&session=15&action=a">
+                                                <i class="fa fa-times color-red"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <?php
                                 }

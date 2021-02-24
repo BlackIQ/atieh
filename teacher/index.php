@@ -79,7 +79,7 @@ include("panels/sidebar.php");
                             </thead>
                             <tbody>
                             <tr class="color-<?php echo $iconcolor; ?>">
-                                <th><i class="fa fa-<?php echo $icon; ?>"></i> <?php echo $level; ?></th>
+                                <th><a href="class.php?code=147"><i class="fa fa-<?php echo $icon; ?>"></i> <?php echo $level; ?></a></th>
                                 <td><?php echo $starttime; ?></td>
                                 <td><?php echo $endtime; ?></td>
                                 <td><?php echo $days; ?></td>

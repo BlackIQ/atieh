@@ -48,6 +48,7 @@ CREATE TABLE teacher
 -- Student Status Table
 CREATE TABLE status
 (
+    student_code TEXT,
     S1           TEXT,
     S2           TEXT,
     S3           TEXT,
@@ -63,6 +64,5 @@ CREATE TABLE status
     S13          TEXT,
     S14          TEXT,
     S15          TEXT,
-    S16          TEXT,
-    student_code TEXT
+    S16          TEXT
 );
