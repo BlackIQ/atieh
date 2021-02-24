@@ -7,7 +7,6 @@ $passwd = "milad";
 $db = "Atieh";
 
 $code = $_GET["code"];
-$session = $_GET["session"];
 $action = $_GET["action"];
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
@@ -23,17 +22,17 @@ if (mysqli_num_rows($result) > 0) {
             if ($s == "p") {
                 continue;
             }
-            elseif (is_null($s)) {
-                $sql = "UPDATE status SET $x='p' WHERE student_code='$code'";
+            elseif ($s == null) {
+                $sql = "UPDATE status SET $x='$action' WHERE student_code='$code'";
                 if (mysqli_query($conn, $sql)) {
                     echo 'Done !';
                 }
                 else {
                     echo mysqli_error($conn);
                 }
-//                header("Location: http://192.168.1.4/Atieh/teacher");
                 break;
             }
         }
+        header("Location: http://192.168.1.4/Atieh/teacher");
     }
 }

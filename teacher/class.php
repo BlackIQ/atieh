@@ -166,11 +166,11 @@ include("panels/sidebar.php");
                                     <tr>
                                         <th scope="row"><?php echo $fullname; ?></th>
                                         <td>
-                                            <a href="include/set.php?code='<?php echo $code; ?>'&session=15&action=p">
+                                            <a href="include/set.php?code=<?php echo $code; ?>&action=p">
                                                 <i class="fa fa-check color-teal"></i>
                                             </a>
                                             | 
-                                            <a href="include/set.php?code='<?php echo $code; ?>'&session=15&action=a">
+                                            <a href="include/set.php?code=<?php echo $code; ?>&action=a">
                                                 <i class="fa fa-times color-red"></i>
                                             </a>
                                         </td>
