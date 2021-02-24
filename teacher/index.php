@@ -1,5 +1,14 @@
 <?php
 include("include/data.php");
+
+if ($sex == "male") {
+    $icon = "male";
+    $iconcolor = "blue";
+}
+elseif ($sex == "female") {
+    $icon = "female";
+    $iconcolor = "red";
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +71,6 @@ include("panels/sidebar.php");
                         <table class="table table-striped table-hover table-bordered">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Gender</th>
                                 <th scope="col">Class Level</th>
                                 <th scope="col">Start Time</th>
                                 <th scope="col">End Time</th>
@@ -70,12 +78,11 @@ include("panels/sidebar.php");
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row"><i class="color-blue fa fa-male"></i></th>
-                                <td>AEF5E</td>
-                                <td>6:00 PM</td>
-                                <td>7:30 PM</td>
-                                <td>Even Days</td>
+                            <tr class="color-<?php echo $iconcolor; ?>">
+                                <th><i class="fa fa-<?php echo $icon; ?>"></i> <?php echo $level; ?></th>
+                                <td><?php echo $starttime; ?></td>
+                                <td><?php echo $endtime; ?></td>
+                                <td><?php echo $days; ?></td>
                             </tr>
                             </tbody>
                         </table>

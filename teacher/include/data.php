@@ -41,6 +41,9 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
             $homeworksession = $row["homework_session"];
             $homeworktitle = $row["homework_title"];
             $homeworktext = $row["homework_text"];
+            $sex = $row['sex'];
+            $level = $row['level'];
+            $days = $row['days'];
         }
     }
 }

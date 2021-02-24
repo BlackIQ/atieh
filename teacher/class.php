@@ -11,16 +11,34 @@ $db = "Atieh";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
-$tcode = $_SESSION['code'];
-
 $sql = "SELECT * FROM class WHERE code='$code'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while ($row = mysqli_fetch_assoc($result)) {
-        $mc = $row["level"];
+        $code = $row["code"];
+        $teacher = $row["teacher"];
+        $starttime = $row["start_time"];
+        $endtime = $row["end_time"];
+        $whatapp = $row["whatsapp_link"];
+        $skype = $row["skype_link"];
+        $price = $row["tuition_price"];
+        $homeworksession = $row["homework_session"];
+        $homeworktitle = $row["homework_title"];
+        $homeworktext = $row["homework_text"];
+        $sex = $row['sex'];
+//        $sex = "female";
+        $level = $row['level'];
+        $days = $row['days'];
     }
+}
+
+if ($sex == "male") {
+    $iconcolor = "blue";
+}
+elseif ($sex == "female") {
+    $iconcolor = "red";
 }
 
 ?>
@@ -74,13 +92,46 @@ include("panels/sidebar.php");
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Students
+                    Class information
                     <span class="pull-right clickable panel-toggle panel-button-tab-left">
                         <em class="fa fa-toggle-up"></em>
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">List of students in <?php echo $mc; ?></h1>
+                    <h1 class="color-<?php echo $iconcolor; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
+                    <hr>
+                    <h4 class="text-primary">Class code</h4>
+                    <p class="text-success"><?php echo $code; ?></p>
+                    <br>
+                    <h4 class="text-primary">Start Time</h4>
+                    <p class="text-success"><?php echo $starttime; ?></p>
+                    <br>
+                    <h4 class="text-primary">End Time</h4>
+                    <p class="text-success"><?php echo $endtime; ?></p>
+                    <br>
+                    <h4 class="text-primary">Days</h4>
+                    <p class="text-success"><?php echo $days; ?> Days</p>
+                    <br>
+                    <h4 class="text-primary">Class Links</h4>
+                    <p><i class="text-success fa fa-whatsapp"></i> <a class="text-success" href="<?php echo $whatapp; ?>">WhatsApp link</a></p>
+                    <p><i class="color-blue fa fa-skype"></i> <a class="text-info" href="<?php echo $skype; ?>">Skype link</a></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Set present or not
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
+                        <em class="fa fa-toggle-up"></em>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h1 class="text-warning">List of students in <?php echo $level; ?></h1>
                     <hr>
                     <label>Session</label>
                     <select class="form-control" id="exampleFormControlSelect2">
