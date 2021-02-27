@@ -101,10 +101,10 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
         </div>
     </div>';
     }
-} else {
-    if ($_SESSION['person'] == "teacher") {
-        header("Location: http://192.168.1.4/Atieh/people/teacher");
-    }
 }
-
-?>
+elseif ($_SESSION['person'] == "teacher") {
+    header("Location: http://192.168.1.4/Atieh/people/teacher");
+}
+else {
+    header("Location: http://192.168.1.4/Atieh");
+}

@@ -47,8 +47,9 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
         }
     }
 }
+if ($_SESSION['person'] == "student") {
+    header("Location: http://192.168.1.4/Atieh/people/student");
+}
 else {
-    if ($_SESSION['person'] == "student") {
-        header("Location: http://192.168.1.4/people/student");
-    }
+    header("Location: http://192.168.1.4/Atieh");
 }
