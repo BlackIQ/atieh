@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,25 @@
             <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-sign-in"></i> Login</a>
+              <?php
+              if ($_SESSION['status'] == true) {
+                    if ($_SESSION["person"] == "teacher") {
+                        ?>
+              <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>    
+                        <?php
+                    }
+                    elseif ($_SESSION["person"] == "student") {
+                        ?>
+            <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a>    
+                        <?php
+                        }
+                }
+                else {
+                    ?>
+              <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Login</a>
+                    <?php
+                }
+              ?>
           </li>
         </ul>
       </div>
@@ -58,8 +82,8 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
+        <h1 class="my-4">Order By
+          <small>New to Old</small>
         </h1>
 
         <!-- Blog Post -->
@@ -72,7 +96,7 @@
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Agents</a>
           </div>
         </div>
         
@@ -81,13 +105,13 @@
           <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-480-80.jpg" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">Mac Book Air</h2>
-            <p class="card-text">My new mac book ! that is by my dear girl friend !Thanks Anna !</p>
-            <p class="card-text">Thanks Annahita !</p>
+            <p class="card-text">My new mac book ! that is by my dear girl friend !</p>
+            <p class="card-text">Thanks Girl !</p>
             <a href="#" class="btn btn-primary">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Amir</a>
           </div>
         </div>
 
