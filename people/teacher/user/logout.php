@@ -1,7 +1,9 @@
 <?php
 
+$ip = "192.168.1.3";
+
 session_start();
 
 session_destroy();
 
-header("Location: http://192.168.1.4/Atieh");
+header("Location: http://$ip/Atieh");

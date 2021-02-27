@@ -201,6 +201,9 @@ session_start();
                   <br>
                   <?php echo date("Y / m / d"); ?>
               </b>
+              <hr>
+              <p>Your IP</p>
+              <b><?php echo $_SERVER['REMOTE_ADDR']; ?></b>
           </div>
         </div>
 

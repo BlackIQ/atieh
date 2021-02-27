@@ -2,6 +2,8 @@
 
 session_start();
 
+$ip = "192.168.1.3";
+
 if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
     // Database Connection
     $server = "localhost";
