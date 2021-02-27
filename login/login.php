@@ -6,6 +6,8 @@ $code = $_POST['code'];
 $password = $_POST['password'];
 $radio = $_POST["person"];
 
+$ip = "192.168.1.3";
+
 // Database Connection
 $server = "localhost";
 $user = "milad";
@@ -25,12 +27,12 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "student";
-                header("Location: http://192.168.1.4/Atieh/people/student");
+                header("Location: http://$ip/Atieh/people/student");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://192.168.1.4/Atieh/login");
+            header("Location: http://$ip/Atieh/login");
         }
     }
     elseif ($radio == "teacher") {
@@ -43,16 +45,16 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "teacher";
-                header("Location: http://192.168.1.4/Atieh/people/teacher");
+                header("Location: http://$ip/Atieh/people/teacher");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://192.168.1.4/Atieh/login");
+            header("Location: http://$ip/Atieh/login");
         }
     }
 }
 else {
     $_SESSION["error"] = "500";
-    header("Location: http://192.168.1.4/Atieh/login");
+    header("Location: http://$ip/Atieh/login");
 }
