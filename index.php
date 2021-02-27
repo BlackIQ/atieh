@@ -31,44 +31,60 @@ session_start();
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><span>Atieh </span>Institute</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-              <?php
-              if ($_SESSION['status'] == true) {
+        <a class="navbar-brand" href="#"><span>Atieh </span>Institute</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                
+                <h3 style="color: white"> </h3>
+                
+                <?php
+                if ($_SESSION['status'] == true) {
                     if ($_SESSION["person"] == "teacher") {
                         ?>
-              <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>    
+                <li class="nav-item">
+                    <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Sign out</a>
+                </li>
                         <?php
                     }
                     elseif ($_SESSION["person"] == "student") {
                         ?>
-            <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a>    
+                <li class="nav-item">
+                    <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Sign out</a>
+                </li>
                         <?php
-                        }
+                    }
                 }
                 else {
                     ?>
-              <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Login</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Login</a>
+                </li>
                     <?php
                 }
-              ?>
-          </li>
+                ?>
+            </li>
         </ul>
       </div>
     </div>
@@ -151,26 +167,23 @@ session_start();
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="#">ITTI</a>
                   </li>
                   <li>
-                    <a href="#">HTML</a>
+                    <a href="#">TESOL</a>
                   </li>
                   <li>
-                    <a href="#">Freebies</a>
+                    <a href="#">TTC</a>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">JavaScript</a>
+                    <a href="#">AEF</a>
                   </li>
                   <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
+                    <a href="#">FCE</a>
                   </li>
                 </ul>
               </div>
@@ -182,7 +195,12 @@ session_start();
         <div class="card my-4">
           <h5 class="card-header">Side Widget</h5>
           <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+              <p>Today is ,</p>
+              <b>
+                  <?php echo date("D"); ?>
+                  <br>
+                  <?php echo date("Y / m / d"); ?>
+              </b>
           </div>
         </div>
 
