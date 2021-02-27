@@ -17,6 +17,9 @@ elseif ($sex == "female") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atieh - Dashboard</title>
+    <script>
+        window.alert("<?php echo $username; ?> , Welcome To Teacher Panel !");
+    </script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
