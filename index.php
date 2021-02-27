@@ -12,8 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
-          rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
@@ -26,7 +25,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Atieh Institute</a>
+      <a class="navbar-brand" href="#"><span>Atieh </span>Institute</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,10 +64,10 @@
 
         <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
           <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <h2 class="card-title">Final news</h2>
+            <p class="card-text">Final is next weed at Saturday</p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
@@ -76,28 +75,15 @@
             <a href="#">Start Bootstrap</a>
           </div>
         </div>
-
+        
         <!-- Blog Post -->
         <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-480-80.jpg" alt="Card image cap">
           <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <h2 class="card-title">Mac Book Air</h2>
+            <p class="card-text">My new mac book ! that is by my dear girl friend !Thanks Anna !</p>
+            <p class="card-text">Thanks Annahita !</p>
+            <a href="#" class="btn btn-primary">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
           <div class="card-footer text-muted">
             Posted on January 1, 2020 by
@@ -106,14 +92,14 @@
         </div>
 
         <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
+<!--        <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
             <a class="page-link" href="#">&larr; Older</a>
           </li>
           <li class="page-item disabled">
             <a class="page-link" href="#">Newer &rarr;</a>
           </li>
-        </ul>
+        </ul>-->
 
       </div>
 
@@ -187,7 +173,16 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <div class="m-0 text-center text-white">
+        <p class="text-white">Designed by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a> <i class="fa fa-heart color-red"></i></p>
+        <p class="text-white">Everything Belongs To <a href="https://www.github.com/BlackIQ">Atieh</a> <i class="fa fa-copyright"></i> 2021</p>
+        <p>
+            <i class="fa fa-telegram text-primary"></i>
+            <i class="fa fa-instagram text-danger"></i>
+            <i class="fa fa-twitter text-primary"></i>
+            <i class="fa fa-facebook text-info"></i>
+        </p>
+    </div>
     </div>
     <!-- /.container -->
   </footer>
