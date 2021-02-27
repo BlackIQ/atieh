@@ -47,7 +47,7 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
         }
     }
 }
-if ($_SESSION['person'] == "student") {
+elseif ($_SESSION['person'] == "student") {
     header("Location: http://192.168.1.4/Atieh/people/student");
 }
 else {
