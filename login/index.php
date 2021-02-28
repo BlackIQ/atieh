@@ -2,6 +2,19 @@
 
 session_start();
 
+$server = "localhost";
+$user = "milad";
+$passwd = "milad";
+$db = "Atieh";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+$getip = "SELECT * FROM development";
+$res = mysqli_query($conn, $getip);
+
+while ($row = mysqli_fetch_assoc($res)) {
+	$ip = $row['ip'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +35,12 @@ session_start();
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="assets/images/login.jpg" alt="login" class="login-card-img">
+              <img src="assets/images/login.jpg" alt="login" class="login-card-img">
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="assets/images/logo.svg" alt="logo" class="logo">
+                <a href="http://<?php echo $ip; ?>/Atieh"><img src="assets/images/logo.svg" alt="logo" class="logo"></a>
               </div>
               <p class="login-card-description">Sign into your account</p>
                 <?php

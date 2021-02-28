@@ -11,6 +11,13 @@ $action = $_GET["action"];
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
+$getip = "SELECT * FROM development";
+$res = mysqli_query($conn, $getip);
+
+while ($row = mysqli_fetch_assoc($res)) {
+    $ip = $row['ip'];
+}
+
 $sql = "SELECT * FROM status WHERE student_code='$code'";
 $result = mysqli_query($conn, $sql);
 
@@ -33,6 +40,6 @@ if (mysqli_num_rows($result) > 0) {
                 break;
             }
         }
-        header("Location: http://192.168.1.4/Atieh/teacher");
+        header("Location: http://$ip/Atieh/teacher");
     }
 }

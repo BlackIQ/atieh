@@ -11,11 +11,7 @@ $getip = "SELECT * FROM development";
 $res = mysqli_query($conn, $getip);
 
 while ($row = mysqli_fetch_assoc($res)) {
-    $ip = $row['ip'];
+	$ip = $row['ip'];
 }
 
-session_start();
-
-session_destroy();
-
-header("Location: http://$ip/Atieh");
+echo $ip;

@@ -2,7 +2,19 @@
 
 session_start();
 
-$ip = "192.168.1.3";
+$server = "localhost";
+$user = "milad";
+$passwd = "milad";
+$db = "Atieh";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+
+$getip = "SELECT * FROM development";
+$res = mysqli_query($conn, $getip);
+
+while ($row = mysqli_fetch_assoc($res)) {
+    $ip = $row['ip'];
+}
 
 if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
     // Database Connection
