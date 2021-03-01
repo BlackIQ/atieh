@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="User Password">
                   </div>
-                  <div class="radio-inline">
+                    <div class="radio-inline">
                         <label>
                             <input type="radio" name="person" <?php if (isset($gender) && $gender=="student") echo "checked";?> value="student"> Student
                         </label>
