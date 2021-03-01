@@ -1,4 +1,7 @@
+-- Create The Database
 CREATE DATABASE Atieh;
+
+-- Change Database
 USE Atieh;
 
 -- Class Table
