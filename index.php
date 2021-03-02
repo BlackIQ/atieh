@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Sign out</a>
+                    <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
                 </li>
                         <?php
                     }
@@ -85,7 +85,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Sign out</a>
+                    <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
                 </li>
                         <?php
                     }
