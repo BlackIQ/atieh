@@ -135,8 +135,8 @@ while ($row = mysqli_fetch_assoc($res)) {
           <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-480-80.jpg" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">Mac Book Air</h2>
-            <p class="card-text">My new mac book ! that is by my dear girl friend !</p>
-            <p class="card-text">Thanks Girl !</p>
+            <p class="card-text">My new mac book !!</p>
+            <p class="card-text">Thanks !</p>
             <a href="#" class="btn btn-primary">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
           <div class="card-footer text-muted">
