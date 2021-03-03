@@ -25,7 +25,7 @@ $date = date("M , d , Y");
 $who = $username;
 $code = rand(1000 , 9999);
 
-$sql = "INSERT INTO post VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
+$sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
 
 mysqli_query($conn, $sql);
 
