@@ -36,23 +36,13 @@
             </a>
             <ul class="children collapse" id="sub-item-1">
                 <li>
+                    <a class="" href="class.php">
+                        <span class="fa fa-sticky-note">&nbsp;</span> New Post
+                    </a>
+                </li>
+                <li>
                     <a class="" href="profile.php">
                         <span class="fa fa-user">&nbsp;</span> Profile
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="class.php">
-                        <span class="fa fa-home">&nbsp;</span> Class
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="payment.php">
-                        <span class="fa fa-money">&nbsp;</span> Payment
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="setting.php">
-                        <span class="fa fa-cogs">&nbsp;</span> Setting
                     </a>
                 </li>
             </ul>
