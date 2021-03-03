@@ -61,7 +61,7 @@ include("panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-warning">Insert a new post</h1>
                     <hr>
-                    <form action="" method="POST">
+                    <form action="include/new.php" method="POST">
 
                         <div class="form-group">
                             <label for="title">Title</label>
