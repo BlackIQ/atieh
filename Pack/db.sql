@@ -80,3 +80,13 @@ CREATE TABLE agent
     email      TEXT,
     phone      TEXT
 );
+
+-- Post Table
+CREATE TABLE post
+(
+    code  TEXT,
+    title TEXT,
+    txt   TEXT,
+    dt    TEXT,
+    who   TEXT
+);
