@@ -70,12 +70,13 @@ CREATE TABLE status
     S16          TEXT
 );
 
--- Service Table
-CREATE TABLE service
+-- Agebt Table
+CREATE TABLE agent
 (
-    in_code TEXT,
-    service_time TEXT,
-    days_left TEXT,
-    status TEXT,
-    
+    agent_code TEXT,
+    password   TEXT,
+    username   TEXT,
+    full_name  TEXT,
+    email      TEXT,
+    phone      TEXT
 );
