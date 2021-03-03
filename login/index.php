@@ -63,10 +63,13 @@ while ($row = mysqli_fetch_assoc($res)) {
                   </div>
                     <div class="radio-inline">
                         <label>
-                            <input type="radio" name="person" <?php if (isset($gender) && $gender=="student") echo "checked";?> value="student"> Student
+                            <input type="radio" name="person" value="student"> Student
                         </label>
                         <label>
-                            <input type="radio" name="person" <?php if (isset($gender) && $gender=="teacher") echo "checked";?> value="teacher"> Teacher
+                            <input type="radio" name="person" value="teacher"> Teacher
+                        </label>
+                        <label>
+                            <input type="radio" name="person" value="agent"> Agent
                         </label>
                     </div>
                   <br>
