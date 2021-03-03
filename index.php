@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     $ip = $row['ip'];
 }
 
-$sql = "SELECT * FROM post";
+$sql = "SELECT * FROM post ORDER BY id DESC;";
 $result = mysqli_query($conn, $sql);
 
 ?>
