@@ -1,17 +1,5 @@
 <?php
 include("include/data.php");
-
-// Database Connection
-$server = "localhost";
-$user = "milad";
-$passwd = "milad";
-$db = "Atieh";
-
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
-$sql = "SELECT * FROM status WHERE student_code='$stdnt'";
-$result = mysqli_query($conn, $sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +7,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atieh - Class</title>
+    <title>Atieh - New</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
