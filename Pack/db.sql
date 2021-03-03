@@ -69,3 +69,13 @@ CREATE TABLE status
     S15          TEXT,
     S16          TEXT
 );
+
+-- Service Table
+CREATE TABLE service
+(
+    in_code TEXT,
+    service_time TEXT,
+    days_left TEXT,
+    status TEXT,
+    
+);
