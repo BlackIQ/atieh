@@ -117,8 +117,11 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
     }
 }
 elseif ($_SESSION['person'] == "teacher") {
-    header("Location: http://192.168.1.4/Atieh/people/teacher");
+    header("Location: http://$ip/Atieh/people/teacher");
+}
+elseif ($_SESSION['person'] == "agent") {
+    header("Location: http://$ip/Atieh/people/agent");
 }
 else {
-    header("Location: http://192.168.1.4/Atieh");
+    header("Location: http://$ip/Atieh");
 }

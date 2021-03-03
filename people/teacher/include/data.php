@@ -62,8 +62,11 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "teacher") {
     }
 }
 elseif ($_SESSION['person'] == "student") {
-    header("Location: http://192.168.1.4/Atieh/people/student");
+    header("Location: http://$ip/Atieh/people/student");
+}
+elseif ($_SESSION['person'] == "agent") {
+    header("Location: http://$ip/Atieh/people/agent");
 }
 else {
-    header("Location: http://192.168.1.4/Atieh");
+    header("Location: http://$ip/Atieh");
 }

@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     $ip = $row['ip'];
 }
 
-if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
+if ($_SESSION['status'] == true && $_SESSION['person'] == "agent" ) {
     // Database Connection
     $server = "localhost";
     $user = "milad";
@@ -117,8 +117,11 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
     }
 }
 elseif ($_SESSION['person'] == "teacher") {
-    header("Location: http://192.168.1.4/Atieh/people/teacher");
+    header("Location: http://$ip/Atieh/people/teacher");
+}
+elseif ($_SESSION['person'] == "student") {
+    header("Location: http://$ip/Atieh/people/student");
 }
 else {
-    header("Location: http://192.168.1.4/Atieh");
+    header("Location: http://$ip/Atieh");
 }
