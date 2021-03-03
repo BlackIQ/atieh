@@ -20,6 +20,4 @@ $code = rand(1000 , 9999);
 
 $sql = "INSERT INTO post VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
 
-if (mysqli_query($conn, $sql)) {
-    echo 'Done !';
-}
+mysqli_query($conn, $sql);
