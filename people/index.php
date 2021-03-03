@@ -23,6 +23,9 @@ if ($_SESSION['status'] == true) {
     if ($_SESSION['person'] == "teacher") {
         header("Location: http://$ip/Atieh/people/teacher");
     }
+    if ($_SESSION['person'] == "agent") {
+        header("Location: http://$ip/Atieh/people/agent");
+    }
 }
 else {
     header("Location: http://$ip/Atieh");
