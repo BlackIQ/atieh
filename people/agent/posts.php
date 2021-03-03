@@ -43,7 +43,7 @@ include("panels/sidebar.php");
             <li><a href="../student">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Class</li>
+            <li class="active">Posts</li>
         </ol>
     </div><!--/.row-->
 
