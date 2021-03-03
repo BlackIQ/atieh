@@ -71,27 +71,6 @@ include("panels/sidebar.php");
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Contact With Me
-                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
-                        <em class="fa fa-toggle-up"></em>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h1 class="text-info">Contact</h1>
-                    <hr>
-                    <h4 class="text-primary">Parent Phone Number</h4>
-                    <p class="text-success"><b><i class="fa fa-phone"></i> +989192186255</b></p>
-                    <br>
-                    <h4 class="text-primary">Home Phone</h4>
-                    <p class="text-success"><b><i class="fa fa-home"></i> +982136156859</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php
     include("panels/footer.php");
