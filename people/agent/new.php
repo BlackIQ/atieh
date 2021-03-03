@@ -59,118 +59,39 @@ include("panels/sidebar.php");
         ?>
     </div>
 
-    <div class="row">
+<div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    My Class
+                    New Post
                     <span class="pull-right clickable panel-toggle panel-button-tab-left">
                         <em class="fa fa-toggle-up"></em>
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Class Information</h1>
+                    <h1 class="text-warning">Insert a new post</h1>
                     <hr>
-                    <h4 class="text-primary">Teacher's name</h4>
-                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $teacher; ?></b></p>
-                    <br>
-                    <h4 class="text-primary"><i class="fa fa-link"></i> Class links</h4>
-                    <p class="text-danger"><b>
-                            <b class="text-primary"><i class="fa fa-skype"></i> Skype</b> | <b class="text-success"><i
-                                        class="fa fa-whatsapp"></i> WhatsApp</b>
-                    </p>
-                    <br>
-                    <h4 class="text-primary"><i class="fa fa-clock-o"></i> Class period</h4>
-                    <p class="text-muted"><b class="text-danger"><?php echo $starttime; ?></b> until <b
-                                class="text-success"><?php echo $endtime; ?></b></p>
+                    <form action="" method="POST">
+
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" name="title" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea rows="5" class="form-control" name="description" ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
     </div><!--/.row-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Homework
-                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
-                        <em class="fa fa-toggle-up"></em>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h1 class="text-warning">Session <?php echo $homeworksession; ?></h1>
-                    <hr>
-                    <h3 class="text-primary"><?php echo $homeworktitle; ?></h3>
-                    <p class="text-success"><?php echo $homeworktext; ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    My Status
-                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
-                        <em class="fa fa-toggle-up"></em>
-                    </span>
-                </div>
-                <div class="panel-body">
-                    <h1 class="text-warning">Present or not !?</h1>
-                    <hr>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Session</th>
-                                <th scope="col">Present</th>
-                                <th scope="col">Absent</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if (mysqli_num_rows($result) > 0) {
-                                // output data of each row
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        for ($i = 1 ; $i <= 16 ; $i++) {
-                                            $session = "S".$i;
-                                            if ($row[$session] == "p") {
-                                                ?>
-                                                    <tr>
-                                                        <th scope="row"><?php echo $i; ?></th>
-                                                        <td><i class="fa fa-check text-success"></i></td>
-                                                        <td></td>
-                                                    </tr>
-                                                <?php
-                                                }
-                                            elseif ($row[$session] == "a") {
-                                                ?>
-                                                    <tr>
-                                                        <th scope="row"><?php echo $i; ?></th>
-                                                        <td></td>
-                                                        <td><i class="fa fa-times text-danger"></i></td>
-                                                    </tr>
-                                                <?php
-                                            }
-                                            else {
-                                                ?>
-                                                <tr>
-                                                    <th scope="row"><?php echo $i; ?></th>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                    }
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php
     include("panels/footer.php");
