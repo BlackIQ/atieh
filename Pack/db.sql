@@ -84,9 +84,11 @@ CREATE TABLE agent
 -- Post Table
 CREATE TABLE post
 (
+    id int AUTO_INCREMENT,
     code  TEXT,
     title TEXT,
     txt   TEXT,
     dt    TEXT,
-    who   TEXT
+    who   TEXT,
+    PRIMARY KEY (id)
 );
