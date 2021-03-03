@@ -16,6 +16,9 @@ while ($row = mysqli_fetch_assoc($res)) {
     $ip = $row['ip'];
 }
 
+$sql = "SELECT * FROM post";
+$result = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -125,23 +128,28 @@ while ($row = mysqli_fetch_assoc($res)) {
         <h1 class="my-4">Order By
           <small>New to Old</small>
         </h1>
+          
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title"><?php echo $row["title"]; ?></h2>
+                        <p class="card-text"><?php echo $row["txt"]; ?></p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <?php echo $row["dt"]." By ".$row["who"]; ?>
+                    </div>
+                </div>
+                <?php
+            }
+        }
 
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
-          <div class="card-body">
-            <h2 class="card-title">Final news</h2>
-            <p class="card-text">Final is next weed at Saturday</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
-            <a href="#">Agents</a>
-          </div>
-        </div>
+        ?>
         
         <!-- Blog Post -->
-        <div class="card mb-4">
+<!--        <div class="card mb-4">
           <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-480-80.jpg" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">Mac Book Air</h2>
@@ -153,7 +161,7 @@ while ($row = mysqli_fetch_assoc($res)) {
             Posted on January 1, 2020 by
             <a href="#">Amir</a>
           </div>
-        </div>
+        </div>-->
 
         <!-- Pagination -->
 <!--        <ul class="pagination justify-content-center mb-4">
