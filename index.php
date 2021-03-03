@@ -71,30 +71,40 @@ while ($row = mysqli_fetch_assoc($res)) {
                 if ($_SESSION['status'] == true) {
                     if ($_SESSION["person"] == "teacher") {
                         ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                        </li>
                         <?php
                     }
                     elseif ($_SESSION["person"] == "student") {
                         ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                        </li>
+                        <?php
+                    }
+                    elseif ($_SESSION["person"] == "agent") {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/agent/"><i class="fa fa-sign-in"></i> Agent Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/agent/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                        </li>
                         <?php
                     }
                 }
                 else {
                     ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Login</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login/"><i class="fa fa-sign-in"></i> Login</a>
+                    </li>
                     <?php
                 }
                 ?>
