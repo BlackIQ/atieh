@@ -59,6 +59,16 @@ include("panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-warning">Insert a new post</h1>
                     <hr>
+                    <?php
+                        if ($_SESSION["post"] == "200") {
+                            echo "<h4 class='text-success'><b>> Done !</b></h4>";
+                            $_SESSION['post'] == 0;
+                        }
+                        elseif ($_SESSION["post"] == "500") {
+                            echo "<h4 class='text-danger'><b>> Fill them all !</b></h4>";
+                            $_SESSION['post'] == 0;
+                        }
+                    ?>
                     <form action="include/new.php" method="POST">
 
                         <div class="form-group">

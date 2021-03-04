@@ -25,8 +25,16 @@ $date = date("M , d , Y");
 $who = $username;
 $code = rand(1000 , 9999);
 
-$sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
+if (!empty($titlw)) {
+    if (!empty($description)) {
+        $sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
 
-mysqli_query($conn, $sql);
-
-header("Location: http://$ip/Atieh/people/agent");
+        mysqli_query($conn, $sql);
+        $_SESSION['post'] = 200;
+        header("Location: http://$ip/Atieh/people/agent/new.php");
+    }
+}
+else {
+    $_SESSION['post'] = 500;
+    header("Location: http://$ip/Atieh/people/agent/new.php");
+}
