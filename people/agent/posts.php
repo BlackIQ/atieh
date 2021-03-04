@@ -9,7 +9,7 @@ $db = "Atieh";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
-$sql = "SELECT * FROM post";
+$sql = "SELECT * FROM post ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 
 ?>
