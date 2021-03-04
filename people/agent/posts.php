@@ -93,7 +93,7 @@ include("panels/sidebar.php");
                                             <td>
                                                 <a href="#"><i class="text-success fa fa-edit"></i></a>
                                                 <bold class="text-primary">|</bold>
-                                                <a href="#"><i class="text-danger fa fa-trash"></i></a>
+                                                <a href="include/del.php?code=<?php echo $row['code']; ?>"><i class="text-danger fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
