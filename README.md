@@ -4,7 +4,7 @@ Atieh Project
 
 ---
 
-**Create MySQL**
+**Create User**
 ```mysql
 CREATE USER 'milad'@'localhost' IDENTIFIED BY 'milad';
 GRANT ALL PRIVILEGES ON *.* TO 'milad'@'localhost';
