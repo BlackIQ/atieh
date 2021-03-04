@@ -8,13 +8,13 @@ Just Do this thing :
 
 ### Create MySQL
 ```mysql
-CREATE USER 'Ashley'@'localhost' IDENTIFIED BY 'Ashley';
-GRANT ALL PRIVILEGES ON *.* TO 'Ashley'@'localhost';
+CREATE USER 'milad'@'localhost' IDENTIFIED BY 'milad';
+GRANT ALL PRIVILEGES ON *.* TO 'milad'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 ### Restart Service
-```
+```commandline
 sudo systemctl restart mysql.service
 ```
 
@@ -24,6 +24,6 @@ CREATE DATABASE Atieh;
 ```
 
 ### Restore backup file
-```
+```commandline
 sudo mysql Atieh < Pack/backup.sql
 ```
