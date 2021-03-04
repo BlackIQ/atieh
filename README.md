@@ -4,8 +4,6 @@ Atieh Project
 
 ---
 
-Just Do this thing :
-
 **Create MySQL**
 ```mysql
 CREATE USER 'milad'@'localhost' IDENTIFIED BY 'milad';
