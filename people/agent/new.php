@@ -37,7 +37,7 @@ include("panels/sidebar.php");
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Class</h1>
+            <h1 class="page-header">New Post</h1>
         </div>
     </div><!--/.row-->
 
