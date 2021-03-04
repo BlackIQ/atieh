@@ -6,7 +6,7 @@ Atieh Project
 
 Just Do this thing :
 
-### MySQL
+### Create MySQL
 ```mysql
 CREATE USER 'Ashley'@'localhost' IDENTIFIED BY 'Ashley';
 GRANT ALL PRIVILEGES ON *.* TO 'Ashley'@'localhost';
