@@ -33,13 +33,19 @@ $result = mysqli_query($conn, $sql);
 
   <title>Atieh - Index</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="vendor/css/blog-home.css" rel="stylesheet">
+  <!-- Custom styles for this template -->  
+  <style>
+    body {
+        padding-top: 56px;
+    }
+  </style>
 
 </head>
 
@@ -48,7 +54,7 @@ $result = mysqli_query($conn, $sql);
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><span>Atieh </span>Institute</a>
+        <a class="navbar-brand" href="."><span>Atieh </span>Institute</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -265,9 +271,8 @@ $result = mysqli_query($conn, $sql);
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
