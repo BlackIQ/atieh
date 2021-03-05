@@ -18,7 +18,9 @@ CREATE TABLE class
     tuition_price    TEXT,
     homework_session TEXT,
     homework_title   TEXT,
-    homework_text    TEXT
+    homework_text    TEXT,
+    sex              TEXT,
+    days             TEXT
 );
 
 -- Student Table
