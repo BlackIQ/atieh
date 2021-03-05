@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql);
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-userpic">
-            <img src="https://github.com/BlackIQ.png" class="img-responsive" alt="User Image">
+            <img src="../pack/pic.jpeg" class="img-responsive" alt="User Image">
         </div>
         <div class="profile-usertitle">
             <div class="profile-usertitle-name"><?php echo $username; ?></div>

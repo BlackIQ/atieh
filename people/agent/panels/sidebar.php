@@ -18,11 +18,11 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-userpic">
-            <img src="https://github.com/BlackIQ.png" class="img-responsive" alt="User Image">
+            <img src="../pack/pic.jpeg" class="img-responsive" alt="User Image">
         </div>
         <div class="profile-usertitle">
             <div class="profile-usertitle-name"><?php echo $username; ?></div>
-            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Student</div>
+            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Agent</div>
         </div>
         <div class="clear"></div>
     </div>
