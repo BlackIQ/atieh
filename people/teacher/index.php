@@ -1,14 +1,13 @@
 <?php
 include("include/data.php");
 
-if ($sex == "male") {
-    $icon = "male";
-    $iconcolor = "blue";
-}
-elseif ($sex == "female") {
-    $icon = "female";
-    $iconcolor = "red";
-}
+$server = "localhost";
+$user = "milad";
+$passwd = "milad";
+$db = "Atieh";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+
 ?>
 
 <!DOCTYPE html>
@@ -81,12 +80,44 @@ include("panels/sidebar.php");
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="color-<?php echo $iconcolor; ?>">
-                                <th><a href="class.php?code=147"><i class="fa fa-<?php echo $icon; ?>"></i> <?php echo $level; ?></a></th>
-                                <td><?php echo $starttime; ?></td>
-                                <td><?php echo $endtime; ?></td>
-                                <td><?php echo $days; ?></td>
-                            </tr>
+                                <?php
+                                $sql = "SELECT * FROM class WHERE teacher_code='$tcode'";
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $code = $row["code"];
+                                        $teacher = $row["teacher"];
+                                        $starttime = $row["start_time"];
+                                        $endtime = $row["end_time"];
+                                        $whatapp = $row["whatsapp_link"];
+                                        $skype = $row["skype_link"];
+                                        $price = $row["tuition_price"];
+                                        $homeworksession = $row["homework_session"];
+                                        $homeworktitle = $row["homework_title"];
+                                        $homeworktext = $row["homework_text"];
+                                        $sex = $row['sex'];
+                                        $level = $row['level'];
+                                        $days = $row['days'];
+                                        
+                                        if ($sex == "male") {
+                                            $iconcolor = "blue";
+                                        }
+                                        elseif ($sex == "female") {
+                                            $iconcolor = "red";
+                                        }
+                                        
+                                        ?>
+                                        <tr class="color-<?php echo $iconcolor; ?>">
+                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=147"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
+                                            <td><?php echo $starttime; ?></td>
+                                            <td><?php echo $endtime; ?></td>
+                                            <td><?php echo $days; ?></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
