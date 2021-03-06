@@ -109,7 +109,7 @@ include("panels/sidebar.php");
                                         
                                         ?>
                                         <tr class="color-<?php echo $iconcolor; ?>">
-                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=147"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
+                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $code; ?>"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
                                             <td><?php echo $starttime; ?></td>
                                             <td><?php echo $endtime; ?></td>
                                             <td><?php echo $days; ?></td>
