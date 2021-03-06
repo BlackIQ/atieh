@@ -84,30 +84,30 @@ $result = mysqli_query($conn, $sql);
                     if ($_SESSION["person"] == "teacher") {
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="people/teacher/"><i class="fa fa-sign-in"></i> Teacher Panel</a>
+                            <a class="nav-link" href="people/teacher/"><i class="fa fa-dashboard"></i> Teacher Panel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                            <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
                     elseif ($_SESSION["person"] == "student") {
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="people/student"><i class="fa fa-sign-in"></i> Student Panel</a
+                            <a class="nav-link" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
                     elseif ($_SESSION["person"] == "agent") {
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="people/agent/"><i class="fa fa-sign-in"></i> Agent Panel</a
+                            <a class="nav-link" href="people/agent/"><i class="fa fa-dashboard"></i> Agent Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/agent/user/logout.php"><i class="fa fa-sign-in"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/agent/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -260,7 +260,7 @@ $result = mysqli_query($conn, $sql);
   <footer class="py-5 bg-dark">
     <div class="container">
       <div class="m-0 text-center text-white">
-        <p class="text-white">Designed by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a> <i class="fa fa-heart color-red"></i></p>
+        <p class="text-white">Designed by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a> <i class="fa fa-heart text-danger"></i></p>
         <p class="text-white">Everything Belongs To <a href="https://www.github.com/BlackIQ">Atieh</a> <i class="fa fa-copyright"></i> 2021</p>
         <p>
             <i class="fa fa-telegram text-primary"></i>
