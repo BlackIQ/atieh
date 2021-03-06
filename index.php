@@ -274,7 +274,7 @@ $result = mysqli_query($conn, $sql);
             <div class="col-md-4">
                 <div class="m-0 text-left text-white">
                     <p class="text-white"><a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
-                    <p class="text-white">Young and powerful programmer .</p>
+                    <p class="text-white">Young programmer</p>
                     <p class="text-white">CEO and Founder of <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a></p>
                     <p>
                         <i class="fa fa-github text-muted"></i>
@@ -290,7 +290,7 @@ $result = mysqli_query($conn, $sql);
             <div class="col-md-4">
                 <div class="m-0 text-left text-white">
                     <p class="text-white"><a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a></p>
-                    <p class="text-white">Neotrinost is a development company</p>
+                    <p class="text-white">Neotrinost is a development company <b>( Team )</b></p>
                     <p>
                         <i class="fa fa-linkedin text-info"></i>
                         <i class="fa fa-github text-muted"></i>
