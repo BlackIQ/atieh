@@ -38,6 +38,9 @@ $result = mysqli_query($conn, $sql);
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/login.css">
   
+  <link href="http://192.168.1.5/Atieh/people/pack/css/font-awesome.min.css" rel="stylesheet">
+
+  
   <!-- Bootstrap core CSS -->
 
   <!-- Custom styles for this template -->  
