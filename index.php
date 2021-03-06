@@ -57,7 +57,7 @@ $result = mysqli_query($conn, $sql);
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="."><span>Atieh </span>Institute</a>
+        <a class="navbar-brand" href="."><span>Atieh </span>Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -262,6 +262,7 @@ $result = mysqli_query($conn, $sql);
         <div class="row">
             <div class="col-md-4">
                 <div class="m-0 text-left text-white">
+                    <p class="text-primary"><b>Atieh Project</b></p>
                     <p class="text-white">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
                     <p class="text-white">Powered By <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
                     <p>
