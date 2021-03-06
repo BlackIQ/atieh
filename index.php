@@ -259,16 +259,47 @@ $result = mysqli_query($conn, $sql);
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <div class="m-0 text-center text-white">
-        <p class="text-white">Designed by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a> <i class="fa fa-heart text-danger"></i></p>
-        <p class="text-white">Everything Belongs To <a href="https://www.github.com/BlackIQ">Atieh</a> <i class="fa fa-copyright"></i> 2021</p>
-        <p>
-            <i class="fa fa-telegram text-primary"></i>
-            <i class="fa fa-instagram text-danger"></i>
-            <i class="fa fa-twitter text-primary"></i>
-            <i class="fa fa-facebook text-info"></i>
-        </p>
-    </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="m-0 text-left text-white">
+                    <p class="text-white">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
+                    <p class="text-white">Powered By <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
+                    <p>
+                        <i class="fa fa-telegram text-primary"></i>
+                        <i class="fa fa-instagram text-danger"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="m-0 text-left text-white">
+                    <p class="text-white"><a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
+                    <p class="text-white">Young and powerful programmer .</p>
+                    <p class="text-white">CEO and Founder of <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a></p>
+                    <p>
+                        <i class="fa fa-github text-muted"></i>
+                        <i class="fa fa-telegram text-primary"></i>
+                        <i class="fa fa-instagram text-danger"></i>
+                        <i class="fa fa-twitter text-primary"></i>
+                        <i class="fa fa-facebook text-info"></i>
+                        <i class="fa fa-medium text-info"></i>
+                        <i class="fa fa-linkedin text-info"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="m-0 text-left text-white">
+                    <p class="text-white"><a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a></p>
+                    <p class="text-white">Neotrinost is a development company</p>
+                    <p>
+                        <i class="fa fa-linkedin text-info"></i>
+                        <i class="fa fa-github text-muted"></i>
+                        <i class="fa fa-telegram text-primary"></i>
+                        <i class="fa fa-instagram text-danger"></i>
+                        <i class="fa fa-twitter text-primary"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /.container -->
   </footer>
