@@ -1,3 +1,18 @@
+<?php
+// Database Connection
+$server = "localhost";
+$user = "milad";
+$passwd = "milad";
+$db = "Atieh";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+
+$code = $_SESSION['code'];
+
+$sql = "SELECT * FROM class WHERE icode='$code'";
+$result = mysqli_query($conn, $sql);
+?>
+
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,21 +50,20 @@
                         class="fa fa-plus"></em></span>
             </a>
             <ul class="children collapse" id="sub-item-1">
-                <li>
-                    <a class="" href="new.php">
-                        <span class="fa fa-sticky-note">&nbsp;</span> New Post
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="posts.php">
-                        <span class="fa fa-tasks">&nbsp;</span> Posts
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="profile.php">
-                        <span class="fa fa-user">&nbsp;</span> Profile
-                    </a>
-                </li>
+                <?php
+                if (mysqli_num_rows($result) > 0) {
+                    // output data of each row
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <li>
+                            <a class="" href="class.php?code=<?php echo $row["code"]; ?>">
+                                <span class="fa fa-<?php echo $icon; ?>">&nbsp;</span> <?php echo $row["level"]; ?>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                }
+                ?>
             </ul>
         </li>
     </ul>

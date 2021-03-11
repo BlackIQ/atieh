@@ -83,7 +83,7 @@ if (isset($code) && isset($password) && isset($radio)) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['status'] = true;
-                $_SESSION['code'] = $code;
+                $_SESSION['code'] = $row['code'];
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "admin";
                 header("Location: http://$ip/Atieh/people/admin");

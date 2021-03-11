@@ -38,7 +38,7 @@ CREATE TABLE `agent` (
 
 LOCK TABLES `agent` WRITE;
 /*!40000 ALTER TABLE `agent` DISABLE KEYS */;
-INSERT INTO `agent` VALUES ('369','agent','MissAgent','Lady Agent','missagent@yahoo.com','9220513088');
+INSERT INTO `agent` VALUES ('369','agent','MissAgent','Lady Agent','missagent@yahoo.com','9220513088' , "10");
 /*!40000 ALTER TABLE `agent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,7 +73,7 @@ CREATE TABLE `class` (
 
 LOCK TABLES `class` WRITE;
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
-INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd'),('148','Mr.Tabrizi','123','4:00 PM','5:30 PM','AEF4E','wa','s','155.000','11','Semi Final','Read For Semi Final','female','even');
+INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd' , '10'),('148','Mr.Tabrizi','123','4:00 PM','5:30 PM','AEF4E','wa','s','155.000','11','Semi Final','Read For Semi Final','female','even' , '10');
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 

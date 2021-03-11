@@ -20,7 +20,8 @@ CREATE TABLE class
     homework_title   TEXT,
     homework_text    TEXT,
     sex              TEXT,
-    days             TEXT
+    days             TEXT,
+    icode            TEXT
 );
 
 -- Student Table
@@ -36,7 +37,8 @@ CREATE TABLE student
     parent_phone   TEXT,
     level          TEXT,
     payment_status TEXT,
-    class          TEXT
+    class          TEXT,
+    icode          TEXT
 );
 
 -- Teacher Table
@@ -47,7 +49,8 @@ CREATE TABLE teacher
     password  TEXT,
     full_name TEXT,
     email     TEXT,
-    phone     TEXT
+    phone     TEXT,
+    icode     TEXT
 );
 
 -- Student Status Table
@@ -80,7 +83,8 @@ CREATE TABLE agent
     username   TEXT,
     full_name  TEXT,
     email      TEXT,
-    phone      TEXT
+    phone      TEXT,
+    icode      TEXT
 );
 
 -- Post Table
@@ -109,4 +113,8 @@ CREATE TABLE institute
     agents     TEXT,
     students   TEXT,
     status     TEXT
+);
+
+CREATE TABLE `development` (
+  `ip` TEXT
 );
