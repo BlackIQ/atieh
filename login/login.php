@@ -76,6 +76,24 @@ if (isset($code) && isset($password) && isset($radio)) {
             header("Location: http://$ip/Atieh/login");
         }
     }
+    elseif ($radio == "admin") {
+        $sql = "SELECT * FROM institute WHERE admin_user='$code' AND admin_pass='$password'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $_SESSION['status'] = true;
+                $_SESSION['code'] = $code;
+                $_SESSION["error"] = "200";
+                $_SESSION["person"] = "admin";
+                header("Location: http://$ip/Atieh/people/admin");
+            }
+        }
+        else {
+            $_SESSION["error"] = "404";
+            header("Location: http://$ip/Atieh/login");
+        }
+    }
 }
 else {
     $_SESSION["error"] = "500";

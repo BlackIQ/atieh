@@ -71,6 +71,9 @@ while ($row = mysqli_fetch_assoc($res)) {
                         <label>
                             <input type="radio" name="person" value="agent"> Agent
                         </label>
+                        <label>
+                            <input type="radio" name="person" value="agent"> Admin
+                        </label>
                     </div>
                   <br>
                   <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit">Login</button>
