@@ -94,3 +94,15 @@ CREATE TABLE post
     who   TEXT,
     PRIMARY KEY (id)
 );
+
+-- Institute Table
+CREATE TABLE institute
+(
+    code       TEXT,
+    iname      TEXT,
+    totald     TEXT,
+    leftd      TEXT,
+    admin_user TEXT,
+    admin_pass TEXT,
+    status     TEXT
+);
