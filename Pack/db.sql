@@ -104,5 +104,9 @@ CREATE TABLE institute
     leftd      TEXT,
     admin_user TEXT,
     admin_pass TEXT,
+    classes    TEXT,
+    teachers   TEXT,
+    agents     TEXT,
+    students   TEXT,
     status     TEXT
 );
