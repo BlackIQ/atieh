@@ -122,6 +122,9 @@ elseif ($_SESSION['person'] == "teacher") {
 elseif ($_SESSION['person'] == "agent") {
     header("Location: http://$ip/Atieh/people/agent");
 }
+elseif ($_SESSION['person'] == "admin") {
+    header("Location: http://$ip/Atieh/people/admin");
+}
 else {
     header("Location: http://$ip/Atieh");
 }

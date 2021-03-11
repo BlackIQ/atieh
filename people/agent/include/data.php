@@ -46,6 +46,9 @@ elseif ($_SESSION['person'] == "teacher") {
 elseif ($_SESSION['person'] == "student") {
     header("Location: http://$ip/Atieh/people/student");
 }
+elseif ($_SESSION['person'] == "admin") {
+    header("Location: http://$ip/Atieh/people/admin");
+}
 else {
     header("Location: http://$ip/Atieh");
 }
