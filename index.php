@@ -111,6 +111,16 @@ $result = mysqli_query($conn, $sql);
                         </li>
                         <?php
                     }
+                    elseif ($_SESSION["person"] == "admin") {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/admin/"><i class="fa fa-dashboard"></i> Admin Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/admin/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                        </li>
+                        <?php
+                    }
                 }
                 else {
                     ?>
