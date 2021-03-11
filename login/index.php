@@ -72,7 +72,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             <input type="radio" name="person" value="agent"> Agent
                         </label>
                         <label>
-                            <input type="radio" name="person" value="agent"> Admin
+                            <input type="radio" name="person" value="admin"> Admin
                         </label>
                     </div>
                   <br>
