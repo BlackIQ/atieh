@@ -73,7 +73,7 @@ CREATE TABLE `class` (
 
 LOCK TABLES `class` WRITE;
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
-INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd');
+INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd'),('148','Mr.Tabrizi','123','4:00 PM','5:30 PM','AEF4E','wa','s','155.000','11','Semi Final','Read For Semi Final','female','even');
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,8 +95,40 @@ CREATE TABLE `development` (
 
 LOCK TABLES `development` WRITE;
 /*!40000 ALTER TABLE `development` DISABLE KEYS */;
-INSERT INTO `development` VALUES ('192.168.1.11');
+INSERT INTO `development` VALUES ('192.168.1.5');
 /*!40000 ALTER TABLE `development` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `institute`
+--
+
+DROP TABLE IF EXISTS `institute`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `institute` (
+  `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `iname` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `totald` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leftd` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_user` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_pass` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `classes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `teachers` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `agents` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `students` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `institute`
+--
+
+LOCK TABLES `institute` WRITE;
+/*!40000 ALTER TABLE `institute` DISABLE KEYS */;
+INSERT INTO `institute` VALUES ('10','Homan','365','178','admin','admin','37','14','3','168','true');
+/*!40000 ALTER TABLE `institute` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -123,46 +155,8 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (3,'5872','اخرین تست','به قرآن دیگه ساعت 2:14 دیقه هستش . شب بخیر','Mar , 03 , 2021','MissAgent'),(4,'6334','Test For Before Mr.Meysam Comming','تست میکنیم ببینیم چطور میشه','Mar , 04 , 2021','MissAgent'),(5,'9932','Test on Phone','Testing on phone is a simple test','Mar , 04 , 2021','MissAgent');
+INSERT INTO `post` VALUES (3,'5872','اخرین تست','به قرآن دیگه ساعت 2:14 دیقه هستش . شب بخیر','Mar , 03 , 2021','MissAgent'),(4,'6334','Test For Before Mr.Meysam Comming','تست میکنیم ببینیم چطور میشه','Mar , 04 , 2021','MissAgent'),(5,'9932','Test on Phone','Testing on phone is a simple test','Mar , 04 , 2021','MissAgent'),(6,'7018','Xiaomi redmi 🎵 8',':))))','Mar , 05 , 2021','MissAgent');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `status`
---
-
-DROP TABLE IF EXISTS `status`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `status` (
-  `student_code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S11` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S12` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S13` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S14` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S15` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `S16` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `status`
---
-
-LOCK TABLES `status` WRITE;
-/*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES ('0481244859','p','p','p','a','p','p','a','p','p','p',NULL,NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -193,7 +187,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES ('0481244859','Amir','black','Amirhossein Mohammadi','amir@yahoo.com','9014784362','2136156859','9192186255','AEF5E','payed','147');
+INSERT INTO `student` VALUES ('0481244859','Amir','black','Amirhossein Mohammadi','amir@yahoo.com','9014784362','2136156859','9192186255','AEF5E','payed','147'),('0406171566','Meh','dice','Ix Igreg','x@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','147'),('041145578','Gir','gir','Xi greg','y@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','148');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-04 16:49:18
+-- Dump completed on 2021-03-11 23:05:31
