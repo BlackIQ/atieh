@@ -59,25 +59,60 @@ include("panels/sidebar.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Insert a new post</h1>
+                    <h1 class="text-warning">Table of classes</h1>
                     <hr>
-                    <form action="include/new.php" method="POST">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Class Level</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">End Time</th>
+                                <th scope="col">Days</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT * FROM class WHERE icode='$code'";
+                                $result = mysqli_query($conn, $sql);
 
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" name="title" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea rows="5" class="form-control" name="description" ></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Post</button>
-                        </div>
-
-                    </form>
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $code = $row["code"];
+                                        $teacher = $row["teacher"];
+                                        $starttime = $row["start_time"];
+                                        $endtime = $row["end_time"];
+                                        $whatapp = $row["whatsapp_link"];
+                                        $skype = $row["skype_link"];
+                                        $price = $row["tuition_price"];
+                                        $homeworksession = $row["homework_session"];
+                                        $homeworktitle = $row["homework_title"];
+                                        $homeworktext = $row["homework_text"];
+                                        $sex = $row['sex'];
+                                        $level = $row['level'];
+                                        $days = $row['days'];
+                                        
+                                        if ($sex == "male") {
+                                            $iconcolor = "blue";
+                                        }
+                                        elseif ($sex == "female") {
+                                            $iconcolor = "red";
+                                        }
+                                        
+                                        ?>
+                                        <tr class="color-<?php echo $iconcolor; ?>">
+                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $code; ?>"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
+                                            <td><?php echo $starttime; ?></td>
+                                            <td><?php echo $endtime; ?></td>
+                                            <td><?php echo $days; ?></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
