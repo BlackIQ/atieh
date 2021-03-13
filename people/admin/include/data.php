@@ -27,7 +27,7 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "admin" ) {
 
     $stdnt = $_SESSION['code'];
 
-    $sql = "SELECT * FROM institute WHERE admin_user ='$stdnt'";
+    $sql = "SELECT * FROM institute WHERE code ='$stdnt'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
