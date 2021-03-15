@@ -57,7 +57,11 @@ include("panels/sidebar.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    
+                    <?php
+                        if ($_SESSION["search_error"] == "404") {
+                            echo "<h4 class='text-danger'><b>> User not found !</b></h4>";
+                        }
+                    ?>
                     <form class="form-inline" action="search.php" method="post">
                         <div class="form-group">
                             <label for="scode">Student Code</label>
@@ -106,6 +110,9 @@ include("panels/sidebar.php");
                         elseif ($sex == "female") {
                             $iconcolor = "red";
                         }
+                    }
+                    else {
+                        $_SESSION["search_error"] = "404";
                     }
                     
                     ?>
