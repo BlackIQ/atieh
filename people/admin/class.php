@@ -102,7 +102,7 @@ include("panels/sidebar.php");
                     <h1 class="color-<?php echo $iconcolor; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
                     <hr>
                     <h4 class="text-primary">Class code</h4>
-                    <p class="text-success"><?php echo $code; ?></p>
+                    <p class="text-success"><?php echo $ccode; ?></p>
                     <br>
                     <h4 class="text-primary">Start Time</h4>
                     <p class="text-success"><?php echo $starttime; ?></p>
