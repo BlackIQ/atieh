@@ -54,6 +54,15 @@ $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                     // output data of each row
                     while ($row = mysqli_fetch_assoc($result)) {
+                        if ($row["sex"] == "male") {
+                            $icon = "male";
+                        }
+                        elseif ($row["sex"] == "female") {
+                            $icon = "female";
+                        }
+                        else {
+                            $icon = "times";
+                        }
                         ?>
                         <li>
                             <a class="" href="class.php?code=<?php echo $row["code"]; ?>">
