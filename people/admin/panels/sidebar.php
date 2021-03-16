@@ -23,9 +23,11 @@ $result = mysqli_query($conn, $sql);
                 <span class="icon-bar"></span></button>
             <a class="navbar-brand" href="http://<?php echo $ip; ?>/Atieh"><span>Atieh </span>Project</a>
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown"><a class="dropdown-toggle count-info" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php">
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php">
                         <em class="fa fa-sign-out"></em>
                     </a>
+                </li>
             </ul>
         </div>
     </div><!-- /.container-fluid -->

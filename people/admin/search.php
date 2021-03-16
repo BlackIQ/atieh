@@ -1,5 +1,7 @@
 <?php
+
 include("include/data.php");
+
 ?>
 
 
@@ -60,6 +62,14 @@ include("panels/sidebar.php");
                     <?php
                         if ($_SESSION["search_error"] == "404") {
                             echo "<h4 class='text-danger'><b>> User not found !</b></h4>";
+                            $_SESSION["search_error"] == "0";
+                        }
+                        if ($_SESSION["search_error"] == "200") {
+                            echo "<h4 class='text-success'><b>> User found !</b></h4>";
+                            $_SESSION["search_error"] == "0";
+                        }
+                        else {
+                            
                         }
                     ?>
                     <form class="form-inline" action="search.php" method="post">
@@ -72,8 +82,9 @@ include("panels/sidebar.php");
                     
                     <?php
                     
-                    if (isset($_GET["code"])) {
-                        $ccode = $_GET["code"];
+                    if (!is_null($_POST["code"])) {
+                        $_SESSION["search_error"] = 200;
+                        $ccode = $_POST["code"];
 
                         // Database Connection
                         $server = "localhost";
