@@ -202,40 +202,28 @@ include("panels/sidebar.php");
                                     $fullname = $row["full_name"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-                                    $sex = $row['sex'];
-                            //        $sex = "female";
+//                                    $sex = $row['sex'];
+                                    $sex = "female";
                                     $class = $row['class'];
                                 }
                             }
 
+                            echo '<hr>';
+                            
                             if ($sex == "male") {
                                 echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
                                 echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
-                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
-                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
-                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
-                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
-                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
+                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
                             }
                             elseif ($sex == "female") {
                                 echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
                                 echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
-                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
-                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
-                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
-                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
-                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
+                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
                             }
-
-                            echo '<hr>';
-
-                            echo '<h1>' . $fullname .'</h1>';
                         }
                     }
                     
