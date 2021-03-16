@@ -155,26 +155,30 @@ include("panels/sidebar.php");
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $scode = $row["code"];
+                                    $scode = $row["agent_code"];
                                     $username = $row["username"];
                                     $fullname = $row["full_name"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-                                    $sex = $row['sex'];
-                            //        $sex = "female";
+//                                    $sex = $row['sex'];
+                                    $sex = "male";
                                 }
                             }
 
                             if ($sex == "male") {
-                                $iconcolor = "blue";
+                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
                             }
                             elseif ($sex == "female") {
-                                $iconcolor = "red";
+                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
                             }
-
-                            echo '<hr>';
-
-                            echo '<h1>Full name : ' . $fullname .'</h1>';
                         }
                         elseif ($radio == "teacher") {
                             $ccode = $_GET["code"];
@@ -205,10 +209,28 @@ include("panels/sidebar.php");
                             }
 
                             if ($sex == "male") {
-                                $iconcolor = "blue";
+                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
+                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
+                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
+                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
+                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
+                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
                             }
                             elseif ($sex == "female") {
-                                $iconcolor = "red";
+                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
+                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
+                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
+                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
+                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
+                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
                             }
 
                             echo '<hr>';
