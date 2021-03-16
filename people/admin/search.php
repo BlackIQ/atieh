@@ -34,13 +34,13 @@ include("panels/sidebar.php");
             <li><a href="../teacher">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Class</li>
+            <li class="active">Search</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Class</h1>
+            <h1 class="page-header">Seach</h1>
         </div>
     </div><!--/.row-->
 
@@ -62,17 +62,19 @@ include("panels/sidebar.php");
                     <?php
                         if ($_SESSION["search_error"] == "404") {
                             echo "<h4 class='text-danger'><b>> User not found !</b></h4>";
-                            $_SESSION["search_error"] == "0";
+                            echo '<br>';
+                            session_unset($_SESSION["search_error"]);
                         }
                         if ($_SESSION["search_error"] == "200") {
                             echo "<h4 class='text-success'><b>> User found !</b></h4>";
-                            $_SESSION["search_error"] == "0";
+                            echo '<br>';
+                            session_unset($_SESSION["search_error"]);
                         }
                         else {
-                            
+                            session_unset($_SESSION["search_error"]);
                         }
                     ?>
-                    <form class="form-inline" action="search.php" method="post">
+                    <form class="form-inline" action="search.php" method="get">
                         <div class="form-group">
                             <label for="scode">Student Code</label>
                             <input name="code" type="text" class="form-control" id="scode" placeholder="Student Code">
@@ -82,9 +84,9 @@ include("panels/sidebar.php");
                     
                     <?php
                     
-                    if (!is_null($_POST["code"])) {
+                    if (isset($_GET['code'])) {
                         $_SESSION["search_error"] = 200;
-                        $ccode = $_POST["code"];
+                        $ccode = $_GET["code"];
 
                         // Database Connection
                         $server = "localhost";
@@ -121,6 +123,10 @@ include("panels/sidebar.php");
                         elseif ($sex == "female") {
                             $iconcolor = "red";
                         }
+
+                        echo '<hr>';
+                        
+                        echo '<h1>' . $fullname .'</h1>';
                     }
                     else {
                         $_SESSION["search_error"] = "404";
@@ -128,8 +134,6 @@ include("panels/sidebar.php");
                     
                     ?>
                     
-                    <h1><?php echo $fullname; ?></h1>
-
                     <br>
                 </div>
             </div>
