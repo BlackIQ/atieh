@@ -112,6 +112,8 @@ include("panels/sidebar.php");
                                     $class = $row['class'];
                                 }
                             }
+                            
+                            echo '<hr>';
 
                             if ($sex == "male") {
                                 echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
@@ -138,7 +140,6 @@ include("panels/sidebar.php");
                                 echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
                             }
 
-                            echo '<hr>';
                         }
                         elseif ($radio == "agent") {
                             // Database Connection
@@ -165,6 +166,8 @@ include("panels/sidebar.php");
                                 }
                             }
 
+                            echo '<hr>';
+                            
                             if ($sex == "male") {
                                 echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
                                 echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
