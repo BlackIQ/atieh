@@ -28,7 +28,8 @@ CREATE TABLE `agent` (
   `username` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `full_name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +39,7 @@ CREATE TABLE `agent` (
 
 LOCK TABLES `agent` WRITE;
 /*!40000 ALTER TABLE `agent` DISABLE KEYS */;
-INSERT INTO `agent` VALUES ('369','agent','MissAgent','Lady Agent','missagent@yahoo.com','9220513088' , "10");
+INSERT INTO `agent` VALUES ('369','agent','MissAgent','Lady Agent','missagent@yahoo.com','9220513088','10');
 /*!40000 ALTER TABLE `agent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +64,8 @@ CREATE TABLE `class` (
   `homework_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `homework_text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sex` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `days` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `days` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,7 +75,7 @@ CREATE TABLE `class` (
 
 LOCK TABLES `class` WRITE;
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
-INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd' , '10'),('148','Mr.Tabrizi','123','4:00 PM','5:30 PM','AEF4E','wa','s','155.000','11','Semi Final','Read For Semi Final','female','even' , '10');
+INSERT INTO `class` VALUES ('147','Mr.Tabrizi','123','6:00 PM','7:30 PM','AEF5E','wa','s','195.000','10','Read Active Reading','Read Units 7 and 8','male','odd','10'),('148','Mr.Tabrizi','123','4:00 PM','5:30 PM','AEF4E','wa','s','155.000','11','Semi Final','Read For Semi Final','female','even','10');
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,8 +157,45 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (3,'5872','اخرین تست','به قرآن دیگه ساعت 2:14 دیقه هستش . شب بخیر','Mar , 03 , 2021','MissAgent'),(4,'6334','Test For Before Mr.Meysam Comming','تست میکنیم ببینیم چطور میشه','Mar , 04 , 2021','MissAgent'),(5,'9932','Test on Phone','Testing on phone is a simple test','Mar , 04 , 2021','MissAgent'),(6,'7018','Xiaomi redmi 🎵 8',':))))','Mar , 05 , 2021','MissAgent');
+INSERT INTO `post` VALUES (6,'6531','Test before BackUp','Hello ! This is a test :)','Mar , 13 , 2021','MissAgent');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `status`
+--
+
+DROP TABLE IF EXISTS `status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `status` (
+  `student_code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S4` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S5` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S6` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S7` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S8` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S9` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S10` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S11` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S12` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S13` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S14` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S15` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `S16` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `status`
+--
+
+LOCK TABLES `status` WRITE;
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -177,7 +216,8 @@ CREATE TABLE `student` (
   `parent_phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `level` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `payment_status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `class` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `class` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -187,7 +227,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES ('0481244859','Amir','black','Amirhossein Mohammadi','amir@yahoo.com','9014784362','2136156859','9192186255','AEF5E','payed','147'),('0406171566','Meh','dice','Ix Igreg','x@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','147'),('041145578','Gir','gir','Xi greg','y@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','148');
+INSERT INTO `student` VALUES ('0481244859','Amir','black','Amirhossein Mohammadi','amir@yahoo.com','9014784362','2136156859','9192186255','AEF5E','payed','147','10'),('0406171566','Meh','dice','Ix Igreg','x@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','147','10'),('041145578','Gir','gir','Xi greg','y@yahoo.com','9126171566','2136150035','09366171566','AEF5E','not','148','10');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +244,8 @@ CREATE TABLE `teacher` (
   `password` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `full_name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `phone` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -214,7 +255,7 @@ CREATE TABLE `teacher` (
 
 LOCK TABLES `teacher` WRITE;
 /*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
-INSERT INTO `teacher` VALUES ('123','Asghar','mrtab','Aliasghar Tabrizi','ali@yahoo.com','9033300303');
+INSERT INTO `teacher` VALUES ('123','Asghar','mrtab','Aliasghar Tabrizi','ali@yahoo.com','9033300303','10');
 /*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -227,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-11 23:05:31
+-- Dump completed on 2021-03-16 14:52:56
