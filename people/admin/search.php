@@ -40,7 +40,7 @@ include("panels/sidebar.php");
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Seach</h1>
+            <h1 class="page-header">Search</h1>
         </div>
     </div><!--/.row-->
 
@@ -59,77 +59,201 @@ include("panels/sidebar.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    <?php
-                        if ($_SESSION["search_error"] == "404") {
-                            echo "<h4 class='text-danger'><b>> User not found !</b></h4>";
-                            echo '<br>';
-                            session_unset($_SESSION["search_error"]);
-                        }
-                        if ($_SESSION["search_error"] == "200") {
-                            echo "<h4 class='text-success'><b>> User found !</b></h4>";
-                            echo '<br>';
-                            session_unset($_SESSION["search_error"]);
-                        }
-                        else {
-                            session_unset($_SESSION["search_error"]);
-                        }
-                    ?>
-                    <form class="form-inline" action="search.php" method="get">
-                        <div class="form-group">
-                            <label for="scode">Student Code</label>
-                            <input name="code" type="text" class="form-control" id="scode" placeholder="Student Code">
+                    <form class="form-group" action="search.php" method="get">
+                        <label for="code">Code</label>
+                        <br>
+                        <input type="text" name="code" class="form-control" placeholder="Code">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="person" value="student"> Student
+                            </label>
+                            <label>
+                                <input type="radio" name="person" value="teacher"> Teacher
+                            </label>
+                            <label>
+                                <input type="radio" name="person" value="agent"> Agent
+                            </label>
+                            <label>
+                                <input type="radio" name="person" value="admin"> Admin
+                            </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button class="btn btn-primary" type="submit">Search</button>
                     </form>
                     
                     <?php
                     
-                    if (isset($_GET['code'])) {
-                        $_SESSION["search_error"] = 200;
-                        $ccode = $_GET["code"];
+                    if (isset($_GET['code']) && isset($_GET['person'])) {
+                        $code = $_GET['code'];
+                        $radio = $_GET['person'];
+                        if ($radio == "student") {
+                            
+                            // Database Connection
+                            $server = "localhost";
+                            $user = "milad";
+                            $passwd = "milad";
+                            $db = "Atieh";
 
-                        // Database Connection
-                        $server = "localhost";
-                        $user = "milad";
-                        $passwd = "milad";
-                        $db = "Atieh";
+                            $conn = mysqli_connect($server, $user, $passwd, $db);
 
-                        $conn = mysqli_connect($server, $user, $passwd, $db);
+                            $sql = "SELECT * FROM student WHERE code='$code'";
+                            $result = mysqli_query($conn, $sql);
 
-                        $sql = "SELECT * FROM student WHERE code='$ccode'";
-                        $result = mysqli_query($conn, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            // output data of each row
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $scode = $row["code"];
-                                $username = $row["username"];
-                                $fullname = $row["full_name"];
-                                $email = $row["email"];
-                                $phone = $row["phone"];
-                                $home = $row["home_phone"];
-                                $parent = $row["paremt_phone"];
-                                $level = $row["level"];
-                                $payment = $row["payment_status"];
-                                $sex = $row['sex'];
-                        //        $sex = "female";
-                                $class = $row['class'];
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $scode = $row["code"];
+                                    $username = $row["username"];
+                                    $fullname = $row["full_name"];
+                                    $email = $row["email"];
+                                    $phone = $row["phone"];
+                                    $home = $row["home_phone"];
+                                    $parent = $row["paremt_phone"];
+                                    $level = $row["level"];
+                                    $payment = $row["payment_status"];
+                                    $sex = $row['sex'];
+                            //        $sex = "female";
+                                    $class = $row['class'];
+                                }
                             }
-                        }
 
-                        if ($sex == "male") {
-                            $iconcolor = "blue";
-                        }
-                        elseif ($sex == "female") {
-                            $iconcolor = "red";
-                        }
+                            if ($sex == "male") {
+                                $iconcolor = "blue";
+                            }
+                            elseif ($sex == "female") {
+                                $iconcolor = "red";
+                            }
 
-                        echo '<hr>';
-                        
-                        echo '<h1>' . $fullname .'</h1>';
-                    }
-                    else {
-                        $_SESSION["search_error"] = "404";
+                            echo '<hr>';
+
+                            echo '<h1>' . $fullname .'</h1>';
+                        }
+                        elseif ($radio == "teacher") {
+                            // Database Connection
+                            $server = "localhost";
+                            $user = "milad";
+                            $passwd = "milad";
+                            $db = "Atieh";
+
+                            $conn = mysqli_connect($server, $user, $passwd, $db);
+
+                            $sql = "SELECT * FROM teacher WHERE code='$code'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $scode = $row["code"];
+                                    $username = $row["username"];
+                                    $fullname = $row["full_name"];
+                                    $email = $row["email"];
+                                    $phone = $row["phone"];
+                                    $home = $row["home_phone"];
+                                    $parent = $row["paremt_phone"];
+                                    $level = $row["level"];
+                                    $payment = $row["payment_status"];
+                                    $sex = $row['sex'];
+                            //        $sex = "female";
+                                    $class = $row['class'];
+                                }
+                            }
+
+                            if ($sex == "male") {
+                                $iconcolor = "blue";
+                            }
+                            elseif ($sex == "female") {
+                                $iconcolor = "red";
+                            }
+
+                            echo '<hr>';
+
+                            echo '<h1>' . $fullname .'</h1>';
+                        }
+                        elseif ($radio == "agent") {
+                            $ccode = $_GET["code"];
+
+                            // Database Connection
+                            $server = "localhost";
+                            $user = "milad";
+                            $passwd = "milad";
+                            $db = "Atieh";
+
+                            $conn = mysqli_connect($server, $user, $passwd, $db);
+
+                            $sql = "SELECT * FROM agent WHERE code='$ccode'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $scode = $row["code"];
+                                    $username = $row["username"];
+                                    $fullname = $row["full_name"];
+                                    $email = $row["email"];
+                                    $phone = $row["phone"];
+                                    $home = $row["home_phone"];
+                                    $parent = $row["paremt_phone"];
+                                    $level = $row["level"];
+                                    $payment = $row["payment_status"];
+                                    $sex = $row['sex'];
+                            //        $sex = "female";
+                                    $class = $row['class'];
+                                }
+                            }
+
+                            if ($sex == "male") {
+                                $iconcolor = "blue";
+                            }
+                            elseif ($sex == "female") {
+                                $iconcolor = "red";
+                            }
+
+                            echo '<hr>';
+
+                            echo '<h1>' . $fullname .'</h1>';
+                        }
+                        elseif ($radio == "admin") {
+                            $ccode = $_GET["code"];
+
+                            // Database Connection
+                            $server = "localhost";
+                            $user = "milad";
+                            $passwd = "milad";
+                            $db = "Atieh";
+
+                            $conn = mysqli_connect($server, $user, $passwd, $db);
+
+                            $sql = "SELECT * FROM admin WHERE code='$ccode'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $scode = $row["code"];
+                                    $username = $row["username"];
+                                    $fullname = $row["full_name"];
+                                    $email = $row["email"];
+                                    $phone = $row["phone"];
+                                    $home = $row["home_phone"];
+                                    $parent = $row["paremt_phone"];
+                                    $level = $row["level"];
+                                    $payment = $row["payment_status"];
+                                    $sex = $row['sex'];
+                            //        $sex = "female";
+                                    $class = $row['class'];
+                                }
+                            }
+
+                            if ($sex == "male") {
+                                $iconcolor = "blue";
+                            }
+                            elseif ($sex == "female") {
+                                $iconcolor = "red";
+                            }
+
+                            echo '<hr>';
+
+                            echo '<h1>' . $fullname .'</h1>';
+                        }
                     }
                     
                     ?>
