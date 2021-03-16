@@ -1,10 +1,3 @@
-<form class="form-inline" action="search.php" method="post">
-    <div class="form-group-sm">
-        <input name="code" type="text" class="form-control" placeholder="Student Code">
-    </div>
-    <button type="submit" class="btn btn-sm btn-primary">Search</button>
-</form>
-
 <?php
 include("include/data.php");
 ?>
