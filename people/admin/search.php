@@ -73,9 +73,6 @@ include("panels/sidebar.php");
                             <label>
                                 <input type="radio" name="person" value="agent"> Agent
                             </label>
-                            <label>
-                                <input type="radio" name="person" value="admin"> Admin
-                            </label>
                         </div>
                         <button class="btn btn-primary" type="submit">Search</button>
                     </form>
@@ -107,70 +104,43 @@ include("panels/sidebar.php");
                                     $email = $row["email"];
                                     $phone = $row["phone"];
                                     $home = $row["home_phone"];
-                                    $parent = $row["paremt_phone"];
+                                    $parent = $row["parent_phone"];
                                     $level = $row["level"];
                                     $payment = $row["payment_status"];
                                     $sex = $row['sex'];
-                            //        $sex = "female";
+                                    $sex = "male";
                                     $class = $row['class'];
                                 }
                             }
 
                             if ($sex == "male") {
-                                $iconcolor = "blue";
+                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
+                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
+                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
+                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
+                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
+                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
                             }
                             elseif ($sex == "female") {
-                                $iconcolor = "red";
+                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
+                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
+                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
+                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
+                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
+                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
+                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
+                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
+                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
                             }
 
                             echo '<hr>';
-
-                            echo '<h1>' . $fullname .'</h1>';
-                        }
-                        elseif ($radio == "teacher") {
-                            // Database Connection
-                            $server = "localhost";
-                            $user = "milad";
-                            $passwd = "milad";
-                            $db = "Atieh";
-
-                            $conn = mysqli_connect($server, $user, $passwd, $db);
-
-                            $sql = "SELECT * FROM teacher WHERE code='$code'";
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                // output data of each row
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $scode = $row["code"];
-                                    $username = $row["username"];
-                                    $fullname = $row["full_name"];
-                                    $email = $row["email"];
-                                    $phone = $row["phone"];
-                                    $home = $row["home_phone"];
-                                    $parent = $row["paremt_phone"];
-                                    $level = $row["level"];
-                                    $payment = $row["payment_status"];
-                                    $sex = $row['sex'];
-                            //        $sex = "female";
-                                    $class = $row['class'];
-                                }
-                            }
-
-                            if ($sex == "male") {
-                                $iconcolor = "blue";
-                            }
-                            elseif ($sex == "female") {
-                                $iconcolor = "red";
-                            }
-
-                            echo '<hr>';
-
-                            echo '<h1>' . $fullname .'</h1>';
                         }
                         elseif ($radio == "agent") {
-                            $ccode = $_GET["code"];
-
                             // Database Connection
                             $server = "localhost";
                             $user = "milad";
@@ -179,7 +149,7 @@ include("panels/sidebar.php");
 
                             $conn = mysqli_connect($server, $user, $passwd, $db);
 
-                            $sql = "SELECT * FROM agent WHERE code='$ccode'";
+                            $sql = "SELECT * FROM agent WHERE agent_code='$code'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
@@ -190,13 +160,8 @@ include("panels/sidebar.php");
                                     $fullname = $row["full_name"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-                                    $home = $row["home_phone"];
-                                    $parent = $row["paremt_phone"];
-                                    $level = $row["level"];
-                                    $payment = $row["payment_status"];
                                     $sex = $row['sex'];
                             //        $sex = "female";
-                                    $class = $row['class'];
                                 }
                             }
 
@@ -209,9 +174,9 @@ include("panels/sidebar.php");
 
                             echo '<hr>';
 
-                            echo '<h1>' . $fullname .'</h1>';
+                            echo '<h1>Full name : ' . $fullname .'</h1>';
                         }
-                        elseif ($radio == "admin") {
+                        elseif ($radio == "teacher") {
                             $ccode = $_GET["code"];
 
                             // Database Connection
@@ -222,7 +187,7 @@ include("panels/sidebar.php");
 
                             $conn = mysqli_connect($server, $user, $passwd, $db);
 
-                            $sql = "SELECT * FROM admin WHERE code='$ccode'";
+                            $sql = "SELECT * FROM teacher WHERE code='$ccode'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
@@ -233,10 +198,6 @@ include("panels/sidebar.php");
                                     $fullname = $row["full_name"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-                                    $home = $row["home_phone"];
-                                    $parent = $row["paremt_phone"];
-                                    $level = $row["level"];
-                                    $payment = $row["payment_status"];
                                     $sex = $row['sex'];
                             //        $sex = "female";
                                     $class = $row['class'];
