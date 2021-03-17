@@ -143,6 +143,7 @@ $result = mysqli_query($conn, $sql);
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title"><?php echo $row["title"]; ?></h2>
+                        <hr>
                         <p class="card-text"><?php echo $row["txt"]; ?></p>
                     </div>
                     <div class="card-footer text-muted">
