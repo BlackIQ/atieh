@@ -17,14 +17,6 @@ while ($row = mysqli_fetch_assoc($res)) {
 }
 
 if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
-    // Database Connection
-    $server = "localhost";
-    $user = "milad";
-    $passwd = "milad";
-    $db = "Atieh";
-
-    $conn = mysqli_connect($server, $user, $passwd, $db);
-
     $stdnt = $_SESSION['code'];
 
     $sql = "SELECT * FROM student WHERE code='$stdnt'";
@@ -41,8 +33,8 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
             $parent = $row["parent_number"];
             $level = $row["level"];
             $payment = $row["payment_status"];
-            // $payment = "Hello";
             $class = $row["class"];
+            $sex = $row["sex"];
         }
     }
 
@@ -117,14 +109,14 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
     }
 }
 elseif ($_SESSION['person'] == "teacher") {
-    header("Location: http://$ip/Atieh/people/teacher");
+    header("Location: http://$ip/Narbon/people/teacher");
 }
 elseif ($_SESSION['person'] == "agent") {
-    header("Location: http://$ip/Atieh/people/agent");
+    header("Location: http://$ip/Narbon/people/agent");
 }
 elseif ($_SESSION['person'] == "admin") {
-    header("Location: http://$ip/Atieh/people/admin");
+    header("Location: http://$ip/Narbon/people/admin");
 }
 else {
-    header("Location: http://$ip/Atieh");
+    header("Location: http://$ip/Narbon");
 }
