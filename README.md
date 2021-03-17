@@ -6,8 +6,8 @@ Narbon Project
 
 **Create User**
 ```mysql
-CREATE USER 'milad'@'localhost' IDENTIFIED BY 'milad';
-GRANT ALL PRIVILEGES ON *.* TO 'milad'@'localhost';
+CREATE USER 'narbon'@'localhost' IDENTIFIED BY 'narbon';
+GRANT ALL PRIVILEGES ON *.* TO 'narbon'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -18,10 +18,10 @@ sudo systemctl restart mysql.service
 
 **Create Database**
 ```mysql
-CREATE DATABASE Atieh;
+CREATE DATABASE narbon;
 ```
 
 **Restore backup file**
 ```
-sudo mysql Atieh < Pack/backup.sql
+sudo mysql narbon < Pack/backup.sql
 ```
