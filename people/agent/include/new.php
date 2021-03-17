@@ -12,7 +12,7 @@ $code = rand(1000 , 9999);
 
 if (!empty($title)) {
     if (!empty($description)) {
-        $sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$titlw' , '$description' , '$date' , '$who')";
+        $sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$title' , '$description' , '$date' , '$who')";
 
         mysqli_query($conn, $sql);
         $_SESSION['post'] = 200;
