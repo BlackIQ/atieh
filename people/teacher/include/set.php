@@ -2,9 +2,9 @@
 
 // Database Connection
 $server = "localhost";
-$user = "milad";
-$passwd = "milad";
-$db = "Atieh";
+$user = "narbon";
+$passwd = "narbon";
+$db = "narbon";
 
 $code = $_GET["code"];
 $action = $_GET["action"];
