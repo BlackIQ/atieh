@@ -7,7 +7,7 @@ include("include/data.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atieh - Dashboard</title>
+    <title>Narbon - Dashboard</title>
     <script>
         window.alert("<?php echo $username; ?> , Welcome To Student Panel !");
     </script>
