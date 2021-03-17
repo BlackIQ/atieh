@@ -5,6 +5,7 @@ session_start();
 $code = $_POST['code'];
 $password = $_POST['password'];
 $radio = $_POST["person"];
+$check = $_POST["remember"];
 
 // Database Connection
 $server = "localhost";
