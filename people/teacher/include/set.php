@@ -40,6 +40,6 @@ if (mysqli_num_rows($result) > 0) {
                 break;
             }
         }
-        header("Location: http://$ip/Atieh/teacher");
+        header("Location: http://$ip/Narbon/teacher");
     }
 }
