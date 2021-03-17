@@ -6,4 +6,4 @@ session_start();
 
 session_destroy();
 
-header("Location: http://$ip/Atieh");
+header("Location: http://$ip/Narbon");
