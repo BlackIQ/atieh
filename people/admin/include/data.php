@@ -17,14 +17,6 @@ while ($row = mysqli_fetch_assoc($res)) {
 }
 
 if ($_SESSION['status'] == true && $_SESSION['person'] == "admin" ) {
-    // Database Connection
-    $server = "localhost";
-    $user = "milad";
-    $passwd = "milad";
-    $db = "Atieh";
-
-    $conn = mysqli_connect($server, $user, $passwd, $db);
-
     $stdnt = $_SESSION['code'];
 
     $sql = "SELECT * FROM institute WHERE code ='$stdnt'";
@@ -41,14 +33,14 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "admin" ) {
     }
 }
 elseif ($_SESSION['person'] == "teacher") {
-    header("Location: http://$ip/Atieh/people/teacher");
+    header("Location: http://$ip/Narbon/people/teacher");
 }
 elseif ($_SESSION['person'] == "student") {
-    header("Location: http://$ip/Atieh/people/student");
+    header("Location: http://$ip/Narbon/people/student");
 }
 elseif ($_SESSION['person'] == "agent") {
-    header("Location: http://$ip/Atieh/people/agent");
+    header("Location: http://$ip/Narbon/people/agent");
 }
 else {
-    header("Location: http://$ip/Atieh");
+    header("Location: http://$ip/Narbon");
 }
