@@ -18,15 +18,15 @@ session_start();
 
 if ($_SESSION['status'] == true) {
     if ($_SESSION['person'] == "student") {
-        header("Location: http://$ip/Atieh/people/student");
+        header("Location: http://$ip/Narbon/people/student");
     }
     if ($_SESSION['person'] == "teacher") {
-        header("Location: http://$ip/Atieh/people/teacher");
+        header("Location: http://$ip/Narbon/people/teacher");
     }
     if ($_SESSION['person'] == "agent") {
-        header("Location: http://$ip/Atieh/people/agent");
+        header("Location: http://$ip/Narbon/people/agent");
     }
 }
 else {
-    header("Location: http://$ip/Atieh");
+    header("Location: http://$ip/Narbon");
 }
