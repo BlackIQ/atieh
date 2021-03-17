@@ -7,7 +7,7 @@ include("include/data.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atieh - Profile</title>
+    <title>Narbon - Profile</title>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
@@ -84,10 +84,10 @@ include("panels/sidebar.php");
                     <h1 class="text-info">Contact</h1>
                     <hr>
                     <h4 class="text-primary">Parent Phone Number</h4>
-                    <p class="text-success"><b><i class="fa fa-phone"></i> +989192186255</b></p>
+                    <p class="text-success"><b><i class="fa fa-phone"></i> <?php echo $parent; ?></b></p>
                     <br>
                     <h4 class="text-primary">Home Phone</h4>
-                    <p class="text-success"><b><i class="fa fa-home"></i> +982136156859</b></p>
+                    <p class="text-success"><b><i class="fa fa-home"></i> <?php echo $home; ?></b></p>
                 </div>
             </div>
         </div>
