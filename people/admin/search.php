@@ -10,7 +10,7 @@ include("include/data.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atieh - Student Search</title>
+    <title>Narbon - Student Search</title>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
