@@ -86,8 +86,8 @@ include("panels/sidebar.php");
                             
                             // Database Connection
                             $server = "localhost";
-                            $user = "milad";
-                            $passwd = "milad";
+                            $user = "narbon";
+                            $passwd = "narbon";
                             $db = "Atieh";
 
                             $conn = mysqli_connect($server, $user, $passwd, $db);
@@ -144,8 +144,8 @@ include("panels/sidebar.php");
                         elseif ($radio == "agent") {
                             // Database Connection
                             $server = "localhost";
-                            $user = "milad";
-                            $passwd = "milad";
+                            $user = "narbon";
+                            $passwd = "narbon";
                             $db = "Atieh";
 
                             $conn = mysqli_connect($server, $user, $passwd, $db);
@@ -188,8 +188,8 @@ include("panels/sidebar.php");
 
                             // Database Connection
                             $server = "localhost";
-                            $user = "milad";
-                            $passwd = "milad";
+                            $user = "narbon";
+                            $passwd = "narbon";
                             $db = "Atieh";
 
                             $conn = mysqli_connect($server, $user, $passwd, $db);
