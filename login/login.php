@@ -32,12 +32,12 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "student";
-                header("Location: http://$ip/Atieh/people/student");
+                header("Location: http://$ip/Narbon/people/student");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://$ip/Atieh/login");
+            header("Location: http://$ip/Narbon/login");
         }
     }
     elseif ($radio == "teacher") {
@@ -50,12 +50,12 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "teacher";
-                header("Location: http://$ip/Atieh/people/teacher");
+                header("Location: http://$ip/Narbon/people/teacher");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://$ip/Atieh/login");
+            header("Location: http://$ip/Narbon/login");
         }
     }
     elseif ($radio == "agent") {
@@ -68,12 +68,12 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "agent";
-                header("Location: http://$ip/Atieh/people/agent");
+                header("Location: http://$ip/Narbon/people/agent");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://$ip/Atieh/login");
+            header("Location: http://$ip/Narbon/login");
         }
     }
     elseif ($radio == "admin") {
@@ -86,16 +86,16 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['code'] = $row['code'];
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "admin";
-                header("Location: http://$ip/Atieh/people/admin");
+                header("Location: http://$ip/Narbon/people/admin");
             }
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://$ip/Atieh/login");
+            header("Location: http://$ip/Narbon/login");
         }
     }
 }
 else {
     $_SESSION["error"] = "500";
-    header("Location: http://$ip/Atieh/login");
+    header("Location: http://$ip/Narbon/login");
 }

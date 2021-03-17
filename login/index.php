@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_assoc($res)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Atieh - Login</title>
+  <title>Narbon - Login</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_assoc($res)) {
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <a href="http://<?php echo $ip; ?>/Atieh"><img src="assets/images/logo.svg" alt="logo" class="logo"></a>
+                <a href="http://<?php echo $ip; ?>/Narbon"><img src="assets/images/logo.svg" alt="logo" class="logo"></a>
               </div>
               <p class="login-card-description">Sign into your account</p>
                 <?php
@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                   <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit">Login</button>
                 </form>
               <br>
-                <a href="#!" class="forgot-password-link">Forgot password ?</a>
+                <a href="#" class="forgot-password-link">Forgot password ?</a>
             </div>
           </div>
         </div>
