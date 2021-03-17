@@ -15,7 +15,7 @@ $conn = mysqli_connect($server, $user, $passwd, $db);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atieh - Dashboard</title>
+    <title>Narbon - Dashboard</title>
     <script>
         window.alert("<?php echo $username; ?> , Welcome To Teacher Panel !");
     </script>
