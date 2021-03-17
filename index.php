@@ -31,19 +31,15 @@ $result = mysqli_query($conn, $sql);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Atieh - Index</title>
+  <title>Narbon - Index</title>
 
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/login.css">
   
-  <link href="http://192.168.1.5/Atieh/people/pack/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://192.168.1.5/Narbon/people/pack/css/font-awesome.min.css" rel="stylesheet">
 
-  
-  <!-- Bootstrap core CSS -->
-
-  <!-- Custom styles for this template -->  
+    <!-- Custom styles for this template -->  
   <style>
     body {
         padding-top: 56px;
@@ -57,7 +53,7 @@ $result = mysqli_query($conn, $sql);
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="."><span>Atieh </span>Project</a>
+        <a class="navbar-brand" href="."><span>Narbon </span>Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,14 +63,6 @@ $result = mysqli_query($conn, $sql);
                     <a class="nav-link" href="#">Home
                         <span class="sr-only">(current)</span>
                     </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
                 </li>
                 
                 <h3 style="color: white"> </h3>
@@ -87,7 +75,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/teacher/"><i class="fa fa-dashboard"></i> Teacher Panel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="http://<?php echo $ip; ?>/Atieh/people/teacher/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link"href="http://<?php echo $ip; ?>/Narbon/people/teacher/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -97,7 +85,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/student/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/student/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -107,7 +95,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/agent/"><i class="fa fa-dashboard"></i> Agent Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/agent/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/agent/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -117,7 +105,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/admin/"><i class="fa fa-dashboard"></i> Admin Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Atieh/people/admin/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/admin/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -158,7 +146,7 @@ $result = mysqli_query($conn, $sql);
                         <p class="card-text"><?php echo $row["txt"]; ?></p>
                     </div>
                     <div class="card-footer text-muted">
-                        <?php echo $row["dt"]." By ".$row["who"]; ?>
+                        <?php echo "Posted on " . $row["dt"]." By ".$row["who"]; ?>
                     </div>
                 </div>
                 <?php
@@ -166,33 +154,7 @@ $result = mysqli_query($conn, $sql);
         }
 
         ?>
-        
-        <!-- Blog Post -->
-<!--        <div class="card mb-4">
-          <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-480-80.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Mac Book Air</h2>
-            <p class="card-text">My new mac book !!</p>
-            <p class="card-text">Thanks !</p>
-            <a href="#" class="btn btn-primary">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
-            <a href="#">Amir</a>
-          </div>
-        </div>-->
-
-        <!-- Pagination -->
-<!--        <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
-          </li>
-        </ul>-->
-
-      </div>
+       </div>
 
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
@@ -272,7 +234,7 @@ $result = mysqli_query($conn, $sql);
         <div class="row">
             <div class="col-md-4">
                 <div class="m-0 text-left text-white">
-                    <p class="text-primary"><b>Atieh Project</b></p>
+                    <p class="text-primary"><b>Narbon Project</b></p>
                     <p class="text-white">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
                     <p class="text-white">Powered By <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
                     <p>
