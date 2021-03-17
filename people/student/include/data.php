@@ -29,8 +29,8 @@ if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
             $fullname = $row["full_name"];
             $email = $row["email"];
             $phone = $row["phone"];
-            $home = $row["home_number"];
-            $parent = $row["parent_number"];
+            $home = $row["home_phone"];
+            $parent = $row["parent_phone"];
             $level = $row["level"];
             $payment = $row["payment_status"];
             $class = $row["class"];
