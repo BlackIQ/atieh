@@ -8,9 +8,9 @@ $radio = $_POST["person"];
 
 // Database Connection
 $server = "localhost";
-$user = "milad";
-$passwd = "milad";
-$db = "Atieh";
+$user = "narbon";
+$passwd = "narbon";
+$db = "narbon";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
