@@ -63,6 +63,9 @@ $result = mysqli_query($conn, $sql);
                     <a class="nav-link" href="#"><i class="fa fa-home"></i> Home
                         <span class="sr-only">(current)</span>
                     </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#report"><i class="fa fa-bug"></i> Report a Bug</a>
+                    </li>
                 </li>
                 
                 <h3 style="color: white"> </h3>
@@ -135,6 +138,46 @@ $result = mysqli_query($conn, $sql);
         <h1 class="my-4">Order By
           <small>New to Old</small>
         </h1>
+          
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://admission.buddy4study.com/study-abroad/wp-content/uploads/2019/09/MIT-Scholarships.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>MIT</h5>
+                    <p>MIT University</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://collegelearners.com/wp-content/uploads/2020/03/fff.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Oxford</h5>
+                    <p>University of Oxford</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.scholarshipcare.com/wp-content/uploads/2019/01/Harvard-University-.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Harvard</h5>
+                    <p>Harvard University</p>
+                  </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <br>
           
         <?php
         if (mysqli_num_rows($result) > 0) {
@@ -284,3 +327,49 @@ $result = mysqli_query($conn, $sql);
 </body>
 
 </html>
+
+<!-- Modal -->
+<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Report a bug</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <form method="post" action="index.php">
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="title" class="col-form-label">Title</label>
+            <input name="title" type="text" class="form-control" id="title" required>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" required></textarea>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+          <button name="do" type="submit" class="btn btn-success">Report</button>
+          <button type="reset" class="btn btn-danger">Clear</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </form>
+        <?php
+        
+            $reportitle = $_POST["title"];
+            $description = $_POST["description"];
+            
+            if (isset($reportitle) && isset($description)) {
+                ?>
+                <script>
+                    window.alert("Done");
+                </script>
+                <?php
+            }
+        
+        ?>
+    </div>
+  </div>
+</div>
