@@ -139,11 +139,11 @@ $result = mysqli_query($conn, $sql);
           <small>New to Old</small>
         </h1>
           
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel" data-slide-to="1"></li>
+              <li data-target="#carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -168,11 +168,11 @@ $result = mysqli_query($conn, $sql);
                   </div>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
@@ -357,16 +357,31 @@ $result = mysqli_query($conn, $sql);
       </div>
     </form>
         <?php
-        
-            $reportitle = $_POST["title"];
-            $description = $_POST["description"];
+            $reportcode = rand(1000 , 9999);
+            $reporttitle = $_POST["title"];
+            $reporttext = $_POST["description"];
+            $reportdate = date("M , d , Y");
+            $reportperson = $_SESSION["code"];
+            $reportposition = $_SESSION["person"];
+            $reporticode = $_SESSION["icode"];
             
-            if (isset($reportitle) && isset($description)) {
-                ?>
-                <script>
-                    window.alert("Done");
-                </script>
-                <?php
+            if (isset($reporttitle) && isset($reporttext)) {
+                $sql = "INSERT INTO report (code , title , txt , dt , person , pos , icode) VALUES ('$reportcode' , '$reporttitle' , '$reporttext' , '$reportdate' , '$reportperson' , '$reportposition' , '$reporticode')";
+                
+                if (mysqli_query($conn, $sql)) {
+                    ?>
+                        <script>
+                            window.alert("Reported. TNX!");
+                        </script>
+                    <?php
+                }
+                else {
+                    ?>
+                        <script>
+                            window.alert("Didnt Reported. Try Again!");
+                        </script>
+                    <?php
+                }
             }
         
         ?>
