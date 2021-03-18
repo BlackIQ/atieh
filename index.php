@@ -366,21 +366,39 @@ $result = mysqli_query($conn, $sql);
             $reporticode = $_SESSION["icode"];
             
             if (isset($reporttitle) && isset($reporttext)) {
-                $sql = "INSERT INTO report (code , title , txt , dt , person , pos , icode) VALUES ('$reportcode' , '$reporttitle' , '$reporttext' , '$reportdate' , '$reportperson' , '$reportposition' , '$reporticode')";
                 
-                if (mysqli_query($conn, $sql)) {
-                    ?>
-                        <script>
-                            window.alert("Reported. TNX!");
-                        </script>
-                    <?php
+                $sql = "SELECT * FROM report WHERE title = '$reporttitle' AND txt = '$reporttext'";
+                $result = mysqli_query($conn, $sql);
+                
+                
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        if ($row["title"] == $reporttitle && $row["txt"] == $reporttext) {
+                            ?>
+                                <script>
+                                    window.alert("This report is reported before.");
+                                </script>
+                            <?php
+                        }
+                    }
                 }
                 else {
-                    ?>
-                        <script>
-                            window.alert("Didnt Reported. Try Again!");
-                        </script>
-                    <?php
+                    $sql = "INSERT INTO report (code , title , txt , dt , person , pos , icode) VALUES ('$reportcode' , '$reporttitle' , '$reporttext' , '$reportdate' , '$reportperson' , '$reportposition' , '$reporticode')";
+                
+                    if (mysqli_query($conn, $sql)) {
+                        ?>
+                            <script>
+                                window.alert("Reported. TNX!\nDont refresh the page.");
+                            </script>
+                        <?php
+                    }
+                    else {
+                        ?>
+                            <script>
+                                window.alert("Didnt Reported. Try Again!\nDont refresh the page.");
+                            </script>
+                        <?php
+                    }
                 }
             }
         
