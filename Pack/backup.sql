@@ -1,6 +1,6 @@
 -- MariaDB dump 10.18  Distrib 10.5.8-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: Atieh
+-- Host: localhost    Database: narbon
 -- ------------------------------------------------------
 -- Server version	10.5.8-MariaDB
 
@@ -162,6 +162,36 @@ INSERT INTO `post` VALUES (8,'3749','Narbon','Everything changed to Narbon!','Ma
 UNLOCK TABLES;
 
 --
+-- Table structure for table `report`
+--
+
+DROP TABLE IF EXISTS `report`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `txt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `person` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pos` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `report`
+--
+
+LOCK TABLES `report` WRITE;
+/*!40000 ALTER TABLE `report` DISABLE KEYS */;
+INSERT INTO `report` VALUES (9,'6193','gds','fds','Mar , 18 , 2021','0481244859','student','10'),(10,'7693','Login','لاگین کردن خیلی طول میکشه','Mar , 18 , 2021','123','teacher','10');
+/*!40000 ALTER TABLE `report` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `status`
 --
 
@@ -268,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18  0:34:46
+-- Dump completed on 2021-03-18 22:20:08
