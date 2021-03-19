@@ -51,7 +51,11 @@ $result = mysqli_query($conn, $sql);
                 <span class="fa fa-envelope">&nbsp;</span> Tickets
             </a>
         </li>
-        <li><a href="search.php"><em class="fa fa-search">&nbsp;</em> Search</a></li>
+        <li>
+            <a class="" href="search.php">
+                <span class="fa fa-search">&nbsp;</span> Search
+            </a>
+        </li>
         <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
                 <em class="fa fa-navicon">&nbsp;</em> Menu <span data-toggle="collapse" href="#sub-item-1"
                                                                  class="icon pull-right"><em
