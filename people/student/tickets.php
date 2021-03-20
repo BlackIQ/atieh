@@ -64,34 +64,41 @@ include("panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-info">Tickets that you sent</h1>
                     <hr>
-                    <table class="table table-hover table-responsive table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Code</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
-                                            <th scope="row"><?php echo $row['code']; ?></th>
-                                            <td><?php echo $row['title']; ?></td>
-                                            <td><?php echo $row["dt"]; ?></td>
-                                            <td>Read</td>
-                                        </tr>
-                                    <?php
-                                }
-                            }
-
+                    <?php
+                    if (mysqli_num_rows($result) > 0) {
+                        ?>
+                        <table class="table table-hover table-responsive table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                        </tbody>
-                    </table>
+                                <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
+                                    <th scope="row"><?php echo $row['code']; ?></th>
+                                    <td><?php echo $row['title']; ?></td>
+                                    <td><?php echo $row["dt"]; ?></td>
+                                    <td>Read</td>
+                                </tr>
+                            <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                                <?php
+                            }
+                            else {
+                                ?>
+                                <h2>No ticket found</h2>   
+                                <?php
+                            }
+                        ?>
                 </div>
             </div>
         </div>

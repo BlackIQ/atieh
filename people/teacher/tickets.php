@@ -1,9 +1,22 @@
 <?php
 include("include/data.php");
 
-$person = $_SESSION["code"];
+$tcode = $_SESSION['code'];
 
-$sql = "SELECT * FROM report WHERE person = '$person'";
+$sql = "SELECT * FROM teacher WHERE code='$tcode'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $code = $row["code"];
+        $username = $row["username"];
+        $fullname = $row["full_name"];
+        $email = $row["email"];
+        $phone = $row["phone"];
+    }
+}
+
+$sql = "SELECT * FROM report WHERE person = '$code'";
 $result = mysqli_query($conn, $sql);
 ?>
 
