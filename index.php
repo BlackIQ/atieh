@@ -63,15 +63,17 @@ $result = mysqli_query($conn, $sql);
                     <a class="nav-link" href="#"><i class="fa fa-home"></i> Home
                         <span class="sr-only">(current)</span>
                     </a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#report"><i class="fa fa-bug"></i> Report a Bug</a>
-                    </li>
                 </li>
                 
                 <h3 style="color: white"> </h3>
                 
                 <?php
                 if ($_SESSION['status'] == true) {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#report"><i class="fa fa-bug"></i> Report a Bug</a>
+                    </li>
+                    <?php
                     if ($_SESSION["person"] == "teacher") {
                         ?>
                         <li class="nav-item">
