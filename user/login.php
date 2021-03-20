@@ -2,25 +2,15 @@
 
 session_start();
 
+if ($_SESSION['status'] == true) {
+    $person = $_SESSION['person'];
+    header("Location: http://$ip/Narbon/people/$person");
+}
+
 $code = $_POST['code'];
 $password = $_POST['password'];
 $radio = $_POST["person"];
 $check = $_POST["remember"];
-
-// Database Connection
-$server = "localhost";
-$user = "narbon";
-$passwd = "narbon";
-$db = "narbon";
-
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
-$getip = "SELECT * FROM development";
-$res = mysqli_query($conn, $getip);
-
-while ($row = mysqli_fetch_assoc($res)) {
-	$ip = $row['ip'];
-}
 
 if (isset($code) && isset($password) && isset($radio)) {
     if ($radio == "student") {
