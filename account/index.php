@@ -2,11 +2,6 @@
 
 include("data.php");
 
-if ($_SESSION['status'] == true) {
-    $person = $_SESSION['person'];
-    header("Location: http://$ip/Narbon/people/$person");
-}
-
 ?>
 
 <!DOCTYPE html>
