@@ -118,7 +118,7 @@ $result = mysqli_query($conn, $sql);
                 else {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="user/"><i class="fa fa-sign-in"></i> Login</a>
+                        <a class="nav-link" href="account/"><i class="fa fa-sign-in"></i> Login</a>
                     </li>
                     <?php
                 }
