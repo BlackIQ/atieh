@@ -26,7 +26,7 @@ include("../pack/include/data.php");
 </head>
 <body>
 <?php
-include("panels/sidebar.php");
+include("../pack/panels/sidebar.php");
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -46,7 +46,7 @@ include("panels/sidebar.php");
 
     <div class="panel panel-container">
         <?php
-        include("panels/bar.php");
+        include("../pack/panels/bar.php");
         ?>
     </div>
     <div class="row">
@@ -95,7 +95,7 @@ include("panels/sidebar.php");
     </div><!--/.row-->
 
     <?php
-    include("panels/footer.php");
+    include("../pack/panels/footer.php");
     ?>
 </div>    <!--/.main-->
 
