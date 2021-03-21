@@ -6,4 +6,4 @@ session_start();
 
 session_destroy();
 
-header("Location: http://$ip/Narbon");
+header("Location: http://$ip/Narbon/user/logout.php");
