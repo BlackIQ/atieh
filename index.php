@@ -80,7 +80,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/teacher/"><i class="fa fa-dashboard"></i> Teacher Panel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="http://<?php echo $ip; ?>/Narbon/people/teacher/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link"href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -90,7 +90,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/student/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -100,7 +100,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/agent/"><i class="fa fa-dashboard"></i> Agent Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/agent/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
@@ -110,7 +110,7 @@ $result = mysqli_query($conn, $sql);
                             <a class="nav-link" href="people/admin/"><i class="fa fa-dashboard"></i> Admin Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/people/admin/user/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
