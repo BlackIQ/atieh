@@ -1,5 +1,5 @@
 <?php
-include("include/data.php");
+include("../pack/include/data.php");
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +69,8 @@ include("panels/sidebar.php");
                     </p>
                     <br>
                     <h4 class="text-primary"><i class="fa fa-clock-o"></i> Class period</h4>
-                    <p class="text-muted"><b class="text-danger"><?php echo $starttime; ?></b> until <b
-                                class="text-success"><?php echo $endtime; ?></b></p>
+                    <p class="text-muted"><b class="text-danger"><?php echo $start; ?></b> until <b
+                                class="text-success"><?php echo $end; ?></b></p>
                 </div>
             </div>
         </div>

@@ -17,42 +17,52 @@ while ($row = mysqli_fetch_assoc($res)) {
 }
 
 if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
-    $stdnt = $_SESSION['code'];
+    $id = $_SESSION['id'];
 
-    $sql = "SELECT * FROM student WHERE code='$stdnt'";
+    $sql = "SELECT * FROM student WHERE mcode='$id'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            $code = $row["code"];
+            $code = $row["mcode"];
             $username = $row["username"];
-            $fullname = $row["full_name"];
+            $fullname = $row["fname"];
             $email = $row["email"];
             $phone = $row["phone"];
-            $home = $row["home_phone"];
-            $parent = $row["parent_phone"];
+            $home = $row["home"];
+            $parent = $row["parent"];
             $level = $row["level"];
-            $payment = $row["payment_status"];
-            $class = $row["class"];
-            $sex = $row["sex"];
+            $payment = $row["payment"];
+            $uclass = $row["class"];
+            $institute = $row["icode"];
         }
     }
 
-    $sql = "SELECT * FROM class WHERE code='$class'";
+    $sql = "SELECT * FROM class WHERE ccode='$class'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            $code = $row["code"];
-            $teacher = $row["teacher"];
-            $starttime = $row["start_time"];
-            $endtime = $row["end_time"];
-            $whatapp = $row["whatsapp_link"];
-            $skype = $row["skype_link"];
-            $price = $row["tuition_price"];
-            $homeworksession = $row["homework_session"];
-            $homeworktitle = $row["homework_title"];
-            $homeworktext = $row["homework_text"];
+            $class = $row["ccode"];
+            $teacher = $row["tcode"];
+            $starttime = $row["start"];
+            $endtime = $row["end"];
+            $whatapp = $row["whatsapp"];
+            $skype = $row["skype"];
+            $price = $row["tuition"];
+        }
+    }
+    
+    $sql = "SELECT * FROM homework WHERE ccode='$class'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $class = $row["ccode"];
+            $teacher = $row["tcode"];
+            $homeworksession = $row["session"];
+            $homeworktitle = $row["title"];
+            $homeworktext = $row["txt"];
         }
     }
 

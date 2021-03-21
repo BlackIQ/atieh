@@ -1,7 +1,7 @@
 <?php
-include("include/data.php");
+include("../pack/include/data.php");
 
-$person = $_SESSION["code"];
+$person = $_SESSION["id"];
 
 $sql = "SELECT * FROM report WHERE person = '$person'";
 $result = mysqli_query($conn, $sql);

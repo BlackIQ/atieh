@@ -1,5 +1,5 @@
 <?php
-include("include/data.php");
+include("../pack/include/data.php");
 ?>
 
 <!DOCTYPE html>

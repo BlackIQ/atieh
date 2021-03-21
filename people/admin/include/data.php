@@ -5,7 +5,7 @@ session_start();
 $server = "localhost";
 $user = "narbon";
 $passwd = "narbon";
-$db = "narbon";
+$db = "narbonn";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($res)) {
 if ($_SESSION['status'] == true && $_SESSION['person'] == "admin" ) {
     $stdnt = $_SESSION['code'];
 
-    $sql = "SELECT * FROM institute WHERE admin_user ='$stdnt'";
+    $sql = "SELECT * FROM admin WHERE mcode = '$stdnt'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
