@@ -16,4 +16,9 @@ while ($row = mysqli_fetch_assoc($res)) {
 	$ip = $row['ip'];
 }
 
+if ($_SESSION['status'] == true) {
+    $person = $_SESSION['person'];
+    header("Location: http://$ip/Narbon/people/$person");
+}
+
 ?>
