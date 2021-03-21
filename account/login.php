@@ -14,13 +14,13 @@ $check = $_POST["remember"];
 
 if (isset($code) && isset($password) && isset($radio)) {
     if ($radio == "student") {
-        $sql = "SELECT * FROM student WHERE code='$code' AND password='$password'";
+        $sql = "SELECT * FROM student WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['status'] = true;
-                $_SESSION['code'] = $code;
+                $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "student";
                 $_SESSION["icode"] = $row["icode"];
@@ -29,7 +29,7 @@ if (isset($code) && isset($password) && isset($radio)) {
         }
         else {
             $_SESSION["error"] = "404";
-            header("Location: http://$ip/Narbon/login");
+            header("Location: http://$ip/Narbon/account");
         }
     }
     elseif ($radio == "teacher") {
