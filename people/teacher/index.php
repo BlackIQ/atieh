@@ -1,13 +1,5 @@
 <?php
 include("../pack/include/data.php");
-
-$server = "localhost";
-$user = "narbon";
-$passwd = "narbon";
-$db = "narbon";
-
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
 ?>
 
 <!DOCTYPE html>
@@ -81,38 +73,24 @@ include("../pack/panels/sidebar.php");
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "SELECT * FROM class WHERE teacher_code='$tcode'";
+                                $sql = "SELECT * FROM class WHERE tcode='$id'";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                        $code = $row["code"];
-                                        $teacher = $row["teacher"];
-                                        $starttime = $row["start_time"];
-                                        $endtime = $row["end_time"];
-                                        $whatapp = $row["whatsapp_link"];
-                                        $skype = $row["skype_link"];
-                                        $price = $row["tuition_price"];
-                                        $homeworksession = $row["homework_session"];
-                                        $homeworktitle = $row["homework_title"];
-                                        $homeworktext = $row["homework_text"];
-                                        $sex = $row['sex'];
-                                        $level = $row['level'];
-                                        $days = $row['days'];
-                                        
-                                        if ($sex == "male") {
+                                        if ($row["sex"] == "male") {
                                             $iconcolor = "blue";
                                         }
-                                        elseif ($sex == "female") {
+                                        elseif ($row["sex"] == "female") {
                                             $iconcolor = "red";
                                         }
                                         
                                         ?>
                                         <tr class="color-<?php echo $iconcolor; ?>">
-                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $code; ?>"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
-                                            <td><?php echo $starttime; ?></td>
-                                            <td><?php echo $endtime; ?></td>
-                                            <td><?php echo $days; ?></td>
+                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $row["ccode"]; ?>"><i class="fa fa-<?php echo $row["sex"]; ?>"></i> <?php echo $row["level"]; ?></a></th>
+                                            <td><?php echo $row["start"]; ?></td>
+                                            <td><?php echo $row["end"]; ?></td>
+                                            <td><?php echo $row["days"]; ?></td>
                                         </tr>
                                         <?php
                                     }
