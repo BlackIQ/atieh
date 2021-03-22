@@ -58,7 +58,7 @@ if (isset($code) && isset($password) && isset($radio)) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['status'] = true;
-                $_SESSION['code'] = $code;
+                $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "agent";
                 $_SESSION["icode"] = $row["icode"];
