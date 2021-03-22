@@ -139,6 +139,16 @@ elseif ($_SESSION['person'] == "agent") {
     <?php
 }
 elseif ($_SESSION["person"] == "admin") {
+    $icode = $_SESSION['icode'];
+    $sql = "SELECT * FROM institute WHERE icode = $icode";
+    $result = mysqli_query($conn, $sql);
+    
+    while ($row = mysqli_fetch_assoc($result)) {
+        $teachers = $row["teachers"];
+        $students = $row["students"];
+        $agents = $row["agents"];
+        $classes = $row["classes"];
+    }
     ?>
     <div class="row">
         <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
