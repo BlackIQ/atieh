@@ -1,22 +1,7 @@
 <?php
 include("../pack/include/data.php");
 
-$tcode = $_SESSION['code'];
-
-$sql = "SELECT * FROM teacher WHERE code='$tcode'";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $code = $row["code"];
-        $username = $row["username"];
-        $fullname = $row["full_name"];
-        $email = $row["email"];
-        $phone = $row["phone"];
-    }
-}
-
-$sql = "SELECT * FROM report WHERE person = '$code'";
+$sql = "SELECT * FROM report WHERE person = '$id'";
 $result = mysqli_query($conn, $sql);
 ?>
 
