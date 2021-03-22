@@ -1,45 +1,25 @@
 <?php
-include("include/data.php");
+include("../pack/include/data.php");
 
-$ccode = $_GET["code"];
+$icode = $_SESSION['icode'];
 
+$get = $_GET["code"];
 
-// Database Connection
-$server = "localhost";
-$user = "narbon";
-$passwd = "narbon";
-$db = "narbon";
-
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
-$sql = "SELECT * FROM class WHERE code='$ccode'";
+$sql = "SELECT * FROM class WHERE ccode='$get'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        $code = $row["code"];
-        $teacher = $row["teacher"];
-        $starttime = $row["start_time"];
-        $endtime = $row["end_time"];
-        $whatapp = $row["whatsapp_link"];
-        $skype = $row["skype_link"];
-        $price = $row["tuition_price"];
-        $homeworksession = $row["homework_session"];
-        $homeworktitle = $row["homework_title"];
-        $homeworktext = $row["homework_text"];
-        $sex = $row['sex'];
-//        $sex = "female";
-        $level = $row['level'];
-        $days = $row['days'];
-    }
+while ($row = mysqli_fetch_assoc($result)) {
+    $stime = $row['start'];
+    $etime = $row['end'];
+    $level = $row['level'];
+    $days = $row['days'];
+    $sex = $row['sex'];
+    $whatapp = $row['whatsapp'];
+    $skype = $row['skype'];
 }
 
-if ($sex == "male") {
-    $iconcolor = "blue";
-}
-elseif ($sex == "female") {
-    $iconcolor = "red";
+if ($sex == 'male') {
+    $color = "blue";
 }
 
 ?>
@@ -50,7 +30,7 @@ elseif ($sex == "female") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Class <?php echo $code; ?></title>
+    <title>Narbon - Class <?php echo $get; ?></title>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
@@ -66,12 +46,12 @@ elseif ($sex == "female") {
 </head>
 <body>
 <?php
-include("panels/sidebar.php");
+include("../pack/panels/sidebar.php");
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../teacher">
+            <li><a href="../admin">
                     <em class="fa fa-home"></em>
                 </a></li>
             <li class="active">Class</li>
@@ -86,7 +66,7 @@ include("panels/sidebar.php");
 
     <div class="panel panel-container">
         <?php
-        include("panels/bar.php");
+        include("../pack/panels/bar.php");
         ?>
     </div>
     <div class="row">
@@ -99,16 +79,16 @@ include("panels/sidebar.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="color-<?php echo $iconcolor; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
+                    <h1 class="color-<?php echo $color; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
                     <hr>
                     <h4 class="text-primary">Class code</h4>
-                    <p class="text-success"><?php echo $ccode; ?></p>
+                    <p class="text-success"><?php echo $get; ?></p>
                     <br>
                     <h4 class="text-primary">Start Time</h4>
-                    <p class="text-success"><?php echo $starttime; ?></p>
+                    <p class="text-success"><?php echo $stime ?></p>
                     <br>
                     <h4 class="text-primary">End Time</h4>
-                    <p class="text-success"><?php echo $endtime; ?></p>
+                    <p class="text-success"><?php echo $etime; ?></p>
                     <br>
                     <h4 class="text-primary">Days</h4>
                     <p class="text-success"><?php echo $days; ?> Days</p>
@@ -145,22 +125,22 @@ include("panels/sidebar.php");
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "SELECT * FROM student WHERE icode=$stdnt AND class=$ccode";
+                                $sql = "SELECT * FROM student WHERE icode=$icode AND class=$get";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                        $scode = $row["code"];
-                                        $name = $row['full_name'];
+                                        $student = $row["mcode"];
+                                        $name = $row['fname'];
                                         $class = $row['class'];
                                         
                                         ?>
                                         <tr>
-                                            <th><?php echo $scode; ?></th>
+                                            <th><?php echo $student; ?></th>
                                             <td><?php echo $name; ?></td>
                                             <td>
                                                 <?php
-                                                if ($row["payment_status"] == "payed") {
+                                                if ($row["payment"] == "true") {
                                                     echo "<i class='fa fa-check text-success'></i>";
                                                 }
                                                 else {
@@ -182,7 +162,7 @@ include("panels/sidebar.php");
     </div>
 
     <?php
-    include("panels/footer.php");
+    include("../pack/panels/footer.php");
     ?>
 </div>    <!--/.main-->
 
