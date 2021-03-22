@@ -1,9 +1,8 @@
 <?php
 
-include("include/data.php");
+include("../pack/include/data.php");
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +25,7 @@ include("include/data.php");
 </head>
 <body>
 <?php
-include("panels/sidebar.php");
+include("../pack/panels/sidebar.php");
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -46,7 +45,7 @@ include("panels/sidebar.php");
 
     <div class="panel panel-container">
         <?php
-        include("panels/bar.php");
+        include("../pack/panels/bar.php");
         ?>
     </div>
     <div class="row">
@@ -80,154 +79,90 @@ include("panels/sidebar.php");
                     <?php
                     
                     if (isset($_GET['code']) && isset($_GET['person'])) {
-                        $code = $_GET['code'];
-                        $radio = $_GET['person'];
-                        if ($radio == "student") {
-                            
-                            // Database Connection
-                            $server = "localhost";
-                            $user = "narbon";
-                            $passwd = "narbon";
-                            $db = "Atieh";
-
-                            $conn = mysqli_connect($server, $user, $passwd, $db);
-
-                            $sql = "SELECT * FROM student WHERE code='$code'";
+                        $personcode = $_GET['code'];
+                        $personpos = $_GET['person'];
+                        if ($personpos == "student") {
+                            $sql = "SELECT * FROM student WHERE mcode='$personcode'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $scode = $row["code"];
+                                    $cperson = $row["mcode"];
                                     $username = $row["username"];
-                                    $fullname = $row["full_name"];
+                                    $fullname = $row["fname"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-                                    $home = $row["home_phone"];
-                                    $parent = $row["parent_phone"];
+                                    $home = $row["home"];
+                                    $parent = $row["parent"];
                                     $level = $row["level"];
-                                    $payment = $row["payment_status"];
+                                    $payment = $row["payment"];
                                     $sex = $row['sex'];
-                                    $sex = "male";
                                     $class = $row['class'];
                                 }
                             }
                             
                             echo '<hr>';
 
-                            if ($sex == "male") {
-                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
-                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
-                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
-                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
-                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
-                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
-                            }
-                            elseif ($sex == "female") {
-                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
-                                echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
-                                echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
-                                echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
-                                echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
-                                echo '<h3 class="text-warning">Code : ' . $scode .'</h3>';
-                            }
+                            echo '<h2 class="text-success">' . $fullname .'</h2>';
+                            echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                            echo '<h3 class="text-primary">Email : ' . $email .'</h3>';
+                            echo '<h3 class="text-primary">Phone : ' . $phone .'</h3>';
+                            echo '<h3 class="text-info">Home Phone : ' . $home .'</h3>';
+                            echo '<h3 class="text-info">Parent Phone : ' . $parent .'</h3>';
+                            echo '<h3 class="text-danger">Class : ' . $class .'</h3>';
+                            echo '<h3 class="text-danger">Level : ' . $level .'</h3>';
+                            echo '<h3 class="text-warning">Payment : ' . $payment .'</h3>';
+                            echo '<h3 class="text-warning">Code : ' . $cperson .'</h3>';
 
                         }
-                        elseif ($radio == "agent") {
-                            // Database Connection
-                            $server = "localhost";
-                            $user = "narbon";
-                            $passwd = "narbon";
-                            $db = "Atieh";
-
-                            $conn = mysqli_connect($server, $user, $passwd, $db);
-
-                            $sql = "SELECT * FROM agent WHERE agent_code='$code'";
+                        elseif ($personpos == "agent") {
+                            $sql = "SELECT * FROM agent WHERE mcode='$personcode'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $scode = $row["agent_code"];
+                                    $cperson = $row["mcode"];
                                     $username = $row["username"];
-                                    $fullname = $row["full_name"];
+                                    $fullname = $row["fname"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-//                                    $sex = $row['sex'];
-                                    $sex = "male";
                                 }
                             }
 
                             echo '<hr>';
                             
-                            if ($sex == "male") {
-                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
-                            }
-                            elseif ($sex == "female") {
-                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
-                            }
+                            echo '<h2 class="text-success">' . $fullname .'</h2>';
+                            echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                            echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                            echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                            echo '<h3 class="text-danger">Code : ' . $cperson .'</h3>';
+                            
                         }
                         elseif ($radio == "teacher") {
-                            $ccode = $_GET["code"];
-
-                            // Database Connection
-                            $server = "localhost";
-                            $user = "narbon";
-                            $passwd = "narbon";
-                            $db = "Atieh";
-
-                            $conn = mysqli_connect($server, $user, $passwd, $db);
-
-                            $sql = "SELECT * FROM teacher WHERE code='$ccode'";
+                            $sql = "SELECT * FROM teacher WHERE mcode='$personcode'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $scode = $row["code"];
+                                    $cperson = $row["mcode"];
                                     $username = $row["username"];
-                                    $fullname = $row["full_name"];
+                                    $fullname = $row["fname"];
                                     $email = $row["email"];
                                     $phone = $row["phone"];
-//                                    $sex = $row['sex'];
-                                    $sex = "female";
-                                    $class = $row['class'];
                                 }
                             }
 
                             echo '<hr>';
                             
-                            if ($sex == "male") {
-                                echo '<h2 class="text-success"><i class="color-blue fa fa-male"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
-                            }
-                            elseif ($sex == "female") {
-                                echo '<h2 class="text-success"><i class="color-red fa fa-female"></i> ' . $fullname .'</h2>';
-                                echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
-                                echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
-                                echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
-                                echo '<h3 class="text-danger">Code : ' . $scode .'</h3>';
-                            }
-                        }
+                            echo '<h2 class="text-success">' . $fullname .'</h2>';
+                            echo '<h3 class="text-primary">Username : ' . $username .'</h3>';
+                            echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
+                            echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
+                            echo '<h3 class="text-danger">Code : ' . $cperson .'</h3>';
+                            
                     }
                     
                     ?>
@@ -239,7 +174,7 @@ include("panels/sidebar.php");
     </div>
     
     <?php
-    include("panels/footer.php");
+    include("../pack/panels/footer.php");
     ?>
 </div>    <!--/.main-->
 
