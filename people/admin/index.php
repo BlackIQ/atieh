@@ -1,5 +1,8 @@
 <?php
-include("include/data.php");
+include("../pack/include/data.php");
+
+$icode = $_SESSION['icode'];
+
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +29,12 @@ include("include/data.php");
 </head>
 <body>
 <?php
-include("panels/sidebar.php");
+include("../pack/panels/sidebar.php");
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../agent/">
+            <li><a href="../admin">
                 <em class="fa fa-home"></em>
             </a></li>
             <li class="active">Dashboard</li>
@@ -46,7 +49,7 @@ include("panels/sidebar.php");
 
     <div class="panel panel-container">
         <?php
-        include("panels/bar.php");
+        include("../pack/panels/bar.php");
         ?>
     </div>
     <div class="row">
@@ -73,24 +76,18 @@ include("panels/sidebar.php");
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = "SELECT * FROM class WHERE icode='$code'";
+                                $sql = "SELECT * FROM class WHERE icode='$icode'";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                        $code = $row["code"];
-                                        $teacher = $row["teacher"];
-                                        $starttime = $row["start_time"];
-                                        $endtime = $row["end_time"];
-                                        $whatapp = $row["whatsapp_link"];
-                                        $skype = $row["skype_link"];
-                                        $price = $row["tuition_price"];
-                                        $homeworksession = $row["homework_session"];
-                                        $homeworktitle = $row["homework_title"];
-                                        $homeworktext = $row["homework_text"];
-                                        $sex = $row['sex'];
-                                        $level = $row['level'];
+                                        $cclass = $row["ccode"];
+                                        $tcode = $row["tcode"];
+                                        $stime = $row["start"];
+                                        $etime = $row["end"];
+                                        $level = $row["level"];
                                         $days = $row['days'];
+                                        $sex = $row['sex'];
                                         
                                         if ($sex == "male") {
                                             $iconcolor = "blue";
@@ -101,9 +98,9 @@ include("panels/sidebar.php");
                                         
                                         ?>
                                         <tr class="color-<?php echo $iconcolor; ?>">
-                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $code; ?>"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
-                                            <td><?php echo $starttime; ?></td>
-                                            <td><?php echo $endtime; ?></td>
+                                            <th><a class="color-<?php echo $iconcolor; ?>" href="class.php?code=<?php echo $cclass; ?>"><i class="fa fa-<?php echo $sex; ?>"></i> <?php echo $level; ?></a></th>
+                                            <td><?php echo $stime; ?></td>
+                                            <td><?php echo $etime; ?></td>
                                             <td><?php echo $days; ?></td>
                                         </tr>
                                         <?php
@@ -119,7 +116,7 @@ include("panels/sidebar.php");
     </div><!--/.row-->
 
     <?php
-    include("panels/footer.php");
+    include("../pack/panels/footer.php");
     ?>
 </div>    <!--/.main-->
 
