@@ -71,7 +71,7 @@ if (isset($code) && isset($password) && isset($radio)) {
         }
     }
     elseif ($radio == "admin") {
-        $sql = "SELECT * FROM institute WHERE mcode='$code' AND password='$password'";
+        $sql = "SELECT * FROM admin WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
