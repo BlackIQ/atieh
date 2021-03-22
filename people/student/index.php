@@ -62,7 +62,7 @@ include("../pack/panels/sidebar.php");
                     <h1 class="text-warning">Class Information</h1>
                     <hr>
                     <h4 class="text-primary">Teacher's name</h4>
-                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $teacher; ?></b></p>
+                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $fteacher; ?></b></p>
                     <br>
                     <h4 class="text-primary"><i class="fa fa-link"></i> Class links</h4>
                     <p class="text-danger"><b>
