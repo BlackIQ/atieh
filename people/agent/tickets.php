@@ -1,9 +1,7 @@
 <?php
 include("../pack/include/data.php");
 
-$person = $_SESSION["code"];
-
-$sql = "SELECT * FROM report WHERE person = '$person'";
+$sql = "SELECT * FROM report WHERE person = '$id'";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -33,7 +31,7 @@ include("../pack/panels/sidebar.php");
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../student">
+            <li><a href="../agent">
                     <em class="fa fa-home"></em>
                 </a></li>
             <li class="active">Profile</li>
@@ -64,41 +62,34 @@ include("../pack/panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-info">Tickets that you sent</h1>
                     <hr>
-                    <?php
-                    if (mysqli_num_rows($result) > 0) {
-                        ?>
-                        <table class="table table-hover table-responsive table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Code</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            ?>
-                                <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
-                                    <th scope="row"><?php echo $row['code']; ?></th>
-                                    <td><?php echo $row['title']; ?></td>
-                                    <td><?php echo $row["dt"]; ?></td>
-                                    <td>Read</td>
-                                </tr>
+                    <table class="table table-hover table-responsive table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
                             <?php
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
+                                            <th scope="row"><?php echo $row['code']; ?></th>
+                                            <td><?php echo $row['title']; ?></td>
+                                            <td><?php echo $row["dt"]; ?></td>
+                                            <td>Read</td>
+                                        </tr>
+                                    <?php
                                 }
-                                ?>
-                            </tbody>
-                        </table>
-                                <?php
                             }
-                            else {
-                                ?>
-                                <h2>No ticket found</h2>   
-                                <?php
-                            }
-                        ?>
+
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
