@@ -4,8 +4,10 @@
         <p class="back-link">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
         <p class="back-link">Powered By <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
         <p class="back-link">
-            <i class="fa fa-telegram text-primary"></i>
-            <i class="fa fa-instagram text-danger"></i>
+            <i class="fa fa-lg fa-linkedin-square text-info"></i>
+            <i class="fa fa-lg fa-github"></i>
+            <i class="fa fa-lg fa-telegram text-primary"></i>
+            <i class="fa fa-lg fa-instagram text-danger"></i>
         </p>
     </div>
 </div>
