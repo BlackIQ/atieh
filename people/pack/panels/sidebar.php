@@ -117,6 +117,9 @@ elseif ($_SESSION["person"] == "teacher") {
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                     <?php
+                    $sql = "SELECT * FROM class WHERE tcode='$id'";
+                    $result = mysqli_query($conn, $sql);
+                    
                     if (mysqli_num_rows($result) > 0) {
                         // output data of each row
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -131,7 +134,7 @@ elseif ($_SESSION["person"] == "teacher") {
                             }
                             ?>
                             <li>
-                                <a class="" href="class.php?code=<?php echo $row["code"]; ?>">
+                                <a class="" href="class.php?code=<?php echo $row["ccode"]; ?>">
                                     <span class="fa fa-<?php echo $icon; ?>">&nbsp;</span> <?php echo $row["level"]; ?>
                                 </a>
                             </li>
