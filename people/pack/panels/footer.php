@@ -8,4 +8,4 @@
             <i class="fa fa-instagram text-danger"></i>
         </p>
     </div>
-</div><!--/.row-->
+</div>
