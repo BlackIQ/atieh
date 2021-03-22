@@ -3,42 +3,21 @@ include("../pack/include/data.php");
 
 $code = $_GET["code"];
 
-// Database Connection
-$server = "localhost";
-$user = "narbon";
-$passwd = "narbon";
-$db = "narbon";
-
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
-$sql = "SELECT * FROM class WHERE code='$code'";
+$sql = "SELECT * FROM class WHERE ccode='$code'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        $code = $row["code"];
-        $teacher = $row["teacher"];
-        $starttime = $row["start_time"];
-        $endtime = $row["end_time"];
-        $whatapp = $row["whatsapp_link"];
-        $skype = $row["skype_link"];
-        $price = $row["tuition_price"];
-        $homeworksession = $row["homework_session"];
-        $homeworktitle = $row["homework_title"];
-        $homeworktext = $row["homework_text"];
-        $sex = $row['sex'];
-//        $sex = "female";
-        $level = $row['level'];
-        $days = $row['days'];
-    }
+while ($row = mysqli_fetch_assoc($result)) {
+    $stime = $row['start'];
+    $etime = $row['end'];
+    $level = $row['level'];
+    $days = $row['days'];
+    $sex = $row['sex'];
+    $whatapp = $row['whatsapp'];
+    $skype = $row['skype'];
 }
 
-if ($sex == "male") {
-    $iconcolor = "blue";
-}
-elseif ($sex == "female") {
-    $iconcolor = "red";
+if ($sex == 'male') {
+    $color = "blue";
 }
 
 ?>
@@ -98,16 +77,16 @@ include("../pack/panels/sidebar.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="color-<?php echo $iconcolor; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
+                    <h1 class="color-<?php echo $color; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
                     <hr>
                     <h4 class="text-primary">Class code</h4>
                     <p class="text-success"><?php echo $code; ?></p>
                     <br>
                     <h4 class="text-primary">Start Time</h4>
-                    <p class="text-success"><?php echo $starttime; ?></p>
+                    <p class="text-success"><?php echo $stime ?></p>
                     <br>
                     <h4 class="text-primary">End Time</h4>
-                    <p class="text-success"><?php echo $endtime; ?></p>
+                    <p class="text-success"><?php echo $etime; ?></p>
                     <br>
                     <h4 class="text-primary">Days</h4>
                     <p class="text-success"><?php echo $days; ?> Days</p>
@@ -160,8 +139,8 @@ include("../pack/panels/sidebar.php");
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $code = $row["code"];
-                                    $fullname = $row["full_name"];
+                                    $code = $row["mcode"];
+                                    $fullname = $row["fname"];
                                     ?>
                                     <tr>
                                         <th scope="row"><?php echo $fullname; ?></th>
