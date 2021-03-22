@@ -162,7 +162,7 @@ include("../pack/panels/sidebar.php");
                             echo '<h3 class="text-warning">Email : ' . $email .'</h3>';
                             echo '<h3 class="text-warning">Phone : ' . $phone .'</h3>';
                             echo '<h3 class="text-danger">Code : ' . $cperson .'</h3>';
-                            
+                        }
                     }
                     
                     ?>
