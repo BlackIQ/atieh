@@ -59,7 +59,8 @@ if ($_SESSION['status'] == true) {
 
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $teacher = $row["fname"];
+                $teacher = $row["username"];
+                $fteacher = $row['fname'];
             }
         }
 
@@ -69,7 +70,6 @@ if ($_SESSION['status'] == true) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $class = $row["ccode"];
-                $teacher = $row["tcode"];
                 $homeworksession = $row["session"];
                 $homeworktitle = $row["title"];
                 $homeworktext = $row["txt"];
