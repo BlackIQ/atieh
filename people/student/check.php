@@ -16,8 +16,14 @@ while ($row = mysqli_fetch_assoc($res)) {
     $ip = $row['ip'];
 }
 
+$username = $_SESSION['username'];
+
 if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
-    
+    ?>
+    <script>
+        window.alert("<?php echo $username; ?> , Welcome To Teacher Panel !");
+    </script>
+    <?php
 }
 elseif ($_SESSION['person'] == "teacher") {
     header("Location: http://$ip/Narbon/people/teacher");
