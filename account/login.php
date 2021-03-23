@@ -23,6 +23,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "student";
+                $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/student");
             }
@@ -42,6 +43,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "teacher";
+                $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/teacher");
             }
@@ -61,6 +63,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "agent";
+                $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/agent");
             }
@@ -80,6 +83,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
                 $_SESSION["person"] = "admin";
+                $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/admin");
             }
