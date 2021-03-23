@@ -16,17 +16,23 @@ while ($row = mysqli_fetch_assoc($res)) {
     $ip = $row['ip'];
 }
 
+$username = $_SESSION['username'];
+
 if ($_SESSION['status'] == true && $_SESSION['person'] == "admin" ) {
-    
+    ?>
+    <script>
+        window.alert("<?php echo $username; ?> , Welcome To Teacher Panel !");
+    </script>
+    <?php
 }
 elseif ($_SESSION['person'] == "teacher") {
-    header("Location: http://$ip/Narbon/people/teacher");
+    header("Location: http://$ip/Narbon/people/student");
 }
 elseif ($_SESSION['person'] == "agent") {
     header("Location: http://$ip/Narbon/people/agent");
 }
 elseif ($_SESSION['person'] == "admin") {
-    header("Location: http://$ip/Narbon/people/student");
+    header("Location: http://$ip/Narbon/people/teacher");
 }
 else {
     header("Location: http://$ip/Narbon");
