@@ -1,4 +1,5 @@
 <?php
+include("check.php");
 include("../pack/include/data.php");
 
 $sql = "SELECT * FROM post ORDER BY id DESC";
