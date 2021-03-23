@@ -80,17 +80,20 @@ include("../pack/panels/sidebar.php");
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
-                                            <th scope="row"><?php echo $row["title"]; ?></th>
+                                            <th><?php echo $row["title"]; ?></th>
                                             <td><?php echo $row["dt"]; ?></td>
                                             <td><?php echo $row["who"]; ?></td>
                                             <td>
                                                 <a href="#"><i class="text-success fa fa-edit"></i></a>
                                                 <bold class="text-primary">|</bold>
-                                                <a href="include/del.php?code=<?php echo $row['code']; ?>"><i class="text-danger fa fa-trash"></i></a>
+                                                <a href="delete.php?code=<?php echo $row['code']; ?>"><i class="text-danger fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php
                                     }
+                                }
+                                else {
+                                    echo "<h3>No post !</h3>";
                                 }
                                 ?>
                             </tbody>
