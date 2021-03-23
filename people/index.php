@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "narbon";
 $passwd = "narbon";
-$db = "narbon";
+$db = "narbonn";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
@@ -25,6 +25,9 @@ if ($_SESSION['status'] == true) {
     }
     if ($_SESSION['person'] == "agent") {
         header("Location: http://$ip/Narbon/people/agent");
+    }
+    if ($_SESSION['person'] == "admin") {
+        header("Location: http://$ip/Narbon/people/admin");
     }
 }
 else {
