@@ -11,9 +11,6 @@ include("../pack/include/data.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Narbon - Dashboard</title>
-    <script>
-        window.alert("<?php echo $username; ?> , Welcome To Student Panel !");
-    </script>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
