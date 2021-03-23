@@ -79,7 +79,7 @@ include("../pack/panels/sidebar.php");
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
-                                        <tr>
+                                        <tr title="<?php echo $row["txt"]; ?>" data-toggle="tooltip" data-placement="right">
                                             <th scope="row"><?php echo $row["title"]; ?></th>
                                             <td><?php echo $row["dt"]; ?></td>
                                             <td><?php echo $row["who"]; ?></td>
