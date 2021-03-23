@@ -193,13 +193,13 @@ elseif ($_SESSION["person"] == "agent") {
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                     <li>
-                        <a class="" href="new.php">
+                        <a class="" href="post.php">
                             <span class="fa fa-sticky-note">&nbsp;</span> New Post
                         </a>
                     </li>
                     <li>
                         <a class="" href="posts.php">
-                            <span class="fa fa-tasks">&nbsp;</span> Posts
+                            <span class="fa fa-book">&nbsp;</span> Posts
                         </a>
                     </li>
                     <li>
