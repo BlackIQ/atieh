@@ -1,6 +1,4 @@
-<?php
-
-include("data.php");
+<?php include("data.php");
 
 if ($_SESSION['status'] == true) {
     $person = $_SESSION['person'];
@@ -53,7 +51,7 @@ if ($_SESSION['status'] == true) {
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="User Password">
                   </div>
-                  <div class="radio-inline">
+                    <div class="radio-inline">
                       <label>
                           <input type="radio" name="person" value="student"> Student
                       </label>
