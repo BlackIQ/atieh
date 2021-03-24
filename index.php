@@ -363,7 +363,7 @@ $result = mysqli_query($conn, $sql);
             $reporttitle = $_POST["title"];
             $reporttext = $_POST["description"];
             $reportdate = date("M , d , Y");
-            $reportperson = $_SESSION["code"];
+            $reportperson = $_SESSION["id"];
             $reportposition = $_SESSION["person"];
             $reporticode = $_SESSION["icode"];
             
