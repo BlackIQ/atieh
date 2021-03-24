@@ -4,7 +4,7 @@ include('check.php');
 
 include("../pack/include/data.php");
 
-$sql = "SELECT * FROM report WHERE person = '$id'";
+$sql = "SELECT * FROM report WHERE person = '$id' ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -84,7 +84,7 @@ include("../pack/panels/sidebar.php");
                                             <th scope="row"><?php echo $row['code']; ?></th>
                                             <td><?php echo $row['title']; ?></td>
                                             <td><?php echo $row["dt"]; ?></td>
-                                            <td>Read</td>
+                                            <td class="text-danger">No Answer Yet</td>
                                         </tr>
                                     <?php
                                 }
