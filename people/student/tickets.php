@@ -84,7 +84,17 @@ include("../pack/panels/sidebar.php");
                                             <th scope="row"><?php echo $row['code']; ?></th>
                                             <td><?php echo $row['title']; ?></td>
                                             <td><?php echo $row["dt"]; ?></td>
-                                            <td class="text-danger">No Answer Yet</td>
+                                            <td class="text-danger">
+                                                <?php
+                                                    if ($row['answer'] == 'no') {
+                                                        echo '<span class="text-danger">No Answer</span>';
+                                                    }
+                                                    else {
+                                                        $answer = $row['answer'];
+                                                        echo '<span class="text-success">'.$answer.'</span>';
+                                                    }
+                                                ?>
+                                            </td>
                                         </tr>
                                     <?php
                                 }
