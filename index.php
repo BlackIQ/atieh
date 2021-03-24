@@ -385,7 +385,7 @@ $result = mysqli_query($conn, $sql);
                     }
                 }
                 else {
-                    $sql = "INSERT INTO report (code , title , txt , dt , person , pos , icode) VALUES ('$reportcode' , '$reporttitle' , '$reporttext' , '$reportdate' , '$reportperson' , '$reportposition' , '$reporticode')";
+                    $sql = "INSERT INTO report (code , title , txt , answer , dt , person , pos , icode) VALUES ('$reportcode' , '$reporttitle' , '$reporttext' , 'no' , '$reportdate' , '$reportperson' , '$reportposition' , '$reporticode')";
                 
                     if (mysqli_query($conn, $sql)) {
                         ?>
@@ -397,7 +397,7 @@ $result = mysqli_query($conn, $sql);
                     else {
                         ?>
                             <script>
-                                window.alert("Didnt Reported. Try Again!\nDont refresh the page.");
+                                window.alert("Didnt Reported. Try Again!\n<?php echo mysqli_error($conn); ?>");
                             </script>
                         <?php
                     }
