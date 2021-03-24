@@ -1,8 +1,10 @@
 <?php
-include("check.php");
+
+include('check.php');
+
 include("../pack/include/data.php");
 
-$sql = "SELECT * FROM report WHERE person = '$id'";
+$sql = "SELECT * FROM report WHERE person = '$id' ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -11,7 +13,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Profile</title>
+    <title>Narbon - Tickets</title>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
@@ -32,16 +34,16 @@ include("../pack/panels/sidebar.php");
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../agent">
+            <li><a href="../student">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Profile</li>
+            <li class="active">Tickets</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Profile</h1>
+            <h1 class="page-header">Tickets</h1>
         </div>
     </div><!--/.row-->
 
@@ -82,7 +84,7 @@ include("../pack/panels/sidebar.php");
                                             <th scope="row"><?php echo $row['code']; ?></th>
                                             <td><?php echo $row['title']; ?></td>
                                             <td><?php echo $row["dt"]; ?></td>
-                                            <td>Read</td>
+                                            <td class="text-danger">No Answer Yet</td>
                                         </tr>
                                     <?php
                                 }
