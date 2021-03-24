@@ -21,7 +21,7 @@ $username = $_SESSION['username'];
 if ($_SESSION['status'] == true && $_SESSION['person'] == "student" ) {
     ?>
     <script>
-        window.alert("<?php echo $username; ?> , Welcome To Teacher Panel !");
+        window.alert("<?php echo $username; ?> , Welcome To Student Panel !");
     </script>
     <?php
 }
