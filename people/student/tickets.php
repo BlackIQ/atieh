@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Profile</title>
+    <title>Narbon - Tickets</title>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../pack/css/datepicker3.css" rel="stylesheet">
@@ -37,13 +37,13 @@ include("../pack/panels/sidebar.php");
             <li><a href="../student">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Profile</li>
+            <li class="active">Tickets</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Profile</h1>
+            <h1 class="page-header">Tickets</h1>
         </div>
     </div><!--/.row-->
 
