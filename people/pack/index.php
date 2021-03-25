@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "narbon";
 $passwd = "narbon";
-$db = "narbon";
+$db = "narbonn";
 
 $conn = mysqli_connect($server, $user, $passwd, $db);
 
@@ -16,16 +16,10 @@ while ($row = mysqli_fetch_assoc($res)) {
 
 session_start();
 
+$person = $_SESSION['person'];
+
 if ($_SESSION['status'] == true) {
-    if ($_SESSION['person'] == "student") {
-        header("Location: http://$ip/Narbon/people/student");
-    }
-    if ($_SESSION['person'] == "teacher") {
-        header("Location: http://$ip/Narbon/people/teacher");
-    }
-    if ($_SESSION['person'] == "agent") {
-        header("Location: http://$ip/Narbon/people/agent");
-    }
+    header("Location: http://$ip/Narbon/people/$person");
 }
 else {
     header("Location: http://$ip/Narbon");
