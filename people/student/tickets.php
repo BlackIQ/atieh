@@ -65,44 +65,9 @@ include("../pack/panels/sidebar.php");
                 <div class="panel-body">
                     <h1 class="text-info">Tickets that you sent</h1>
                     <hr>
-                    <table class="table table-hover table-responsive table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Code</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                        <tr title="<?php echo $row["answer"]; ?>" data-toggle="tooltip" data-placement="right">
-                                            <th scope="row"><?php echo $row['code']; ?></th>
-                                            <td><?php echo $row['title']; ?></td>
-                                            <td><?php echo $row["dt"]; ?></td>
-                                            <td class="text-danger">
-                                                <?php
-                                                    if ($row['answer'] == 'no') {
-                                                        echo '<span class="text-danger">No Answer</span>';
-                                                    }
-                                                    else {
-                                                        $answer = $row['answer'];
-                                                        echo '<span class="text-success">'.$answer.'</span>';
-                                                    }
-                                                ?>
-                                            </td>
-                                        </tr>
-                                    <?php
-                                }
-                            }
-
-                            ?>
-                        </tbody>
-                    </table>
+                    <?php
+                    include('../pack/panels/tickets.php');
+                    ?>
                 </div>
             </div>
         </div>
