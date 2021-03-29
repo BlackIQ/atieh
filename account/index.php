@@ -51,19 +51,14 @@ if ($_SESSION['status'] == true) {
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="User Password">
                   </div>
-                    <div class="radio-inline">
-                      <label>
-                          <input type="radio" name="person" value="student"> Student
-                      </label>
-                      <label>
-                          <input type="radio" name="person" value="teacher"> Teacher
-                      </label>
-                      <label>
-                          <input type="radio" name="person" value="agent"> Agent
-                      </label>
-                      <label>
-                          <input type="radio" name="person" value="admin"> Admin
-                      </label>
+                    <div class="form-group">
+                        <select class="form-control" name="person">
+                            <option value="1">Student</option>
+                            <option value="2">Teacher</option>
+                            <option value="3">Agent</option>
+                            <option value="4">Admin</option>
+                            <option value="5">Parent</option>
+                        </select>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" name="remember" type="checkbox" id="remember">
