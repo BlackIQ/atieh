@@ -102,7 +102,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION['status'] = true;
                 $_SESSION['id'] = $code;
                 $_SESSION["error"] = "200";
-                $_SESSION["person"] = "admin";
+                $_SESSION["person"] = "parent";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/parent");
