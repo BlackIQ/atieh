@@ -13,7 +13,7 @@ $radio = $_POST["person"];
 $check = $_POST["remember"];
 
 if (isset($code) && isset($password) && isset($radio)) {
-    if ($radio == "student") {
+    if ($radio == "1") {
         $sql = "SELECT * FROM student WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
@@ -33,7 +33,7 @@ if (isset($code) && isset($password) && isset($radio)) {
             header("Location: http://$ip/Narbon/account");
         }
     }
-    elseif ($radio == "teacher") {
+    elseif ($radio == "2") {
         $sql = "SELECT * FROM teacher WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
@@ -53,7 +53,7 @@ if (isset($code) && isset($password) && isset($radio)) {
             header("Location: http://$ip/Narbon/account");
         }
     }
-    elseif ($radio == "agent") {
+    elseif ($radio == "3") {
         $sql = "SELECT * FROM agent WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
@@ -73,7 +73,7 @@ if (isset($code) && isset($password) && isset($radio)) {
             header("Location: http://$ip/Narbon/account");
         }
     }
-    elseif ($radio == "admin") {
+    elseif ($radio == "4") {
         $sql = "SELECT * FROM admin WHERE mcode='$code' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
@@ -86,6 +86,26 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 header("Location: http://$ip/Narbon/people/admin");
+            }
+        }
+        else {
+            $_SESSION["error"] = "404";
+            header("Location: http://$ip/Narbon/account");
+        }
+    }
+    elseif ($radio == "5") {
+        $sql = "SELECT * FROM parent WHERE mcode='$code' AND password='$password'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $_SESSION['status'] = true;
+                $_SESSION['id'] = $code;
+                $_SESSION["error"] = "200";
+                $_SESSION["person"] = "admin";
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["icode"] = $row["icode"];
+                header("Location: http://$ip/Narbon/people/parent");
             }
         }
         else {
