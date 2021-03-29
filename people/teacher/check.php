@@ -34,6 +34,9 @@ elseif ($_SESSION['person'] == "agent") {
 elseif ($_SESSION['person'] == "admin") {
     header("Location: http://$ip/Narbon/people/admin");
 }
+elseif ($_SESSION['person'] == "parent") {
+    header("Location: http://$ip/Narbon/people/parent");
+}
 else {
     header("Location: http://$ip/Narbon");
 }
