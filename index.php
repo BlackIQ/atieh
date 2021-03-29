@@ -114,6 +114,16 @@ $result = mysqli_query($conn, $sql);
                         </li>
                         <?php
                     }
+                    elseif ($_SESSION["person"] == "parent") {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/parent/"><i class="fa fa-dashboard"></i> Parent Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
+                        </li>
+                        <?php
+                    }
                 }
                 else {
                     ?>
