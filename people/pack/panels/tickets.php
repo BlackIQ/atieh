@@ -43,4 +43,7 @@ if (mysqli_num_rows($result) > 0) {
     </table>
 <?php
 }
+else {
+    echo "<h1>You have no tickets yet.</h1>";
+}
 ?>
