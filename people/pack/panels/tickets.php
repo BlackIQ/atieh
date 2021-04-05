@@ -1,3 +1,12 @@
+<?php
+
+include("../include/data.php");
+
+$sql = "SELECT * FROM report WHERE person = '$id' ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
+
+?>
+
 <table class="table table-hover table-responsive table-bordered">
     <thead>
         <tr>

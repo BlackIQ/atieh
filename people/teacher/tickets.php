@@ -3,9 +3,6 @@
 include('check.php');
 
 include("../pack/include/data.php");
-
-$sql = "SELECT * FROM report WHERE person = '$id' ORDER BY id DESC";
-$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
