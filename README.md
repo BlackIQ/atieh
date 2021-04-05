@@ -1,3 +1,8 @@
+<p>
+<img src="https://img.shields.io/github/license/BlackIQ/Narbon?style=flat-square" alt="License"/>
+<img src="https://img.shields.io/github/languages/code-size/BlackIQ/Narbon?style=flat-square" alt="Code Size"/>
+</p>
+
 # Narbon
 
 Narbon Project
