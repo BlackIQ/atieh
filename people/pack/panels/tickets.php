@@ -32,6 +32,9 @@
                 <?php
             }
         }
+        else {
+            echo "<h1>You have no tickets yet.</h1>";
+        }
 
         ?>
     </tbody>
