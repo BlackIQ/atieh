@@ -37,7 +37,7 @@ $result = mysqli_query($conn, $sql);
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   
-  <link href="http://<?php echo $ip; ?>/Narbon/people/pack/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://<?php echo $ip; ?>/people/pack/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->  
   <style>
