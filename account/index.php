@@ -1,4 +1,6 @@
-<?php include("data.php");
+<?php
+
+include("data.php");
 
 if ($_SESSION['status'] == true) {
     $person = $_SESSION['person'];
