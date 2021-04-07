@@ -9,10 +9,11 @@ $description = $_POST['description'];
 $date = date("M , d , Y");
 $who = $username;
 $code = rand(1000 , 9999);
+$icode = $_SESSION['icode'];
 
 if (!empty($title)) {
     if (!empty($description)) {
-        $sql = "INSERT INTO post (code , title , txt , dt , who) VALUES ('$code' , '$title' , '$description' , '$date' , '$who')";
+        $sql = "INSERT INTO post (icode, code , title , txt , dt , who) VALUES ($icode ,'$code' , '$title' , '$description' , '$date' , '$who')";
 
         mysqli_query($conn, $sql);
         $_SESSION['post'] = 200;
