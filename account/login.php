@@ -25,7 +25,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["person"] = "student";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
-                $_SESSION["directory"] = "NarbonSupport";
+                $_SESSION["directory"] = "Narbon";
                 header("Location: http://$ip/Narbon/people/student");
             }
         }
@@ -46,7 +46,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["person"] = "teacher";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
-                $_SESSION["directory"] = "NarbonSupport";
+                $_SESSION["directory"] = "Narbon";
                 header("Location: http://$ip/Narbon/people/teacher");
             }
         }
@@ -67,7 +67,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["person"] = "agent";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
-                $_SESSION["directory"] = "NarbonSupport";
+                $_SESSION["directory"] = "Narbon";
                 header("Location: http://$ip/Narbon/people/agent");
             }
         }
@@ -88,7 +88,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["person"] = "admin";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
-                $_SESSION["directory"] = "NarbonSupport";
+                $_SESSION["directory"] = "Narbon";
                 header("Location: http://$ip/Narbon/people/admin");
             }
         }
@@ -109,7 +109,7 @@ if (isset($code) && isset($password) && isset($radio)) {
                 $_SESSION["person"] = "parent";
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
-                $_SESSION["directory"] = "NarbonSupport";
+                $_SESSION["directory"] = "Narbon";
                 header("Location: http://$ip/Narbon/people/parent");
             }
         }
