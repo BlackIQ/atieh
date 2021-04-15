@@ -358,16 +358,6 @@ elseif ($_SESSION['person'] == "parent") {
                         </a>
                     </li>
                     <li>
-                        <a class="" href="class.php">
-                            <span class="fa fa-home">&nbsp;</span> Class
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="payment.php">
-                            <span class="fa fa-money">&nbsp;</span> Payment
-                        </a>
-                    </li>
-                    <li>
                         <a class="" href="setting.php">
                             <span class="fa fa-cogs">&nbsp;</span> Setting
                         </a>
