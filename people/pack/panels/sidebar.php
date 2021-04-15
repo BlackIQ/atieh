@@ -116,6 +116,11 @@ elseif ($_SESSION["person"] == "teacher") {
                             class="fa fa-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="setting.php">
+                            <span class="fa fa-cogs">&nbsp;</span> Setting
+                        </a>
+                    </li>
                     <?php
                     $sql = "SELECT * FROM class WHERE tcode='$id'";
                     $result = mysqli_query($conn, $sql);
@@ -207,6 +212,11 @@ elseif ($_SESSION["person"] == "agent") {
                             <span class="fa fa-user">&nbsp;</span> Profile
                         </a>
                     </li>
+                    <li>
+                        <a class="" href="setting.php">
+                            <span class="fa fa-cogs">&nbsp;</span> Setting
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -264,6 +274,11 @@ elseif ($_SESSION["person"] == "admin") {
                             class="fa fa-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="setting.php">
+                            <span class="fa fa-cogs">&nbsp;</span> Setting
+                        </a>
+                    </li>
                     <?php
                     if (mysqli_num_rows($result) > 0) {
                         // output data of each row
