@@ -19,7 +19,7 @@ if ($_SESSION['status'] == true) {
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="http://office.narbon.ir:4488/assets/css/login.css">
 </head>
 <body>
   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -27,12 +27,12 @@ if ($_SESSION['status'] == true) {
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-              <img src="assets/images/login.jpg" alt="login" class="login-card-img">
+              <img src="http://office.narbon.ir:4488/assets/images/login.jpg" alt="login" class="login-card-img">
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <a href="http://<?php echo $ip; ?>/Narbon"><img src="assets/images/logo.svg" alt="logo" class="logo"></a>
+                <a href="../"><img src="http://office.narbon.ir:4488/assets/images/logo.svg" alt="logo" class="logo"></a>
               </div>
               <p class="login-card-description">Sign into your account</p>
                 <?php
