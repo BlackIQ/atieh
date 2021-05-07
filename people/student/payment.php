@@ -59,14 +59,14 @@ include("../pack/panels/sidebar.php");
 
 </div>    <!--/.main-->
 
-<script src="../pack/js/jquery-1.11.1.min.js"></script>
-<script src="../pack/js/bootstrap.min.js"></script>
-<script src="../pack/js/chart.min.js"></script>
-<script src="../pack/js/chart-data.js"></script>
-<script src="../pack/js/easypiechart.js"></script>
-<script src="../pack/js/easypiechart-data.js"></script>
-<script src="../pack/js/bootstrap-datepicker.js"></script>
-<script src="../pack/js/custom.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/jquery-1.11.1.min.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/bootstrap.min.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/chart.min.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/chart-data.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/easypiechart.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/easypiechart-data.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/bootstrap-datepicker.js"></script>
+<script src="http://office.narbon.ir:4488/pack/js/custom.js"></script>
 <script>
     window.onload = function () {
         var chart1 = document.getElementById("line-chart").getContext("2d");
