@@ -312,7 +312,7 @@ $result = mysqli_query($conn, $sql);
                     <p class="text-white">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a>
                     </p>
                     <p class="text-white">Powered By <a
-                                href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i
+                                href="https://narbon.ir">Narbon</a> <i
                                 class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
                     <p>
                         <i class="fa fa-telegram text-primary"></i>
@@ -320,37 +320,7 @@ $result = mysqli_query($conn, $sql);
                     </p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="m-0 text-left text-white">
-                    <p class="text-white"><b><a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></b></p>
-                    <p class="text-white">Young programmer</p>
-                    <p class="text-white">CEO and Founder of <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a>
-                    </p>
-                    <p>
-                        <i class="fa fa-github text-muted"></i>
-                        <i class="fa fa-telegram text-primary"></i>
-                        <i class="fa fa-instagram text-danger"></i>
-                        <i class="fa fa-twitter text-primary"></i>
-                        <i class="fa fa-facebook text-info"></i>
-                        <i class="fa fa-medium text-info"></i>
-                        <i class="fa fa-linkedin text-info"></i>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="m-0 text-left text-white">
-                    <p class="text-white"><b><a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a></b>
-                    </p>
-                    <p class="text-white">Neotrinost is a development company <b>( Team )</b></p>
-                    <p>
-                        <i class="fa fa-linkedin text-info"></i>
-                        <i class="fa fa-github text-muted"></i>
-                        <i class="fa fa-telegram text-primary"></i>
-                        <i class="fa fa-instagram text-danger"></i>
-                        <i class="fa fa-twitter text-primary"></i>
-                    </p>
-                </div>
-            </div>
+            
         </div>
     </div>
     <!-- /.container -->
