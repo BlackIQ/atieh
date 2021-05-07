@@ -22,11 +22,8 @@ if ($_SESSION['status'] == true) {
     if ($directory == "Narbon") {
 
     }
-    elseif ($directory == "NarbonSupport") {
-        header("Location: http://$ip/NarbonSupport");
-    }
     else {
-        header("Location: http://$ip/Narbon");
+        header("Location: http://$ip/$directory");
     }
 }
 
