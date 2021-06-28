@@ -31,6 +31,10 @@ $result = mysqli_query($connection, $sql);
             font-family: 'Nunito', sans-serif;
             padding-top: 56px;
         }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +159,7 @@ $result = mysqli_query($connection, $sql);
                     </p>
                     <p>
                         <i class="fa fa-telegram text-primary"></i>
+                        &nbsp;
                         <i class="fa fa-instagram text-danger"></i>
                     </p>
                 </div>
