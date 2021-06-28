@@ -2,33 +2,12 @@
 
 session_start();
 
-$server = "localhost";
-$user = "narbon";
-$passwd = "narbon";
-$db = "narbonn";
+include('pack/config.php');
 
-$conn = mysqli_connect($server, $user, $passwd, $db);
-
-$getip = "SELECT * FROM development";
-$res = mysqli_query($conn, $getip);
-
-while ($row = mysqli_fetch_assoc($res)) {
-    $ip = $row['ip'];
-}
-
-if ($_SESSION['status'] == true) {
-    $directory = $_SESSION["directory"];
-
-    if ($directory == "Narbon") {
-
-    }
-    else {
-        header("Location: http://$ip/$directory");
-    }
-}
+$connection = mysqli_connect($msi, $msu, $msp, $msd);
 
 $sql = "SELECT * FROM post ORDER BY id DESC;";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($connection, $sql);
 
 ?>
 
@@ -42,15 +21,13 @@ $result = mysqli_query($conn, $sql);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Narbon - Index</title>
+    <title>Atieh - Index</title>
 
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <link href="http://office.narbon.ir:4488/pack/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
         body {
             padding-top: 56px;
@@ -64,7 +41,7 @@ $result = mysqli_query($conn, $sql);
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="."><span>Narbon </span>Project</a>
+        <a class="navbar-brand" href="."><span>Atieh </span>Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -81,64 +58,52 @@ $result = mysqli_query($conn, $sql);
 
                 <?php
                 if ($_SESSION['status'] == true) {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#report"><i class="fa fa-bug"></i> Report a
-                            Bug</a>
-                    </li>
-                    <?php
                     if ($_SESSION["person"] == "teacher") {
                         ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="people/teacher/"><i class="fa fa-dashboard"></i> Teacher Panel</a>
+                            <a class="nav-link" href="people/teacher"><i class="fa fa-dashboard"></i> Teacher Panel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i
+                            <a class="nav-link" href="account/logout.php"><i
                                         class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
-                    } elseif ($_SESSION["person"] == "student") {
+                    }
+                    elseif ($_SESSION["person"] == "student") {
                         ?>
                         <li class="nav-item">
                             <a class="nav-link" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    } elseif ($_SESSION["person"] == "agent") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/agent/"><i class="fa fa-dashboard"></i> Agent Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    } elseif ($_SESSION["person"] == "admin") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/admin/"><i class="fa fa-dashboard"></i> Admin Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    } elseif ($_SESSION["person"] == "parent") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/parent/"><i class="fa fa-dashboard"></i> Parent Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://<?php echo $ip; ?>/Narbon/account/logout.php"><i
+                            <a class="nav-link" href="account/logout.php"><i
                                         class="fa fa-sign-out"></i> Sign out</a>
                         </li>
                         <?php
                     }
-                } else {
+                    elseif ($_SESSION["person"] == "agent") {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/agent"><i class="fa fa-dashboard"></i> Agent Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account/logout.php"><i
+                                        class="fa fa-sign-out"></i> Sign out</a>
+                        </li>
+                        <?php
+                    }
+                    elseif ($_SESSION["person"] == "admin") {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="people/admin"><i class="fa fa-dashboard"></i> Admin Panel</a
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account/logout.php"><i
+                                        class="fa fa-sign-out"></i> Sign out</a>
+                        </li>
+                        <?php
+                    }
+                }
+                else {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="account/"><i class="fa fa-sign-in"></i> Login</a>
