@@ -1,86 +1,67 @@
-<?php
 
-include("data.php");
-
-if ($_SESSION['status'] == true) {
-    $person = $_SESSION['person'];
-    header("Location: http://$ip/Narbon/people/$person");
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Narbon - Login</title>
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/login.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+        body {
+            padding: 50px;
+        }
+        .all {
+            font-family: 'Lato', sans-serif;
+            border-radius: 20px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            padding: 50px;
+            top: 50%;
+        }
+
+        .blk {
+            background: black;
+            color: white;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atieh - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-      <div class="card login-card">
-        <div class="row no-gutters">
-          <div class="col-md-5">
-              <img src="http://office.narbon.ir:4488/assets/images/login.jpg" alt="login" class="login-card-img">
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <div class="brand-wrapper">
-                <a href="../"><img src="http://office.narbon.ir:4488/assets/images/logo.svg" alt="logo" class="logo"></a>
-              </div>
-              <p class="login-card-description">Sign into your account</p>
-                <?php
-                    if ($_SESSION["error"] == "404") {
-                        echo "<h4 class='text-danger'><b>> User not found !</b></h4>";
-                    }
-                    elseif ($_SESSION["error"] == "500") {
-                        echo "<h4 class='text-danger'><b>> Fill them all !</b></h4>";
-                    }
-                ?>
-              <br>
-              <form action="login.php" method="post">
-                  <div class="form-group">
-                    <label for="code" class="sr-only">Code</label>
-                    <input type="text" name="code" id="code" class="form-control" placeholder="User Code">
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="User Password">
-                  </div>
-                    <div class="form-group">
-                        <select class="form-control" name="person">
-                            <option value="1">Student</option>
-                            <option value="2">Teacher</option>
-                            <option value="3">Agent</option>
-                            <option value="4">Admin</option>
-                            <option value="5">Parent</option>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="all border border-success">
+                <h3 class="text-success">Login</h3>
+                <br>
+                <form method="post" action="index.php">
+                    <div class="group">
+                        <input name="code" type="text" class="form-control border border-success" placeholder="User Code">
+                        <br>
+                        <input name="password" type="password" class="form-control border border-success" placeholder="User Password">
+                        <br>
+                        <select name="person" class="form-select border border-success">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="agent">Agent</option>
+                            <option value="admin">Admin</option>
                         </select>
+                        <br>
+                        <button name="login" class="btn btn-success" type="submit">Login</button>
                     </div>
-                    <div class="form-check">
-                      <input class="form-check-input" name="remember" type="checkbox" id="remember">
-                      <label class="form-check-label" for="remember">
-                        Remember Me
-                      </label>
-                    </div>
-                  <br>
-                  <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit">Login</button>
                 </form>
-              <br>
-                <a href="#" class="forgot-password-link">Forgot password ?</a>
+                <br>
+                <p class="text-danger">Forgot Password ?</p>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 </html>
