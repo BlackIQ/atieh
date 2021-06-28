@@ -1,4 +1,50 @@
+<?php
 
+include('../pack/config.php');
+
+$connection = mysqli_connect($msi, $msu, $msp, $msd);
+
+$errors = array();
+
+if (isset($_POST['login'])) {
+    $code = mysqli_real_escape_string($connection, $_POST['code']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $person = mysqli_real_escape_string($connection, $_POST["person"]);
+
+    if (empty($code)) {
+        array_push($errors, "User code is required");
+    }
+    if (empty($password)) {
+        array_push($errors, "User Password is required");
+    }
+
+    if (count($errors) == 0) {
+        if ($person == "student") {
+            $sql = "SELECT * FROM student WHERE mcode = '$code' AND password = '$password'";
+            $result = mysqli_query($connection, $sql);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+
+                $_SESSION['status'] = true;
+                $_SESSION['id'] = $code;
+                $_SESSION["person"] = "student";
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["icode"] = $row["icode"];
+                ?>
+                <script>
+                    window.location.replace("../people/student")
+                </script>
+                <?php
+            }
+            else {
+                array_push($errors, "Sorry, user didnt found");
+            }
+        }
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +83,21 @@
         <div class="col-md-5">
             <div class="all border border-success">
                 <h3 class="text-success">Login</h3>
+                <br>
+                <?php
+                if (count($errors) > 0) {
+                    ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php
+                        foreach ($errors as $error) {
+                            echo "<p>" . $error . "</p>";
+                        }
+                        ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php
+                }
+                ?>
                 <br>
                 <form method="post" action="index.php">
                     <div class="group">
