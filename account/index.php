@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include('../pack/config.php');
 
 $connection = mysqli_connect($msi, $msu, $msp, $msd);
@@ -32,7 +34,7 @@ if (isset($_POST['login'])) {
                 $_SESSION["icode"] = $row["icode"];
                 ?>
                 <script>
-                    window.location.replace("../people/student")
+                    window.location.replace("../people/student");
                 </script>
                 <?php
             }
@@ -53,7 +55,7 @@ if (isset($_POST['login'])) {
                 $_SESSION["icode"] = $row["icode"];
                 ?>
                 <script>
-                    window.location.replace("../people/teacher")
+                    window.location.replace("../people/teacher");
                 </script>
                 <?php
             }
@@ -74,7 +76,7 @@ if (isset($_POST['login'])) {
                 $_SESSION["icode"] = $row["icode"];
                 ?>
                 <script>
-                    window.location.replace("../people/agent")
+                    window.location.replace("../people/agent");
                 </script>
                 <?php
             }
@@ -95,7 +97,7 @@ if (isset($_POST['login'])) {
                 $_SESSION["icode"] = $row["icode"];
                 ?>
                 <script>
-                    window.location.replace("../people/admin")
+                    window.location.replace("../people/admin");
                 </script>
                 <?php
             }
