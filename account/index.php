@@ -29,11 +29,73 @@ if (isset($_POST['login'])) {
                 $_SESSION['status'] = true;
                 $_SESSION['id'] = $code;
                 $_SESSION["person"] = "student";
-                $_SESSION["username"] = $row["username"];
                 $_SESSION["icode"] = $row["icode"];
                 ?>
                 <script>
                     window.location.replace("../people/student")
+                </script>
+                <?php
+            }
+            else {
+                array_push($errors, "Sorry, user didnt found");
+            }
+        }
+        elseif ($person == "teacher") {
+            $sql = "SELECT * FROM teacher WHERE mcode = '$code' AND password = '$password'";
+            $result = mysqli_query($connection, $sql);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+
+                $_SESSION['status'] = true;
+                $_SESSION['id'] = $code;
+                $_SESSION["person"] = "teacher";
+                $_SESSION["icode"] = $row["icode"];
+                ?>
+                <script>
+                    window.location.replace("../people/teacher")
+                </script>
+                <?php
+            }
+            else {
+                array_push($errors, "Sorry, user didnt found");
+            }
+        }
+        elseif ($person == "agent") {
+            $sql = "SELECT * FROM agent WHERE mcode = '$code' AND password = '$password'";
+            $result = mysqli_query($connection, $sql);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+
+                $_SESSION['status'] = true;
+                $_SESSION['id'] = $code;
+                $_SESSION["person"] = "agent";
+                $_SESSION["icode"] = $row["icode"];
+                ?>
+                <script>
+                    window.location.replace("../people/agent")
+                </script>
+                <?php
+            }
+            else {
+                array_push($errors, "Sorry, user didnt found");
+            }
+        }
+        elseif ($person == "admin") {
+            $sql = "SELECT * FROM admin WHERE mcode = '$code' AND password = '$password'";
+            $result = mysqli_query($connection, $sql);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+
+                $_SESSION['status'] = true;
+                $_SESSION['id'] = $code;
+                $_SESSION["person"] = "admin";
+                $_SESSION["icode"] = $row["icode"];
+                ?>
+                <script>
+                    window.location.replace("../people/admin")
                 </script>
                 <?php
             }
