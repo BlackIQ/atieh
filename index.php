@@ -13,117 +13,104 @@ $result = mysqli_query($connection, $sql);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Atieh - Index</title>
-
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
         body {
+            font-family: 'Nunito', sans-serif;
             padding-top: 56px;
         }
     </style>
-
 </head>
-
 <body>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="."><span>Atieh </span>Institute</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href=".">Atieh Institute</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fa fa-home"></i> Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <h3 style="color: white"></h3>
-
-                <?php
-                if ($_SESSION['status'] == true) {
-                    if ($_SESSION["person"] == "teacher") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/teacher"><i class="fa fa-dashboard"></i> Teacher Panel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    }
-                    elseif ($_SESSION["person"] == "student") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    }
-                    elseif ($_SESSION["person"] == "agent") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/agent"><i class="fa fa-dashboard"></i> Agent Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    }
-                    elseif ($_SESSION["person"] == "admin") {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="people/admin"><i class="fa fa-dashboard"></i> Admin Panel</a
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="account/logout.php"><i
-                                        class="fa fa-sign-out"></i> Sign out</a>
-                        </li>
-                        <?php
-                    }
-                }
-                else {
+            </ul>
+            <?php
+            if ($_SESSION['status'] == true) {
+                if ($_SESSION["person"] == "teacher") {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="account"><i class="fa fa-sign-in"></i> Login</a>
+                        <a class="nav-link" href="people/teacher"><i class="fa fa-dashboard"></i> Teacher Panel</a>
+                    </li>
+                    <li class="navbar-nav">
+                        <a class="nav-link active" href="account/logout.php">
+                            <i class="fa fa-sign-out"></i> Sign out
+                        </a>
                     </li>
                     <?php
                 }
+                elseif ($_SESSION["person"] == "student") {
+                    ?>
+                    <li class="navbar-nav">
+                        <a class="nav-link active" href="people/student"><i class="fa fa-dashboard"></i> Student Panel</a
+                    </li>
+                    <li class="navbar-nav">
+                        <a class="nav-link active" href="account/logout.php">
+                            <i class="fa fa-sign-out"></i> Sign out
+                        </a>
+                    </li>
+                    <?php
+                }
+                elseif ($_SESSION["person"] == "agent") {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="people/agent"><i class="fa fa-dashboard"></i> Agent Panel</a
+                    </li>
+                    <li class="navbar-nav">
+                        <a class="nav-link active" href="account/logout.php">
+                            <i class="fa fa-sign-out"></i> Sign out
+                        </a>
+                    </li>
+                    <?php
+                }
+                elseif ($_SESSION["person"] == "admin") {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="people/admin"><i class="fa fa-dashboard"></i> Admin Panel</a
+                    </li>
+                    <li class="navbar-nav">
+                        <a class="nav-link active" href="account/logout.php">
+                            <i class="fa fa-sign-out"></i> Sign out
+                        </a>
+                    </li>
+                    <?php
+                }
+            }
+            else {
                 ?>
+                <li class="navbar-nav">
+                    <a class="nav-link active" href="account"><i class="fa fa-sign-in"></i> Login</a>
                 </li>
-            </ul>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </nav>
-
-<!-- Page Content -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <h1 class="my-4">Atieh insitute
-                <small>is here!</small>
-            </h1>
             <br>
             <?php
             if (mysqli_num_rows($result) > 0) {
@@ -176,8 +163,8 @@ $result = mysqli_query($connection, $sql);
         </div>
     </div>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 </html>
