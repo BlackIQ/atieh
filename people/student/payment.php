@@ -1,7 +1,4 @@
 <?php
-
-include('core.php');
-
 include("../pack/include/data.php");
 ?>
 
@@ -64,23 +61,20 @@ include("../pack/include/data.php");
                 </a></li>
             <li class="active">Payment</li>
         </ol>
-    </div><!--/.row-->
-
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Payment</h1>
         </div>
-    </div><!--/.row-->
+    </div>
     <div class="panel panel-container">
         <?php
         include("../pack/panels/bar.php");
         ?>
     </div>
-
     <?php
     echo $panel;
     ?>
-
     <div class="row">
         <div class="col-sm-12">
             <p class="back-link"><a href="http://<?php echo $ip; ?>/Narbon">Narbon</a></p>

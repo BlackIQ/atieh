@@ -1,7 +1,4 @@
 <?php
-
-include('check.php');
-
 include("../pack/include/data.php");
 ?>
 
@@ -64,20 +61,17 @@ include("../pack/include/data.php");
                 </a></li>
             <li class="active">Profile</li>
         </ol>
-    </div><!--/.row-->
-
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Profile</h1>
         </div>
-    </div><!--/.row-->
-
+    </div>
     <div class="panel panel-container">
         <?php
         include("../pack/panels/bar.php");
         ?>
     </div>
-
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -123,11 +117,10 @@ include("../pack/include/data.php");
             </div>
         </div>
     </div>
-
     <?php
     include("../pack/panels/footer.php");
     ?>
-</div>    <!--/.main-->
+</div>
 <script src="../../pack/js/jquery-1.11.1.min.js"></script>
 <script src="../../pack/js/bootstrap.min.js"></script>
 <script src="../../pack/js/chart.min.js"></script>
