@@ -53,7 +53,7 @@ if ($_SESSION['status'] == true) {
                 $price = $row["tuition"];
             }
         }
-        
+
         $sql = "SELECT * FROM teacher WHERE mcode='$tcode'";
         $result = mysqli_query($conn, $sql);
 
