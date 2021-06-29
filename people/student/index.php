@@ -151,9 +151,9 @@ include("../pack/include/data.php");
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <p class="back-link"><a href="http://<?php echo $ip; ?>/Narbon">Narbon</a></p>
-            <p class="back-link">Created by <a href="https://www.github.com/BlackIQ">Amirhossein Mohammadi</a></p>
-            <p class="back-link">Powered By <a href="https://www.linkedin.com/company/neotrinost">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
+            <p class="back-link"><a href="http://<?php echo $ip; ?>/Narbon">Atieh Institute</a></p>
+            <p class="back-link">Created by <a href="https://BlackIQ.ir">Amirhossein Mohammadi</a></p>
+            <p class="back-link">Powered By <a href="https://Neotrinost.ir">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
             <p class="back-link">
                 <i class="fa fa-lg fa-linkedin-square text-info"></i>
                 <i class="fa fa-lg fa-github"></i>
