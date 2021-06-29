@@ -2,12 +2,17 @@
 
 session_start();
 
-$connection = mysqli_connect('127.0.0.1', 'narbon', 'narbon', 'narbonn');
+$server = "localhost";
+$user = "narbon";
+$passwd = "narbon";
+$db = "narbonn";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
 
 $id = $_SESSION['id'];
 
 $sql = "SELECT * FROM student WHERE mcode='$id'";
-$result = mysqli_query($connection, $sql);
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
