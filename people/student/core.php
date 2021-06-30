@@ -81,14 +81,9 @@ if ($payment == "true") {
                 <div class="panel-body">
                     <h1 class="text-success">Tuition is <b>payed</b></h1>
                     <hr>
-                    <h4 class="text-primary">Date</h4>
-                    <p class="text-success"><b><i class="fa fa-calendar"></i> 2020/10/5</b></p>
-                    <br>
-                    <h4 class="text-primary">Time</h4>
-                    <p class="text-success"><b><i class="fa fa-clock-o"></i> 10:54:26</b></p>
-                    <br>
-                    <h4 class="text-primary">Code</h4>
-                    <p class="text-success"><b><i class="fa fa-paypal"></i> 2020/10/5</b></p>
+                    <h4>Date <b>date</b></h4>
+                    <h4>Time <b>time</b></h4>
+                    <h4>Code <b>748159263</b></h4>
                 </div>
             </div>
         </div>
