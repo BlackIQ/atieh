@@ -107,9 +107,19 @@ include("core.php");
             </div>
         </div>
     </div>
-    <?php
-    include("../pack/panels/footer.php");
-    ?>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="back-link">Atieh Institute</p>
+            <p class="back-link">Created by <a href="https://BlackIQ.ir">Amirhossein Mohammadi</a></p>
+            <p class="back-link">Powered By <a href="https://Neotrinost.ir">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
+            <p class="back-link">
+                <i class="fa fa-lg fa-linkedin-square text-info"></i>
+                <i class="fa fa-lg fa-github"></i>
+                <i class="fa fa-lg fa-telegram text-primary"></i>
+                <i class="fa fa-lg fa-instagram text-danger"></i>
+            </p>
+        </div>
+    </div>
 </div>
 <script src="../../pack/js/jquery-1.11.1.min.js"></script>
 <script src="../../pack/js/bootstrap.min.js"></script>
