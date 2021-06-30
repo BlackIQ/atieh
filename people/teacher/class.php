@@ -219,6 +219,32 @@ if ($sex == 'male') {
         </div>
     </div>
     <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Homework
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
+                        <em class="fa fa-toggle-up"></em>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <label>Homework Session</label>
+                        <input name="session" type="text" class="form-control" placeholder="Session">
+                        <br>
+                        <label>Homework Title</label>
+                        <input name="title" type="text" class="form-control" placeholder="Title">
+                        <br>
+                        <label>Homework Describe</label>
+                        <input name="describe" type="text" class="form-control" placeholder="Describe">
+                        <br>
+                        <button class="btn btn-info">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12">
             <p class="back-link">Atieh Institute</p>
             <p class="back-link">Created by <a href="https://BlackIQ.ir">Amirhossein Mohammadi</a></p>
