@@ -138,21 +138,18 @@ if ($sex == 'male') {
                 <div class="panel-body">
                     <h1 class="color-<?php echo $color; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
                     <hr>
-                    <h4 class="text-primary">Class code</h4>
-                    <p class="text-success"><?php echo $code; ?></p>
+                    <h4 class="text-primary">Class code <b class="text-success"><?php echo $code; ?></b></h4>
                     <br>
-                    <h4 class="text-primary">Start Time</h4>
-                    <p class="text-success"><?php echo $stime ?></p>
+                    <h4 class="text-primary">Start Time <b class="text-success"><?php echo $stime ?></b></h4>
+                    <h4 class="text-primary">End Time <b class="text-success"><?php echo $etime; ?></b></h4>
                     <br>
-                    <h4 class="text-primary">End Time</h4>
-                    <p class="text-success"><?php echo $etime; ?></p>
-                    <br>
-                    <h4 class="text-primary">Days</h4>
-                    <p class="text-success"><?php echo $days; ?> Days</p>
+                    <h4 class="text-primary"><b class="text-success"><?php echo $days; ?> days</b></h4>
                     <br>
                     <h4 class="text-primary">Class Links</h4>
-                    <p><i class="text-success fa fa-whatsapp"></i> <a class="text-success" href="<?php echo $whatapp; ?>">WhatsApp link</a></p>
-                    <p><i class="color-blue fa fa-skype"></i> <a class="text-info" href="<?php echo $skype; ?>">Skype link</a></p>
+                    <b>
+                        <i class="text-success fa fa-whatsapp"></i> <a class="text-success" href="<?php echo $whatapp; ?>">WhatsApp link</a>
+                        <i class="color-blue fa fa-skype"></i> <a class="text-info" href="<?php echo $skype; ?>">Skype link</a>
+                    </b>
                     <br>
                 </div>
             </div>
@@ -168,7 +165,7 @@ if ($sex == 'male') {
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">List of students in <?php echo $level; ?></h1>
+                    <h4>List of students in <?php echo $level; ?></h4>
                     <hr>
                     <label>Session</label>
                     <select class="form-control" id="exampleFormControlSelect2">
@@ -183,7 +180,7 @@ if ($sex == 'male') {
                     <br>
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
-                            <thead class="thead-dark">
+                            <thead>
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Set Status</th>
