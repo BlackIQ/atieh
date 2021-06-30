@@ -1,5 +1,5 @@
 <?php
-include("../pack/include/data.php");
+include("core.php");
 
 $code = $_GET["code"];
 
