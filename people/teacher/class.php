@@ -1,5 +1,4 @@
 <?php
-include("check.php");
 include("../pack/include/data.php");
 
 $code = $_GET["code"];
@@ -29,7 +28,7 @@ if ($sex == 'male') {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Class <?php echo $code; ?></title>
+    <title>Atieh - Class <?php echo $code; ?></title>
     <link href="../../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../pack/css/datepicker3.css" rel="stylesheet">
@@ -47,14 +46,12 @@ include("../pack/panels/sidebar.php");
                 </a></li>
             <li class="active">Class</li>
         </ol>
-    </div><!--/.row-->
-
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Class</h1>
         </div>
-    </div><!--/.row-->
-
+    </div>
     <div class="panel panel-container">
         <?php
         include("../pack/panels/bar.php");
@@ -92,7 +89,6 @@ include("../pack/panels/sidebar.php");
             </div>
         </div>
     </div>
-    
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -158,11 +154,10 @@ include("../pack/panels/sidebar.php");
             </div>
         </div>
     </div>
-
     <?php
     include("../pack/panels/footer.php");
     ?>
-</div>    <!--/.main-->
+</div>
 <script src="../../pack/js/jquery-1.11.1.min.js"></script>
 <script src="../../pack/js/bootstrap.min.js"></script>
 <script src="../../pack/js/chart.min.js"></script>
