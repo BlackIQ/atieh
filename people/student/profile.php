@@ -108,7 +108,7 @@ include('core.php');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     My Information
@@ -117,37 +117,31 @@ include('core.php');
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-info">Personal Information</h1>
-                    <hr>
-                    <h4 class="text-primary">My name</h4>
-                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $fullname; ?></b></p>
+                    <h4>My name</h4>
+                    <p><b><i class="fa fa-user"></i> <?php echo $fullname; ?></b></p>
                     <br>
-                    <h4 class="text-primary">My Phone</h4>
-                    <p class="text-success"><b><i class="fa fa-mobile"></i> <?php echo $phone; ?></b></p>
+                    <h4>My Phone</h4>
+                    <p><b><i class="fa fa-mobile"></i> <?php echo $phone; ?></b></p>
                     <br>
-                    <h4 class="text-primary">My Email</h4>
-                    <p class="text-success"><b><i class="fa fa-envelope"></i> <?php echo $email; ?></b></p>
+                    <h4>My Email</h4>
+                    <p><b><i class="fa fa-envelope"></i> <?php echo $email; ?></b></p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Contact With Me
+                    Parent information
                     <span class="pull-right clickable panel-toggle panel-button-tab-left">
                         <em class="fa fa-toggle-up"></em>
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-info">Contact</h1>
-                    <hr>
-                    <h4 class="text-primary">Parent Phone Number</h4>
-                    <p class="text-success"><b><i class="fa fa-phone"></i> <?php echo $parent; ?></b></p>
+                    <h4>Parent Phone Number</h4>
+                    <p><b><i class="fa fa-phone"></i> <?php echo $parent; ?></b></p>
                     <br>
-                    <h4 class="text-primary">Home Phone</h4>
-                    <p class="text-success"><b><i class="fa fa-home"></i> <?php echo $home; ?></b></p>
+                    <h4>Home Phone</h4>
+                    <p><b><i class="fa fa-home"></i> <?php echo $home; ?></b></p>
                 </div>
             </div>
         </div>
