@@ -1,5 +1,4 @@
 <?php
-include("check.php");
 include("../pack/include/data.php");
 ?>
 
@@ -8,7 +7,7 @@ include("../pack/include/data.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Dashboard</title>
+    <title>Atieh - Dashboard</title>
     <link href="../../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../pack/css/datepicker3.css" rel="stylesheet">
@@ -26,14 +25,12 @@ include("../pack/panels/sidebar.php");
             </a></li>
             <li class="active">Dashboard</li>
         </ol>
-    </div><!--/.row-->
-
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Dashboard</h1>
         </div>
-    </div><!--/.row-->
-
+    </div>
     <div class="panel panel-container">
         <?php
         include("../pack/panels/bar.php");
@@ -92,12 +89,11 @@ include("../pack/panels/sidebar.php");
                 </div>
             </div>
         </div>
-    </div><!--/.row-->
-
+    </div>
     <?php
     include("../pack/panels/footer.php");
     ?>
-</div>    <!--/.main-->
+</div>
 <script src="../../pack/js/jquery-1.11.1.min.js"></script>
 <script src="../../pack/js/bootstrap.min.js"></script>
 <script src="../../pack/js/chart.min.js"></script>
