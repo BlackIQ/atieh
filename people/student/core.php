@@ -106,14 +106,13 @@ else {
                 </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-danger">Tuition is <b>not payed</b></h1>
+                    <h1 class="text-danger">Your tuition is <b>not payed</b></h1>
                     <hr>
-                    <h3 class="text-success"><i class="fa fa-caret-right"></i> You can pay tuition online or pay offline</h3>
+                    <h3>You can pay tuition online or pay offline</h3>
                     <br>
-                    <h4 class="text-warning">Price : 195.000 Toman</h4>
+                    <h4>Tuition price : 195.000 Toman</h4>
                     <br>
-                    <h4 class="text-primary"><i class="fa fa-shopping-basket"></i> Pay online</h4>
-                    <a class="btn btn-primary" href="#">Pay Now</a>
+                    <a class="btn btn-success" href="#">Pay Now</a>
                 </div>
             </div>
         </div>
