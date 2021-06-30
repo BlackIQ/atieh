@@ -138,14 +138,14 @@ if ($sex == 'male') {
                 <div class="panel-body">
                     <h1 class="color-<?php echo $color; ?> text-warning">Class <?php echo $level; ?> - <i class="fa fa-<?php echo $sex; ?>"></i></h1>
                     <hr>
-                    <h4 class="text-primary">Class code <b class="text-success"><?php echo $code; ?></b></h4>
+                    <h4>Class code <b><?php echo $code; ?></b></h4>
                     <br>
-                    <h4 class="text-primary">Start Time <b class="text-success"><?php echo $stime ?></b></h4>
-                    <h4 class="text-primary">End Time <b class="text-success"><?php echo $etime; ?></b></h4>
+                    <h4>Start Time <b><?php echo $stime ?></b></h4>
+                    <h4>End Time <b><?php echo $etime; ?></b></h4>
                     <br>
-                    <h4 class="text-primary"><b class="text-success"><?php echo $days; ?> days</b></h4>
+                    <h4>Classes are in <b><?php echo $days; ?> days</b></h4>
                     <br>
-                    <h4 class="text-primary">Class Links</h4>
+                    <h4>Class Links</h4>
                     <b>
                         <i class="text-success fa fa-whatsapp"></i> <a class="text-success" href="<?php echo $whatapp; ?>">WhatsApp link</a>
                         <i class="color-blue fa fa-skype"></i> <a class="text-info" href="<?php echo $skype; ?>">Skype link</a>
