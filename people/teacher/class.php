@@ -127,7 +127,7 @@ if ($sex == 'male') {
         ?>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Class information
@@ -154,9 +154,7 @@ if ($sex == 'male') {
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Set present or not
@@ -170,11 +168,11 @@ if ($sex == 'male') {
                     <label>Session</label>
                     <select class="form-control" id="exampleFormControlSelect2">
                         <?php
-                                for($i = 1 ; $i <= 16 ; $i++) {
-                                    ?>
-                                    <option><?php echo $i; ?></option>    
-                                    <?php
-                                }
+                        for($i = 1 ; $i <= 16 ; $i++) {
+                            ?>
+                            <option><?php echo $i; ?></option>
+                            <?php
+                        }
                         ?>
                     </select>
                     <br>
@@ -203,7 +201,7 @@ if ($sex == 'male') {
                                             <a href="include/set.php?code=<?php echo $code; ?>&action=p">
                                                 <i class="fa fa-check color-teal"></i>
                                             </a>
-                                            | 
+                                            |
                                             <a href="include/set.php?code=<?php echo $code; ?>&action=a">
                                                 <i class="fa fa-times color-red"></i>
                                             </a>
