@@ -2,6 +2,13 @@
 
 session_start();
 
+$server = "localhost";
+$user = "narbon";
+$passwd = "narbon";
+$db = "narbonn";
+
+$conn = mysqli_connect($server, $user, $passwd, $db);
+
 $id = $_SESSION['id'];
 
 $sql = "SELECT * FROM teacher WHERE mcode='$id'";
