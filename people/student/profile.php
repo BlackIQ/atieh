@@ -148,7 +148,7 @@ include('core.php');
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <p class="back-link"><a href="http://<?php echo $ip; ?>/Narbon">Atieh Institute</a></p>
+            <p class="back-link">Atieh Institute</p>
             <p class="back-link">Created by <a href="https://BlackIQ.ir">Amirhossein Mohammadi</a></p>
             <p class="back-link">Powered By <a href="https://Neotrinost.ir">Neotrinost</a> <i class="fa fa-copyright"></i> <?php echo date("Y"); ?></p>
             <p class="back-link">
