@@ -115,7 +115,7 @@ include("core.php");
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Table of classes</h1>
+                    <h3>List of classed you have</h3>
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
