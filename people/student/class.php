@@ -108,7 +108,7 @@ include('core.php');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     My Class
@@ -117,26 +117,24 @@ include('core.php');
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Class Information</h1>
-                    <hr>
-                    <h4 class="text-primary">Teacher's name</h4>
-                    <p class="text-success"><b><i class="fa fa-user"></i> <?php echo $fteacher; ?></b></p>
+                    <h4>Teacher's name <b><?php echo $fteacher; ?></b></h4>
                     <br>
-                    <h4 class="text-primary"><i class="fa fa-link"></i> Class links</h4>
-                    <p class="text-danger"><b>
-                            <b class="text-primary"><i class="fa fa-skype"></i> Skype</b> | <b class="text-success"><i
-                                        class="fa fa-whatsapp"></i> WhatsApp</b>
-                    </p>
+                    <h4>Class links</h4>
+                    <h5>
+                        <b class="text-primary">
+                            <i class="fa fa-skype"></i> Skype
+                        </b>
+                        <b class="text-success">
+                            <i class="fa fa-whatsapp"></i> WhatsApp
+                        </b>
+                    </h5>
                     <br>
-                    <h4 class="text-primary"><i class="fa fa-clock-o"></i> Class period</h4>
-                    <p class="text-muted"><b class="text-danger"><?php echo $start; ?></b> until <b
-                                class="text-success"><?php echo $end; ?></b></p>
+                    <h4> Class Time</h4>
+                    <h5><b><?php echo $start; ?></b> until <b><?php echo $end; ?></b></h5>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Homework
@@ -145,10 +143,9 @@ include('core.php');
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Session <?php echo $homeworksession; ?></h1>
-                    <hr>
-                    <h3 class="text-primary"><?php echo $homeworktitle; ?></h3>
-                    <p class="text-success"><?php echo $homeworktext; ?></p>
+                    <h2>Session <b><?php echo $homeworksession; ?></b></h2>
+                    <h3><?php echo $homeworktitle; ?></h3>
+                    <p><?php echo $homeworktext; ?></p>
                 </div>
             </div>
         </div>
@@ -163,7 +160,7 @@ include('core.php');
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-warning">Present or not !?</h1>
+                    <h4>Here you can see you where present or not in with session</h4>
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
