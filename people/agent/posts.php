@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Narbon - Posts</title>
+    <title>Atieh - Posts</title>
     <link href="../../pack/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../pack/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../pack/css/datepicker3.css" rel="stylesheet">
@@ -30,20 +30,17 @@ include("../pack/panels/sidebar.php");
                 </a></li>
             <li class="active">Posts</li>
         </ol>
-    </div><!--/.row-->
-
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Posts</h1>
         </div>
-    </div><!--/.row-->
-
+    </div>
     <div class="panel panel-container">
         <?php
         include("../pack/panels/bar.php");
         ?>
     </div>
-    
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -108,7 +105,7 @@ include("../pack/panels/sidebar.php");
             </p>
         </div>
     </div>
-</div>    <!--/.main-->
+</div>
 <script src="../../pack/js/jquery-1.11.1.min.js"></script>
 <script src="../../pack/js/bootstrap.min.js"></script>
 <script src="../../pack/js/chart.min.js"></script>
