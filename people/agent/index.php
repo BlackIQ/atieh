@@ -1,6 +1,5 @@
 <?php
-include("check.php");
-include("../pack/include/data.php");
+include("core.php");
 ?>
 
 <!DOCTYPE html>
