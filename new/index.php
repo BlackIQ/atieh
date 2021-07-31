@@ -15,10 +15,7 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Atieh - Index</title>
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link href="pack/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
         body {
@@ -41,34 +38,29 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            </ul>
-            <?php
-            if ($_SESSION['status'] == true) {
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="user/<?php echo $_SESSION["user_role"]; ?>">
-                        <i class="fa fa-dashboard"></i> <?php echo $_SESSION["user_role"]; ?> Panel
-                    </a>
-                </li>
-                <li class="navbar-nav">
-                    <a class="nav-link active" href="auth/logout.php">
-                        <i class="fa fa-sign-out"></i> Sign out
-                    </a>
-                </li>
-                <?php
-            }
-            else {
-                ?>
-                <li class="navbar-nav">
-                    <a class="nav-link active" href="auth"><i class="fa fa-sign-in"></i> Login</a>
-                </li>
-                <?php
-            }
+        <?php
+        if ($_SESSION['status'] == true) {
             ?>
-        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="user/<?php echo $_SESSION["user_role"]; ?>">
+                    <i class="fa fa-dashboard"></i> <?php echo $_SESSION["user_role"]; ?> Panel
+                </a>
+            </li>
+            <li class="navbar-nav">
+                <a class="nav-link active" href="auth/logout.php">
+                    <i class="fa fa-sign-out"></i> Sign out
+                </a>
+            </li>
+            <?php
+        }
+        else {
+            ?>
+            <li class="navbar-nav">
+                <a class="nav-link active" href="auth"><i class="fa fa-sign-in"></i> Login</a>
+            </li>
+            <?php
+        }
+        ?>
     </div>
 </nav>
 <div class="container">
@@ -210,8 +202,6 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
         </div>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+<script src="../pack/js/bootstrap.min.js"></script>
 </body>
 </html>
