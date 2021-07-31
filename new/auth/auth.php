@@ -34,6 +34,9 @@ if (isset($_POST['logging'])) {
                 </script>
                 <?php
             }
+            else {
+                array_push($errors, "Id or password is wrong.");
+            }
         }
         else if ($role == 'teacher') {
             $get_teacher_query = "";
@@ -46,6 +49,9 @@ if (isset($_POST['logging'])) {
                     window.location.replace("../people/teacher");
                 </script>
                 <?php
+            }
+            else {
+                array_push($errors, "Id or password is wrong.");
             }
         }
         else if ($role == 'agent') {
@@ -60,6 +66,9 @@ if (isset($_POST['logging'])) {
                 </script>
                 <?php
             }
+            else {
+                array_push($errors, "Id or password is wrong.");
+            }
         }
         else if ($role == 'admin') {
             $get_admin_query = "";
@@ -72,6 +81,9 @@ if (isset($_POST['logging'])) {
                     window.location.replace("../people/admin");
                 </script>
                 <?php
+            }
+            else {
+                array_push($errors, "Id or password is wrong.");
             }
         }
     }
