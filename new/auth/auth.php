@@ -23,7 +23,7 @@ if (isset($_POST['logging'])) {
 
     if (count($errors) == 0) {
         if ($role == 'student') {
-            $get_student_query = "SELECT * FROM student ";
+            $get_student_query = "SELECT * FROM students WHERE `id` = '$id' AND `password` = '$password'";
             $result_student_query = mysqli_query($connection, $get_student_query);
             if (mysqli_num_rows($result_student_query) == 1) {
                 $_SESSION['user_id'] = $id;
@@ -40,7 +40,7 @@ if (isset($_POST['logging'])) {
             }
         }
         else if ($role == 'teacher') {
-            $get_teacher_query = "";
+            $get_teacher_query = "SELECT * FROM teachers WHERE `id` = '$id' AND `password` = '$password'";
             $result_teacher_query = mysqli_query($connection, $get_teacher_query);
             if (mysqli_num_rows($result_teacher_query) == 1) {
                 $_SESSION['user_id'] = $id;
@@ -57,7 +57,7 @@ if (isset($_POST['logging'])) {
             }
         }
         else if ($role == 'agent') {
-            $get_agent_query = "";
+            $get_agent_query = "SELECT * FROM agents WHERE `id` = '$id' AND `password` = '$password'";
             $result_agent_query = mysqli_query($connection, $get_agent_query);
             if (mysqli_num_rows($result_agent_query) == 1) {
                 $_SESSION['user_id'] = $id;
@@ -74,7 +74,7 @@ if (isset($_POST['logging'])) {
             }
         }
         else if ($role == 'admin') {
-            $get_admin_query = "";
+            $get_admin_query = "SELECT * FROM admins WHERE `id` = '$id' AND `password` = '$password'";
             $result_admin_query = mysqli_query($connection, $get_admin_query);
             if (mysqli_num_rows($result_admin_query) == 1) {
                 $_SESSION['user_id'] = $id;
