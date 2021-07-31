@@ -35,5 +35,18 @@ if (isset($_POST['logging'])) {
                 <?php
             }
         }
+        if ($role == 'teacher') {
+            $get_teacher_query = "";
+            $result_teacher_query = mysqli_query($connection, $get_teacher_query);
+            if (mysqli_num_rows($result_teacher_query) == 1) {
+                $_SESSION['user_id'] = $id;
+                $_SESSION['session_status'] = true;
+                ?>
+                <script>
+                    window.location.replace("../people/teacher");
+                </script>
+                <?php
+            }
+        }
     }
 }
