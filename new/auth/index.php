@@ -48,11 +48,11 @@ if ($_SESSION['session_status']) {
             <div class="col-md-5">
                 <div class="">
                     <div class="text-center">
-                        <h1><i class="text-primary fas fa-book-open"></i></h1>
-                        <h1 class="text-primary">Atieh Institute</h1>
+                        <h1><i class="fas fa-book-open"></i></h1>
+                        <h1 class="">Atieh Institute</h1>
                     </div>
                     <br>
-                    <p class="text-primary">
+                    <p class="">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
