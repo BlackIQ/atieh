@@ -44,54 +44,18 @@ include("pack/config/configuration.php");
             </ul>
             <?php
             if ($_SESSION['status'] == true) {
-                if ($_SESSION["person"] == "teacher") {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user/teacher"><i class="fa fa-dashboard"></i> Teacher Panel</a>
-                    </li>
-                    <li class="navbar-nav">
-                        <a class="nav-link active" href="auth/logout.php">
-                            <i class="fa fa-sign-out"></i> Sign out
-                        </a>
-                    </li>
-                    <?php
-                }
-                elseif ($_SESSION["person"] == "student") {
-                    ?>
-                    <li class="navbar-nav">
-                        <a class="nav-link active" href="user/student"><i class="fa fa-dashboard"></i> Student Panel</a
-                    </li>
-                    <li class="navbar-nav">
-                        <a class="nav-link active" href="auth/logout.php">
-                            <i class="fa fa-sign-out"></i> Sign out
-                        </a>
-                    </li>
-                    <?php
-                }
-                elseif ($_SESSION["person"] == "agent") {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user/agent"><i class="fa fa-dashboard"></i> Agent Panel</a
-                    </li>
-                    <li class="navbar-nav">
-                        <a class="nav-link active" href="auth/logout.php">
-                            <i class="fa fa-sign-out"></i> Sign out
-                        </a>
-                    </li>
-                    <?php
-                }
-                elseif ($_SESSION["person"] == "admin") {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user/admin"><i class="fa fa-dashboard"></i> Admin Panel</a
-                    </li>
-                    <li class="navbar-nav">
-                        <a class="nav-link active" href="auth/logout.php">
-                            <i class="fa fa-sign-out"></i> Sign out
-                        </a>
-                    </li>
-                    <?php
-                }
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="user/<?php echo $_SESSION["user_role"]; ?>">
+                        <i class="fa fa-dashboard"></i> <?php echo $_SESSION["user_role"]; ?> Panel
+                    </a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link active" href="auth/logout.php">
+                        <i class="fa fa-sign-out"></i> Sign out
+                    </a>
+                </li>
+                <?php
             }
             else {
                 ?>
