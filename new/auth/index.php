@@ -3,7 +3,6 @@
 session_start();
 
 include("auth.php");
-include("../pack/config/configuration.php");
 
 if ($_SESSION['session_status']) {
     $role = $_SESSION['user_role'];
@@ -63,7 +62,7 @@ if ($_SESSION['session_status']) {
             <div class="col-md-2"></div>
             <div class="col-md-5">
                 <div class="dialog border border-primary">
-                    <form method="post" action="auth.php">
+                    <form method="post" action="index.php">
                         <h3 class="text-primary">Login</h3>
                         <hr class="border border-primary">
                         <div>

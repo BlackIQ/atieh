@@ -4,12 +4,13 @@ session_start();
 
 include("../pack/config/configuration.php");
 
+
 $errors = array();
 
 if (isset($_POST['logging'])) {
-    $id = mysqli_real_escape_string($connetion, $_POST['id']);
-    $password = mysqli_real_escape_string($connetion, $_POST['password']);
-    $role = mysqli_real_escape_string($connetion, $_POST['role']);
+    $id = mysqli_real_escape_string($connection, $_POST['id']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $role = mysqli_real_escape_string($connection, $_POST['role']);
 
     if (empty($id)) {
         array_push($errors, "Id is required.");
@@ -39,7 +40,7 @@ if (isset($_POST['logging'])) {
                 array_push($errors, "Id or password is wrong.");
             }
         }
-        else if ($role == 'teacher') {
+        if ($role == 'teacher') {
             $get_teacher_query = "SELECT * FROM teachers WHERE `id` = '$id' AND `password` = '$password'";
             $result_teacher_query = mysqli_query($connection, $get_teacher_query);
             if (mysqli_num_rows($result_teacher_query) == 1) {
@@ -56,7 +57,7 @@ if (isset($_POST['logging'])) {
                 array_push($errors, "Id or password is wrong.");
             }
         }
-        else if ($role == 'agent') {
+        if ($role == 'agent') {
             $get_agent_query = "SELECT * FROM agents WHERE `id` = '$id' AND `password` = '$password'";
             $result_agent_query = mysqli_query($connection, $get_agent_query);
             if (mysqli_num_rows($result_agent_query) == 1) {
@@ -73,7 +74,7 @@ if (isset($_POST['logging'])) {
                 array_push($errors, "Id or password is wrong.");
             }
         }
-        else if ($role == 'admin') {
+        if ($role == 'admin') {
             $get_admin_query = "SELECT * FROM admins WHERE `id` = '$id' AND `password` = '$password'";
             $result_admin_query = mysqli_query($connection, $get_admin_query);
             if (mysqli_num_rows($result_admin_query) == 1) {
