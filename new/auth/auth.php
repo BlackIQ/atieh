@@ -9,7 +9,7 @@ $errors = array();
 if (isset($_POST['logging'])) {
     $id = mysqli_real_escape_string($connetion, $_POST['id']);
     $password = mysqli_real_escape_string($connetion, $_POST['password']);
-    $role = mysqli_real_escape_string($connetion, $_POST['type']);
+    $role = mysqli_real_escape_string($connetion, $_POST['role']);
 
     if (empty($id)) {
         array_push($errors, "Id is required.");
@@ -17,13 +17,13 @@ if (isset($_POST['logging'])) {
     if (empty($password)) {
         array_push($errors, "Password is required.");
     }
-    if ($role == "none") {
+    if (empty($role)) {
         array_push($errors, "Role is required.");
     }
 
     if (count($errors) == 0) {
         if ($role == 'student') {
-            $get_student_query = "";
+            $get_student_query = "SELECT * FROM student ";
             $result_student_query = mysqli_query($connection, $get_student_query);
             if (mysqli_num_rows($result_student_query) == 1) {
                 $_SESSION['user_id'] = $id;
