@@ -31,7 +31,7 @@ if (isset($_POST['logging'])) {
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
-                    window.location.replace("../people/student");
+                    window.location.replace("../user/student");
                 </script>
                 <?php
             }
@@ -48,7 +48,7 @@ if (isset($_POST['logging'])) {
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
-                    window.location.replace("../people/teacher");
+                    window.location.replace("../user/teacher");
                 </script>
                 <?php
             }
@@ -65,7 +65,7 @@ if (isset($_POST['logging'])) {
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
-                    window.location.replace("../people/agent");
+                    window.location.replace("../user/agent");
                 </script>
                 <?php
             }
@@ -82,7 +82,7 @@ if (isset($_POST['logging'])) {
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
-                    window.location.replace("../people/admin");
+                    window.location.replace("../user/admin");
                 </script>
                 <?php
             }
