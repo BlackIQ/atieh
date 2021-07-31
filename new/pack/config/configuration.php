@@ -1,13 +1,13 @@
 <?php
 
 // Hosting IP
-$host = "";
+$host = "127.0.0.1";
 
 // MariaDB Config
-$server = "";
-$user = "";
-$password = "";
-$database = "";
+$server = "127.0.0.1";
+$user = "amir";
+$password = "amir";
+$database = "atieh";
 
 // Mail Config
 $mail_username = "";
