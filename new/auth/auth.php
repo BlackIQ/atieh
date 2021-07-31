@@ -61,5 +61,18 @@ if (isset($_POST['logging'])) {
                 <?php
             }
         }
+        else if ($role == 'admin') {
+            $get_admin_query = "";
+            $result_admin_query = mysqli_query($connection, $get_admin_query);
+            if (mysqli_num_rows($result_admin_query) == 1) {
+                $_SESSION['user_id'] = $id;
+                $_SESSION['session_status'] = true;
+                ?>
+                <script>
+                    window.location.replace("../people/admin");
+                </script>
+                <?php
+            }
+        }
     }
 }
