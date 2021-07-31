@@ -4,7 +4,7 @@ session_start();
 
 include("pack/config/configuration.php");
 
-$get_posts_query = "";
+$get_posts_query = "SELECT * FROM posts";
 $result_posts_query = mysqli_query($connection, $get_posts_query);
 
 ?>
@@ -16,6 +16,7 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Atieh - Index</title>
     <link href="pack/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="pack/css/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
         body {
@@ -38,29 +39,23 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <?php
-        if ($_SESSION['status'] == true) {
-            ?>
-            <li class="nav-item">
-                <a class="nav-link" href="user/<?php echo $_SESSION["user_role"]; ?>">
-                    <i class="fa fa-dashboard"></i> <?php echo $_SESSION["user_role"]; ?> Panel
-                </a>
-            </li>
-            <li class="navbar-nav">
-                <a class="nav-link active" href="auth/logout.php">
-                    <i class="fa fa-sign-out"></i> Sign out
-                </a>
-            </li>
-            <?php
-        }
-        else {
-            ?>
-            <li class="navbar-nav">
-                <a class="nav-link active" href="auth"><i class="fa fa-sign-in"></i> Login</a>
-            </li>
-            <?php
-        }
-        ?>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav">
+                <?php
+                if ($_SESSION['session_status']) {
+                    ?>
+                    <a class="nav-link active" href="user"><i class="fa fa-dashboard"></i> Go To Panel</a>
+                    <a class="nav-link active" href="auth/logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+                    <?php
+                }
+                else {
+                    ?>
+                    <a class="nav-link active" href="auth"><i class="fa fa-sign-in"></i> Sign In</a>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
     </div>
 </nav>
 <div class="container">
