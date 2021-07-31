@@ -86,5 +86,8 @@ if (isset($_POST['logging'])) {
                 array_push($errors, "Id or password is wrong.");
             }
         }
+        else {
+            array_push($errors, "Sorry, something went wrong.");
+        }
     }
 }
