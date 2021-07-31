@@ -27,6 +27,7 @@ if (isset($_POST['logging'])) {
             $result_student_query = mysqli_query($connection, $get_student_query);
             if (mysqli_num_rows($result_student_query) == 1) {
                 $_SESSION['user_id'] = $id;
+                $_SESSION['user_role'] = $role;
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
@@ -43,6 +44,7 @@ if (isset($_POST['logging'])) {
             $result_teacher_query = mysqli_query($connection, $get_teacher_query);
             if (mysqli_num_rows($result_teacher_query) == 1) {
                 $_SESSION['user_id'] = $id;
+                $_SESSION['user_role'] = $role;
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
@@ -59,6 +61,7 @@ if (isset($_POST['logging'])) {
             $result_agent_query = mysqli_query($connection, $get_agent_query);
             if (mysqli_num_rows($result_agent_query) == 1) {
                 $_SESSION['user_id'] = $id;
+                $_SESSION['user_role'] = $role;
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
@@ -75,6 +78,7 @@ if (isset($_POST['logging'])) {
             $result_admin_query = mysqli_query($connection, $get_admin_query);
             if (mysqli_num_rows($result_admin_query) == 1) {
                 $_SESSION['user_id'] = $id;
+                $_SESSION['user_role'] = $role;
                 $_SESSION['session_status'] = true;
                 ?>
                 <script>
