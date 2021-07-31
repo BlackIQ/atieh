@@ -25,6 +25,7 @@ if ($_SESSION['session_status']) {
     <title>Atieh - Login</title>
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <link href="../pack/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../pack/css/style.css" rel="stylesheet" type="text/css">
     <style>
         .main {
             padding: 10%;
