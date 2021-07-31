@@ -77,16 +77,16 @@ if ($_SESSION['session_status']) {
                         <div>
                             <label class="form-label">Choose your role</label>
                             <br>
-                            <input type="radio" class="btn-check" name="role" id="student" autocomplete="off">
+                            <input type="radio" class="btn-check" name="role" value="student" id="student" autocomplete="off">
                             <label class="btn btn-sm btn-outline-dark" for="student">Student</label>
                             &nbsp;
-                            <input type="radio" class="btn-check" name="role" id="teacher" autocomplete="off">
+                            <input type="radio" class="btn-check" name="role" value="teacher" id="teacher" autocomplete="off">
                             <label class="btn btn-sm btn-outline-dark" for="teacher">Teacher</label>
                             &nbsp;
-                            <input type="radio" class="btn-check" name="role" id="agent" autocomplete="off">
+                            <input type="radio" class="btn-check" name="role" value="agent" id="agent" autocomplete="off">
                             <label class="btn btn-sm btn-outline-dark" for="agent">Agent</label>
                             &nbsp;
-                            <input type="radio" class="btn-check" name="role" id="admin" autocomplete="off">
+                            <input type="radio" class="btn-check" name="role" value="admin" id="admin" autocomplete="off">
                             <label class="btn btn-sm btn-outline-dark" for="admin">Admin</label>
                         </div>
                         <br>
