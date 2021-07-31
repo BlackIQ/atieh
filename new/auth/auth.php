@@ -22,6 +22,18 @@ if (isset($_POST['logging'])) {
     }
 
     if (count($errors) == 0) {
-        
+        if ($role == 'student') {
+            $get_student_query = "";
+            $result_student_query = mysqli_query($connection, $get_student_query);
+            if (mysqli_num_rows($result_student_query) == 1) {
+                $_SESSION['user_id'] = $id;
+                $_SESSION['session_status'] = true;
+                ?>
+                <script>
+                    window.location.replace("../people/student");
+                </script>
+                <?php
+            }
+        }
     }
 }
