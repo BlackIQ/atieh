@@ -40,11 +40,20 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href=""><i class="fa fa-phone"></i> Contact with institute</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="us"><i class="fa fa-info"></i> About institute</a>
+                </li>
+            </ul>
             <div class="navbar-nav">
                 <?php
                 if ($_SESSION['session_status']) {
+                    $role = $_SESSION['user_role'];
                     ?>
-                    <a class="nav-link active" href="user"><i class="fa fa-dashboard"></i> Go To Panel</a>
+                    <a class="nav-link active" href="user/<?php echo $role; ?>"><i class="fa fa-dashboard"></i> Go To <?php echo $role; ?> Panel</a>
                     <a class="nav-link active" href="auth/logout.php"><i class="fa fa-sign-out"></i> Logout</a>
                     <?php
                 }
