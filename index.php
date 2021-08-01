@@ -15,7 +15,7 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Atieh - Index</title>
-    <link href="pack/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../jobnic/pack/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="pack/css/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
@@ -206,6 +206,6 @@ $result_posts_query = mysqli_query($connection, $get_posts_query);
         </div>
     </div>
 </footer>
-<script src="../pack/js/bootstrap.min.js"></script>
+<script src="../jobnic/pack/js/bootstrap.min.js"></script>
 </body>
 </html>
