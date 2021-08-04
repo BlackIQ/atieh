@@ -20,6 +20,11 @@ if ($_SESSION['user_role'] != "admin") {
     <?php
 }
 
+$id = $_SESSION['user_id'];
+$get_user_data = "SELECT * FROM admin WHERE id = '$id'";
+$get_user_result = mysqli_query($connection, $get_user_data);
+$user = mysqli_fetch_assoc($get_user_result);
+
 ?>
 
 
@@ -61,7 +66,7 @@ if ($_SESSION['user_role'] != "admin") {
             <img src="../../people/pack/pic.jpeg" class="img-responsive" alt="User Image">
         </div>
         <div class="profile-usertitle">
-            <div class="profile-usertitle-name">username</div>
+            <div class="profile-usertitle-name"><?php echo $user['firstname']; ?></div>
             <div class="profile-usertitle-status"><span class="indicator label-success"></span>Admin</div>
         </div>
         <div class="clear"></div>
