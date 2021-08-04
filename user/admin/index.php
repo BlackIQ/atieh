@@ -75,12 +75,12 @@ $user = mysqli_fetch_assoc($get_user_result);
     <ul class="nav menu">
         <li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
         <li>
-            <a class="" href="post.php">
+            <a class="" href="posts/new.php">
                 <span class="fa fa-paper-plane-o">&nbsp;</span> Posting
             </a>
         </li>
         <li>
-            <a class="" href="add.php">
+            <a class="" href="people/new.php">
                 <span class="fa fa-user-plus">&nbsp;</span> Add new user
             </a>
         </li>
@@ -94,22 +94,22 @@ $user = mysqli_fetch_assoc($get_user_result);
             </a>
             <ul class="children collapse" id="people">
                 <li>
-                    <a class="" href="#">
+                    <a class="" href="people/student.php">
                         <span class="fa fa-graduation-cap">&nbsp;</span> Students
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
+                    <a class="" href="people/teacher.php">
                         <span class="fa fa-book">&nbsp;</span> Teachers
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
+                    <a class="" href="people/agent.php">
                         <span class="fa fa-microphone">&nbsp;</span> Agents
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
+                    <a class="" href="people/admin.php">
                         <span class="fa fa-map-marker">&nbsp;</span> Admins
                     </a>
                 </li>
@@ -125,7 +125,7 @@ $user = mysqli_fetch_assoc($get_user_result);
             </a>
             <ul class="children collapse" id="etc">
                 <li>
-                    <a class="" href="setting.php">
+                    <a class="" href="etc/settings.php">
                         <span class="fa fa-cogs">&nbsp;</span> Setting
                     </a>
                 </li>
