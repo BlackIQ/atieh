@@ -188,6 +188,9 @@ $user = mysqli_fetch_assoc($get_user_result);
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">Fast shortcuts</h3>
+        </div>
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
