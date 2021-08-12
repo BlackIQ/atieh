@@ -278,6 +278,51 @@ $user = mysqli_fetch_assoc($get_user_result);
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    New Teacher
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
+                        <em class="fa fa-toggle-up"></em>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="fname" class="form-label">First Name</label>
+                                <input id="fname" name="fname" class="form-control" placeholder="First name">
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input id="lname" name="lname" class="form-control" placeholder="Last name">
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input id="phone" name="phone" class="form-control" placeholder="Phone">
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" name="email" class="form-control" placeholder="Email">
+                                <br>
+                            </div>
+                        </div>
+                        <label for="id" class="form-label">ID</label>
+                        <input id="id" name="id" class="form-control" placeholder="ID">
+                        <br>
+                        <div>
+                            <button class="btn btn-success" type="submit" name="addteacher">Add</button>
+                            <button class="btn btn-danger" type="reset">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="../../bundle/js/jquery-1.11.1.min.js"></script>
