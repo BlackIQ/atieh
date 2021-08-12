@@ -229,6 +229,19 @@ $user = mysqli_fetch_assoc($get_user_result);
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Selected Admin
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left">
+                        <em class="fa fa-toggle-up"></em>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <p>Will add.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="../../bundle/js/jquery-1.11.1.min.js"></script>
