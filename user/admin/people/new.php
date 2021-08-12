@@ -226,13 +226,14 @@ $user = mysqli_fetch_assoc($get_user_result);
                         <input id="id" name="id" class="form-control" placeholder="ID">
                         <br>
                         <div>
-                            <button class="btn btn-success" type="submit" name="addstudent">Add</button>
+                            <button class="btn btn-success" type="submit" name="addadmin">Add</button>
                             <button class="btn btn-danger" type="reset">Clear</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <script src="../../bundle/js/jquery-1.11.1.min.js"></script>
