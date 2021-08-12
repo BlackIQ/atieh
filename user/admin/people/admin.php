@@ -188,16 +188,44 @@ $user = mysqli_fetch_assoc($get_user_result);
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Header
+                    All of admins
                     <span class="pull-right clickable panel-toggle panel-button-tab-left">
                         <em class="fa fa-toggle-up"></em>
                     </span>
                 </div>
                 <div class="panel-body">
-                    Body
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>First Name</td>
+                                <td>Last Name</td>
+                                <td>Phone</td>
+                                <td>Email</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $get_all_admins_query = "SELECT * FROM admins";
+                                $get_all_admins_result = mysqli_query($connection, $get_all_admins_query);
+
+                                while ($admin_row = mysqli_fetch_assoc($get_all_admins_result)) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $admin_row["id"]; ?></td>
+                                        <td><?php echo $admin_row["firstname"]; ?></td>
+                                        <td><?php echo $admin_row["lastname"]; ?></td>
+                                        <td><?php echo $admin_row["email"]; ?></td>
+                                        <td><?php echo $admin_row["phone"]; ?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
